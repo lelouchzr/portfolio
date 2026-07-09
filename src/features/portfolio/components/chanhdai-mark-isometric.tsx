@@ -18,7 +18,7 @@ import { useSound } from "@/hooks/soundcn/use-sound"
 Original ChanhDai isometric mark:
 The previous version used hand-authored CD path data generated from Figma.
 It is kept in git history; this replacement keeps the same isometric block
-treatment while drawing Adrien's AL monogram from a pixel grid.
+treatment while drawing Adrien's AL monogram as compound extruded paths.
 */
 
 const transition: Transition = {
@@ -28,87 +28,128 @@ const transition: Transition = {
   stiffness: 200,
 }
 
-const TILE_WIDTH = 42
-const TILE_HEIGHT = 24
-const TILE_DEPTH = 24
-const OFFSET_X = 180
-const OFFSET_Y = 16
+const MARK_CELL_HEIGHT = 32
+// The width-to-height ratio must be sqrt(3) to match the isometric guides.
+const MARK_CELL_WIDTH = MARK_CELL_HEIGHT * Math.sqrt(3)
+const MARK_CELL_DEPTH = 32
 
-const AL_GRID = [
-  "0111000100000",
-  "1000100100000",
-  "1000100100000",
-  "1111100100000",
-  "1000100100000",
-  "1000100100000",
-  "1000100100000",
-  "1000100111110",
-]
+// Move the isometric mark: increase X to move right, increase Y to move down.
+const MARK_OFFSET_X = 333
+const MARK_OFFSET_Y = 32.5
 
 type Point = {
   x: number
   y: number
 }
 
-type IsoBlock = {
-  top: Point[]
-  left: Point[]
-  right: Point[]
+type GridPoint = {
+  x: number
+  y: number
+}
+
+type IsoShape = {
+  id: string
+  topRings: GridPoint[][]
 }
 
 function pointsToPath(points: Point[]) {
   return `${points.map((point) => `${point.x},${point.y}`).join(" ")}`
 }
 
+function ringToPath(points: GridPoint[]) {
+  const [firstPoint, ...nextPoints] = points
+
+  return [
+    `M${projectPoint(firstPoint).x},${projectPoint(firstPoint).y}`,
+    ...nextPoints.map((point) => {
+      const projectedPoint = projectPoint(point)
+
+      return `L${projectedPoint.x},${projectedPoint.y}`
+    }),
+    "Z",
+  ].join(" ")
+}
+
+function shapeToPath(shape: IsoShape) {
+  return shape.topRings.map(ringToPath).join(" ")
+}
+
+function ringToEdges(points: GridPoint[]) {
+  return points.map((point, index) => [
+    point,
+    points[(index + 1) % points.length],
+  ]) satisfies [GridPoint, GridPoint][]
+}
+
+function shapeToSideFaces(shape: IsoShape) {
+  return shape.topRings.flatMap((ring) => ringToEdges(ring).map(edgeToSideFace))
+}
+
 function project(row: number, column: number): Point {
   return {
-    x: OFFSET_X + (column - row) * (TILE_WIDTH / 2),
-    y: OFFSET_Y + (column + row) * (TILE_HEIGHT / 2),
+    x: MARK_OFFSET_X + (row - column) * (MARK_CELL_WIDTH / 2),
+    y: MARK_OFFSET_Y + (column + row) * (MARK_CELL_HEIGHT / 2),
   }
 }
 
-function createIsoBlock(row: number, column: number): IsoBlock {
-  const top = project(row, column)
-  const right = {
-    x: top.x + TILE_WIDTH / 2,
-    y: top.y + TILE_HEIGHT / 2,
-  }
-  const bottom = {
-    x: top.x,
-    y: top.y + TILE_HEIGHT,
-  }
-  const left = {
-    x: top.x - TILE_WIDTH / 2,
-    y: top.y + TILE_HEIGHT / 2,
-  }
-  const rightDrop = {
-    x: right.x,
-    y: right.y + TILE_DEPTH,
-  }
-  const bottomDrop = {
-    x: bottom.x,
-    y: bottom.y + TILE_DEPTH,
-  }
-  const leftDrop = {
-    x: left.x,
-    y: left.y + TILE_DEPTH,
-  }
+function projectPoint(point: GridPoint): Point {
+  return project(point.y, point.x)
+}
 
+function drop(point: Point): Point {
   return {
-    top: [top, right, bottom, left],
-    left: [left, bottom, bottomDrop, leftDrop],
-    right: [right, bottom, bottomDrop, rightDrop],
+    x: point.x,
+    y: point.y + MARK_CELL_DEPTH,
   }
 }
 
-const AL_BLOCKS = AL_GRID.flatMap((row, rowIndex) =>
-  row
-    .split("")
-    .map((cell, columnIndex) =>
-      cell === "1" ? createIsoBlock(rowIndex, columnIndex) : null
-    )
-    .filter((block): block is IsoBlock => block !== null)
-)
+function edgeToSideFace([start, end]: [GridPoint, GridPoint]): Point[] {
+  const startPoint = projectPoint(start)
+  const endPoint = projectPoint(end)
+
+  return [startPoint, endPoint, drop(endPoint), drop(startPoint)]
+}
+
+const AL_SHAPES = [
+  {
+    id: "l",
+    topRings: [
+      [
+        { x: 4, y: 0 },
+        { x: 5, y: 0 },
+        { x: 5, y: 7 },
+        { x: 0, y: 7 },
+        { x: 0, y: 6 },
+        { x: 4, y: 6 },
+      ],
+    ],
+  },
+  {
+    id: "a",
+    topRings: [
+      [
+        { x: 8, y: 0 },
+        { x: 11, y: 0 },
+        { x: 11, y: 1 },
+        { x: 12, y: 1 },
+        { x: 12, y: 7 },
+        { x: 11, y: 7 },
+        { x: 11, y: 4 },
+        { x: 8, y: 4 },
+        { x: 8, y: 7 },
+        { x: 7, y: 7 },
+        { x: 7, y: 1 },
+        { x: 8, y: 1 },
+      ],
+      [
+        { x: 8, y: 1 },
+        { x: 11, y: 1 },
+        { x: 11, y: 3 },
+        { x: 8, y: 3 },
+      ],
+    ],
+  },
+] satisfies IsoShape[]
 
 export function ChanhDaiMarkIsometric() {
   const id = useId()
@@ -215,54 +256,75 @@ export function ChanhDaiMarkIsometric() {
       </g>
 
       <motion.g
+        strokeLinejoin="round"
         variants={{
           normal: { transform: "translate(0px, 0px)" },
           pressed: { transform: "translate(0px, 16px)" },
         }}
         transition={transition}
       >
-        {AL_BLOCKS.map((block, index) => (
-          <g key={index}>
-            <polygon
-              points={pointsToPath(block.left)}
-              className="fill-background"
-              opacity="0.72"
-            />
-            <polygon
-              points={pointsToPath(block.right)}
-              className="fill-background"
-              opacity="0.88"
-            />
-            <polygon
-              points={pointsToPath(block.top)}
-              className="fill-background"
-            />
-            <polygon
-              points={pointsToPath(block.top)}
-              fill={`url(#${ids.facePattern})`}
-            />
+        {AL_SHAPES.map((shape) => {
+          const topPath = shapeToPath(shape)
+          const sideFaces = shapeToSideFaces(shape)
 
-            {[block.left, block.right, block.top].map((face, faceIndex) => (
-              <polygon
-                key={faceIndex}
-                points={pointsToPath(face)}
+          return (
+            <g key={shape.id}>
+              {sideFaces.map((face, faceIndex) => (
+                <polygon
+                  key={`${shape.id}-side-${faceIndex}`}
+                  points={pointsToPath(face)}
+                  className="fill-background"
+                  opacity={faceIndex % 2 === 0 ? "0.88" : "0.72"}
+                />
+              ))}
+
+              <path
+                d={topPath}
+                className="fill-background"
+                fillRule="evenodd"
+              />
+              <path
+                d={topPath}
+                fill={`url(#${ids.facePattern})`}
+                fillRule="evenodd"
+              />
+
+              {sideFaces.map((face, faceIndex) => (
+                <polygon
+                  key={`${shape.id}-side-stroke-${faceIndex}`}
+                  points={pointsToPath(face)}
+                  fill="none"
+                  stroke="var(--stroke)"
+                  strokeWidth="1"
+                />
+              ))}
+
+              <path
+                d={topPath}
                 fill="none"
                 stroke="var(--stroke)"
                 strokeWidth="1"
               />
-            ))}
 
-            {[block.left, block.right, block.top].map((face, faceIndex) => (
-              <polygon
-                key={faceIndex}
-                points={pointsToPath(face)}
+              {sideFaces.map((face, faceIndex) => (
+                <polygon
+                  key={`${shape.id}-side-highlight-${faceIndex}`}
+                  points={pointsToPath(face)}
+                  fill="none"
+                  stroke={`url(#${ids.radialGradient})`}
+                  strokeWidth="1"
+                />
+              ))}
+
+              <path
+                d={topPath}
                 fill="none"
                 stroke={`url(#${ids.radialGradient})`}
                 strokeWidth="1"
               />
-            ))}
-          </g>
-        ))}
+            </g>
+          )
+        })}
       </motion.g>
     </motion.svg>
   )

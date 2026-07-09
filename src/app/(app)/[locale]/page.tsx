@@ -43,7 +43,9 @@ export async function generateMetadata({
   const url = `/${locale}`
 
   return {
-    title: messages.metadata.title,
+    title: {
+      absolute: messages.metadata.title,
+    },
     description: messages.metadata.description,
     keywords: user.keywords,
     alternates: {

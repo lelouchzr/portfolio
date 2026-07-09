@@ -101,7 +101,7 @@ export type LocalizedPortfolio = {
 const messages: Record<Locale, PortfolioMessages> = {
   en: {
     metadata: {
-      title: `${USER.displayName} - ${USER.jobTitle}`,
+      title: "Adrien LACHAMBRE - Software Engineer",
       description: USER.bio,
     },
     overview: {
@@ -176,7 +176,7 @@ const messages: Record<Locale, PortfolioMessages> = {
   },
   fr: {
     metadata: {
-      title: `${USER.displayName} - Ingénieur logiciel`,
+      title: "Adrien LACHAMBRE - Ingénieur logiciel",
       description:
         "Étudiant en ingénierie logicielle intéressé par l'IA, les systèmes backend et les technologies émergentes.",
     },
@@ -259,7 +259,7 @@ const messages: Record<Locale, PortfolioMessages> = {
   },
   kr: {
     metadata: {
-      title: `${USER.displayName} - 소프트웨어 엔지니어`,
+      title: "아드리앙 라샹브르 - 소프트웨어 엔지니어",
       description:
         "AI, 백엔드 시스템, 신기술에 관심이 있는 소프트웨어 공학 학생입니다.",
     },
