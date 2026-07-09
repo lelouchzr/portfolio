@@ -55,6 +55,7 @@ type CommandLinkItem = {
   shortcut?: string
   keywords?: string[]
   openInNewTab?: boolean
+  download?: string | boolean
 }
 
 type BlockItem = {
@@ -116,6 +117,13 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
 
 const OTHER_LINK_ITEMS: CommandLinkItem[] = [
   {
+    title: "Download Resume",
+    href: "/adrien-lachambre-resume.pdf",
+    kind: "command",
+    icon: <FileTextIcon />,
+    download: "adrien-lachambre-resume.pdf",
+  },
+  {
     title: "Download vCard",
     href: "/vcard",
     kind: "command",
@@ -172,19 +180,34 @@ export function CommandMenu({
   )
 
   const handleOpenLink = useCallback(
-    (href: string, openInNewTab = false) => {
+    (
+      href: string,
+      openInNewTab = false,
+      download: string | boolean = false
+    ) => {
       setOpen(false)
 
       trackEvent({
         name: "command_menu_action",
         properties: {
-          action: "navigate",
+          action: download ? "download" : "navigate",
           href: href,
           open_in_new_tab: openInNewTab,
         },
       })
 
-      if (openInNewTab) {
+      if (download) {
+        const anchor = document.createElement("a")
+        anchor.href = href
+        if (typeof download === "string") {
+          anchor.download = download
+        } else {
+          anchor.download = ""
+        }
+        document.body.appendChild(anchor)
+        anchor.click()
+        document.body.removeChild(anchor)
+      } else if (openInNewTab) {
         window.open(href, "_blank", "noopener")
       } else {
         router.push(href)
@@ -438,7 +461,11 @@ function CommandLinkGroup({
   links: CommandLinkItem[]
   fallbackIcon?: React.ReactElement
   onLinkHighlight: (link: CommandLinkItem) => void
-  onLinkSelect: (href: string, openInNewTab?: boolean) => void
+  onLinkSelect: (
+    href: string,
+    openInNewTab?: boolean,
+    download?: string | boolean
+  ) => void
 }) {
   return (
     <CommandGroup heading={heading}>
@@ -450,7 +477,9 @@ function CommandLinkGroup({
             key={link.href}
             keywords={link.keywords}
             onHighlight={() => onLinkHighlight(link)}
-            onSelect={() => onLinkSelect(link.href, link.openInNewTab)}
+            onSelect={() =>
+              onLinkSelect(link.href, link.openInNewTab, link.download)
+            }
           >
             {link?.iconImage ? (
               <img

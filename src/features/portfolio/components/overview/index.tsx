@@ -1,5 +1,6 @@
 import { urlToName } from "@/utils/url"
 import {
+  DownloadIcon,
   LinkIcon,
   MapPinIcon,
   MarsIcon,
@@ -21,6 +22,8 @@ import {
 } from "./intro-item"
 import { JobItem } from "./job-item"
 import { PhoneItem } from "./phone-item"
+
+const RESUME_URL = "/adrien-lachambre-resume.pdf"
 
 export function Overview() {
   return (
@@ -59,6 +62,21 @@ export function Overview() {
         <PhoneItem phoneNumberB64={USER.phoneNumberB64} />
 
         <EmailItem emailB64={USER.emailB64} />
+
+        <IntroItem>
+          <IntroItemIcon>
+            <DownloadIcon />
+          </IntroItemIcon>
+          <IntroItemContent>
+            <IntroItemLink
+              href={RESUME_URL}
+              download="adrien-lachambre-resume.pdf"
+              aria-label="Download resume"
+            >
+              Resume
+            </IntroItemLink>
+          </IntroItemContent>
+        </IntroItem>
 
         <IntroItem>
           <IntroItemIcon>
