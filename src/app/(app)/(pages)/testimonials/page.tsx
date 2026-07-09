@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-import { X_HANDLE } from "@/config/site"
+// import { X_HANDLE } from "@/config/site"
 import { jsonLdBreadcrumbList, JsonLdScript } from "@/lib/json-ld"
 import { cn } from "@/lib/utils"
 import {
@@ -25,7 +25,7 @@ import {
 } from "@/features/portfolio/data/testimonials"
 
 const title = "Testimonials"
-const description = "Trusted by top builders."
+const description = "Feedback from builders and collaborators."
 
 const ogImage = `/og/simple?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}`
 
@@ -45,12 +45,12 @@ export const metadata: Metadata = {
       alt: title,
     },
   },
-  twitter: {
-    card: "summary_large_image",
-    site: X_HANDLE,
-    creator: X_HANDLE,
-    images: [ogImage],
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   site: X_HANDLE,
+  //   creator: X_HANDLE,
+  //   images: [ogImage],
+  // },
 }
 
 const TESTIMONIALS = [...TESTIMONIALS_1, ...TESTIMONIALS_2].sort(
@@ -76,9 +76,7 @@ export default function TestimonialsPage() {
       <div className="min-h-svh">
         <PageHeading>
           <PageHeadingTagline>Testimonials</PageHeadingTagline>
-          <PageHeadingTitle>
-            Trusted by top builders on <span aria-label="X">𝕏</span>
-          </PageHeadingTitle>
+          <PageHeadingTitle>Feedback from builders</PageHeadingTitle>
         </PageHeading>
 
         <div className="relative pt-4">

@@ -6,7 +6,7 @@ import type { CollectionPage, WithContext } from "schema-dts"
 
 import { JSON_LD_ID } from "@/config/json-ld"
 import { registryConfig } from "@/config/registry"
-import { UTM_PARAMS, X_HANDLE } from "@/config/site"
+import { UTM_PARAMS /*X_HANDLE*/ } from "@/config/site"
 import { jsonLdBreadcrumbList, JsonLdScript } from "@/lib/json-ld"
 import { absoluteUrl, cn } from "@/lib/utils"
 import AdUnit from "@/components/ad-unit"
@@ -55,12 +55,12 @@ export const metadata: Metadata = {
       alt: title,
     },
   },
-  twitter: {
-    card: "summary_large_image",
-    site: X_HANDLE,
-    creator: X_HANDLE,
-    images: [ogImage],
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   site: X_HANDLE,
+  //   creator: X_HANDLE,
+  //   images: [ogImage],
+  // },
 }
 
 function getCollectionPageJsonLd(

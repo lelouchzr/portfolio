@@ -10,8 +10,8 @@
     "jotai"
   ],
   "registryDependencies": [
-    "https://chanhdai.com/r/icon-swap.json",
-    "https://chanhdai.com/r/copy-button.json"
+    "https://acme.com/r/icon-swap.json",
+    "https://acme.com/r/copy-button.json"
   ],
   "files": [
     {

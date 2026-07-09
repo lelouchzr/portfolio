@@ -6,7 +6,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react"
 import type { BlogPosting as PageSchema, WithContext } from "schema-dts"
 
 import { JSON_LD_ID } from "@/config/json-ld"
-import { X_HANDLE } from "@/config/site"
+// import { X_HANDLE } from "@/config/site"
 import { jsonLdBreadcrumbList, JsonLdScript } from "@/lib/json-ld"
 import { absoluteUrl } from "@/lib/utils"
 import { Kbd } from "@/components/ui/kbd"
@@ -82,12 +82,12 @@ export async function generateMetadata({
         alt: title,
       },
     },
-    twitter: {
-      card: "summary_large_image",
-      site: X_HANDLE,
-      creator: X_HANDLE,
-      images: [ogImage],
-    },
+    // twitter: {
+    //   card: "summary_large_image",
+    //   site: X_HANDLE,
+    //   creator: X_HANDLE,
+    //   images: [ogImage],
+    // },
   }
 }
 

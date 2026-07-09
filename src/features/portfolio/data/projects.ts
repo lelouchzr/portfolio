@@ -2,239 +2,195 @@ import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
-    id: "react-wheel-picker",
-    title: "React Wheel Picker",
+    id: "flashcardstudy",
+    title: "FlashCardStudy",
     period: {
-      start: "05.2025",
+      start: "05.2026",
     },
-    link: "https://react-wheel-picker.chanhdai.com",
+    link: "https://flashcardstudy.com",
+    logo: "/images/portfolio/flashcardstudy-logo.png",
     skills: [
-      "Open Source",
-      "React",
+      "Full-stack SaaS",
+      "React 19",
       "TypeScript",
-      "Monorepo",
-      "Turborepo",
-      "pnpm-workspace",
-      "Package Publishing",
-      "NPM Registry",
-      "GitHub Actions",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "TanStack Query",
+      "React Router",
+      "Framer Motion",
+      "Supabase",
+      "PostgreSQL",
+      "Stripe",
+      "Vercel",
+      "SEO",
+      "i18n",
     ],
-    description: `iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. / Backed by [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker)
-- Natural touch scrolling with smooth inertia, mouse drag and scroll for desktop
-- Infinite loop scrolling
-- Unstyled core for complete style customization
-- Full keyboard navigation and type-ahead search
-`,
-    logo: "https://assets.chanhdai.com/images/project-logos/react-wheel-picker.svg",
+    description: `Full-stack SaaS web application for language learning, built around flashcards, public deck sharing, image-backed cards and spaced repetition.
+- Developed a React 19 + TypeScript + Vite frontend with Tailwind CSS, shadcn/ui, TanStack Query, React Router and Framer Motion.
+- Built a Supabase backend using Auth, PostgreSQL, Row Level Security, Storage, Edge Functions and database migrations.
+- Implemented deck and card CRUD, optimistic UI updates, study sessions, review history, streak tracking and FSRS-inspired spaced repetition scheduling.
+- Added public deck sharing, import flows, multilingual i18n and prerendered SEO pages for public decks, collections, topics and pricing.
+- Integrated Stripe Checkout, Billing Portal, webhooks, subscription plans, quotas and feature gates across frontend and database policies.
+- Added analytics-focused pages including daily progress, due cards, recent activity, hardest cards and plan-based advanced stats.
+- Deployed on Vercel with Supabase production infrastructure, sitemap generation, robots.txt and performance monitoring.`,
     isExpanded: true,
   },
   {
-    id: "chanhdaidotcom",
-    title: "chanhdai.com",
+    id: "losthaven",
+    title: "LostHaven",
     period: {
-      start: "01.2025",
+      start: "2025",
     },
-    link: "https://github.com/ncdai/chanhdai.com",
+    link: "https://lost-haven.com",
+    logo: "/images/portfolio/losthaven-logo-rune.png",
     skills: [
-      "Open Source",
-      "Next.js 16",
-      "Tailwind CSS v4",
-      "Radix UI",
-      "Base UI",
-      "Motion",
-      "shadcn/ui",
-      "shadcn registry",
-      "Vercel",
+      "Game Development",
+      "Godot",
+      "Gameplay Programming",
+      "Game Design",
+      "Team Project",
+      "Commercialization",
     ],
-    description: "A pixel-perfect dev portfolio and shadcn registry.",
-    logo: "https://assets.chanhdai.com/images/project-logos/chanhdaidotcom.svg",
+    description: `Single-player game built with Godot as part of a team project with a commercialization objective.
+- Co-founded the project and contributed to the commercial release strategy.
+- Designed the project's technical architecture and core systems.
+- Developed gameplay systems with Godot and web-based features around the game.
+- Maintained the official website and related web services.
+- Participated in project management, technical planning and team coordination.`,
   },
   {
-    id: "quaricdotcom",
-    title: "quaric.com",
+    id: "lightweight-rag-framework",
+    title: "Python RAG Framework",
     period: {
-      start: "03.2024",
+      start: "06.2026",
+      end: "07.2026",
     },
-    link: "https://quaric.com",
+    link: "https://github.com/lelouchzr/python-rag-framework",
+    logo: "/images/portfolio/python-rag-framework-logo.png",
     skills: [
-      "Company Project",
-      "Next.js 15",
-      "Tailwind CSS v3",
-      "shadcn/ui",
-      "Strapi 5",
-      "VNPAY-QR",
-      "Docker",
-      "Docker Compose",
-      "NGINX",
-    ],
-    logo: "https://assets.chanhdai.com/images/project-logos/quaricdotcom.svg",
-  },
-  {
-    id: "zadark",
-    title: "ZaDark",
-    period: {
-      start: "01.2022",
-    },
-    link: "https://zadark.com",
-    skills: [
-      "Pet Project",
-      "Open Source",
-      "Browser Extension",
+      "AI",
+      "RAG",
+      "Python",
+      "Python 3.12",
+      "LLM",
+      "Embeddings",
+      "Vector Search",
+      "SQLite",
+      "OpenAI",
+      "Anthropic",
       "CLI",
-      "Docusaurus 3",
+      "Typed Library",
     ],
-    description: `ZaDark adds Dark Mode, anti-peeking, customizable fonts, backgrounds, and more to Zalo Web and PC.
-- Earned 10M+ VND in net sales from a paid Safari Extension*
-- 80k+ downloads on SourceForge* (awarded Community Leader badge by SourceForge)
-- 30k+ active users via Chrome Web Store*
-- Bronze Medal — 10th Design, Manufacturing, and Application Award 2022
-
-<p class="text-muted-foreground">* Peak metrics.</p>
-`,
-    logo: "https://assets.chanhdai.com/images/project-logos/zadark.svg",
+    description: `Lightweight Python framework for building retrieval-augmented generation applications with clean architecture, strong typing and minimal dependencies.
+- Built composable primitives for document loading, deterministic chunking, retrieval, prompt construction and answer generation.
+- Added local hashing and n-gram hashing embeddings, in-memory and SQLite vector stores, metadata filtering and lexical reranking.
+- Implemented callable, OpenAI and Anthropic LLM adapters with streaming responses, source citations and conversation history.
+- Added a local CLI for inspecting files, chunking documents and testing retrieval workflows.`,
   },
   {
-    id: "qabox",
-    title: "QABox",
+    id: "python-agent-runtime",
+    title: "Python Agent Runtime",
     period: {
-      start: "07.2023",
-      end: "07.2023",
+      start: "06.2026",
+      end: "07.2026",
     },
-    link: "https://github.com/ncdai/qabox",
+    link: "https://github.com/lelouchzr/python-agent-runtime",
+    logo: "/images/portfolio/python-agent-runtime-logo.png",
     skills: [
-      "University Project",
-      "PHP",
-      "MySQL",
-      "MVC",
-      "Docker",
-      "Docker Compose",
+      "AI Agents",
+      "Python",
+      "Python 3.12",
+      "LLM",
+      "RAG",
+      "Tools",
+      "Streaming",
+      "Pydantic",
+      "OpenAI",
+      "Typed Library",
     ],
-    description:
-      "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/ncdai/qabox",
+    description: `Lightweight Python runtime for executing AI agents cleanly and predictably.
+- Built core abstractions for Agent, Runtime, PromptBuilder, ConversationHistory, Memory, ToolRegistry and ToolExecutor.
+- Added callback support, streaming responses, Pydantic-based configuration and callable / OpenAI LLM adapters.
+- Integrated optional retrieval through python-rag-framework without duplicating ingestion, embeddings or vector-store concerns.
+- Focused the implementation on clean architecture, type-safe APIs and practical runtime behavior.`,
   },
   {
-    id: "taskbox",
-    title: "TaskBox",
+    id: "python-doc-generator",
+    title: "Python Doc Generator",
     period: {
-      start: "07.2023",
-      end: "07.2023",
+      start: "06.2026",
     },
-    link: "https://github.com/ncdai/taskbox",
+    link: "https://github.com/lelouchzr/python-doc-generator",
+    logo: "/images/portfolio/python-doc-generator-logo.png",
     skills: [
-      "University Project",
-      "PHP",
-      "MySQL",
-      "MVC",
-      "Docker",
-      "Docker Compose",
+      "AI",
+      "Python",
+      "CLI",
+      "RAG",
+      "Agents",
+      "Typer",
+      "Markdown",
+      "Documentation",
+      "OpenAI",
+      "Anthropic",
+      "Gemini",
     ],
-    description:
-      "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/ncdai/taskbox",
+    description: `CLI that analyzes local Python repositories and generates useful Markdown documentation drafts.
+- Built repository scanning, light static analysis, RAG-backed repository Q&A and agent-driven documentation generation.
+- Generates README, architecture, API, diagrams, questions, roadmap and project summary drafts.
+- Uses python-rag-framework for repository indexing and python-agent-runtime for prompt execution, history, tools and RAG plumbing.
+- Supports dry-runs, config files, section selection, Mermaid diagram generation and optional hosted LLM providers.`,
   },
   {
-    id: "daichat-app",
-    title: "DaiChat App",
+    id: "lem-in",
+    title: "Lem_in",
     period: {
-      start: "07.2020",
-      end: "07.2020",
+      start: "20.03.2023",
+      end: "16.04.2023",
     },
-    link: "https://www.youtube.com/watch?v=H5U3J_W1low",
-    skills: ["University Project", "Java", "Java Swing", "Java Networking"],
-    description: `- Course: Java Application Programming — FIT@HCMUS
-- Requirement: Developed a real-time chat application using Java technologies
-- Project Score: 10/10
-- Source Code:
-  - Server: https://github.com/ncdai/ltudjava-summer2020-chatapp_server
-  - Client: https://github.com/ncdai/ltudjava-summer2020-chatapp_client`,
-  },
-  {
-    id: "qlsv-app",
-    title: "QLSV App",
-    period: {
-      start: "06.2020",
-      end: "06.2020",
-    },
-    link: "https://www.youtube.com/watch?v=tG9SZEBrwog",
-    skills: ["University Project", "Java", "Java Swing", "Hibernate", "MySQL"],
-    description: `- Course: Java Application Programming — FIT@HCMUS
-- Requirement: Built a student management system with role-based functionalities using Java technologies
-- Project Score: 10/10
-- Source Code: https://github.com/ncdai/ltudjava-summer2020-hibernate`,
-  },
-  {
-    id: "penphy",
-    title: "Penphy",
-    period: {
-      start: "01.2019",
-      end: "08.2019",
-    },
-    link: "https://www.youtube.com/watch?v=EdU7rUO-UA4",
-    skills: ["Startup Project", "JavaScript", "React Native"],
-    description: "2nd Prize — Business Startup Competition 2019",
-  },
-  {
-    id: "unlimitedstudy",
-    title: "UnlimitedStudy",
-    period: {
-      start: "01.2017",
-      end: "08.2018",
-    },
-    link: "https://muctim.tuoitre.vn/cong-cu-ho-tro-viec-day-va-hoc-55107.htm",
+    link: "https://github.com/lelouchzr/lem_in",
+    logo: "/images/portfolio/lem-in-logo.png",
     skills: [
-      "National Competition",
-      "Creative Software",
-      "PHP",
-      "Laravel 4",
-      "MySQL",
-      "jQuery",
-      "Bootstrap 3",
+      "EPITECH Project",
+      "C",
+      "Graph",
+      "Pathfinding",
+      "BFS",
+      "Hashmap",
+      "Optimization",
+      "Python",
+      "Pygame",
     ],
-    description: `UnlimitedStudy is a website that provides teaching and learning support tools for teachers and students.
-- 3rd Prize — National Science and Engineering Fair 2018 (ViSEF)
-- 1st Prize — Can Tho City Science and Engineering Fair 2018
-- 3rd Prize — National Young Informatics Contest 2018
-- 2nd Prize — Can Tho City Youth and Children’s Creativity Contest 2018
-- 3rd Prize — Can Tho City Young Informatics Contest 2018
-- Reached 7k+ users, mainly high school students in Can Tho City
-- Pilot implemented in high schools across Can Tho City with English quizzes, supervised by English subject specialists from the Can Tho City Department of Education and Training`,
+    description: `Pathfinding simulation in C where ants must travel from the entrance to the exit of an anthill in the fewest possible turns.
+- Built strict map parsing for rooms, tunnels and special start/end commands.
+- Modeled the anthill as a graph and used BFS to find shortest viable paths.
+- Implemented ant scheduling to avoid collisions and optimize total turns.
+- Added a Python / Pygame visualizer for movement simulation.`,
   },
   {
-    id: "dmessage",
-    title: "DMessage",
+    id: "corewar",
+    title: "Corewar",
     period: {
-      start: "05.2017",
-      end: "05.2017",
+      start: "24.04.2023",
+      end: "28.05.2023",
     },
-    link: "https://github.com/ncdai/DMessage",
+    link: "https://github.com/lelouchzr/corewar",
+    logo: "/images/portfolio/corewar-logo.png",
     skills: [
-      "Self-learning Project",
-      "Pet Project",
-      "Express.js",
-      "Socket.io",
-      "MongoDB",
-      "Mongoose ODM",
+      "EPITECH Project",
+      "C",
+      "Virtual Machine",
+      "Assembler",
+      "Redcode",
+      "ncurses",
+      "Criterion",
+      "CMake",
     ],
-    description:
-      "A Messenger clone built to practice real-time communication using Socket.IO. This project showcases my self-learning journey in implementing WebSockets for instant messaging.",
-  },
-  {
-    id: "study-english",
-    title: "Study English",
-    period: {
-      start: "11.2016",
-      end: "12.2017",
-    },
-    link: "https://www.youtube.com/watch?v=OYgugvjqU4A",
-    skills: [
-      "National Competition",
-      "Creative Software",
-      "PHP",
-      "Laravel 4",
-      "MySQL",
-    ],
-    description: `Study English is a free, mobile-friendly website for high school English learning, offering vocabulary, quizzes, listening practice, and more.
-- Consolation Prize — National Youth and Children’s Creativity Contest 2016
-- 1st Prize — Can Tho City Youth and Children’s Creativity Contest 2016
-- Consolation Prize — Can Tho City Young Informatics Contest 2016`,
+    description: `Computer simulation game where programs called Champions fight inside a shared virtual machine memory.
+- Built an assembler to convert Redcode source files into binary champion files.
+- Developed the virtual machine used to load and execute champions.
+- Implemented command-line execution flows and memory dump support.
+- Added a bonus ncurses visualizer for the simulation.`,
   },
 ]

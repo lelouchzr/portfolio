@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { addQueryParams } from "@/utils/url"
 import { ArrowUpRightIcon } from "lucide-react"
 
-import { SPONSORSHIP_URL, UTM_PARAMS, X_HANDLE } from "@/config/site"
+import { SPONSORSHIP_URL, UTM_PARAMS /*X_HANDLE*/ } from "@/config/site"
 import { jsonLdBreadcrumbList, JsonLdScript } from "@/lib/json-ld"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/base/ui/button"
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
       alt: title,
     },
   },
-  twitter: {
-    card: "summary_large_image",
-    site: X_HANDLE,
-    creator: X_HANDLE,
-    images: [ogImage],
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   site: X_HANDLE,
+  //   creator: X_HANDLE,
+  //   images: [ogImage],
+  // },
 }
 
 const SPONSORS_BY_TIER = SPONSORS.reduce(

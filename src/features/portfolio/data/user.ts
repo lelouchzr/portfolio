@@ -1,66 +1,65 @@
 import type { User } from "@/features/portfolio/types/user"
 
 export const USER: User = {
-  firstName: "Chánh Đại",
-  lastName: "Nguyễn",
-  displayName: "Chánh Đại",
-  username: "ncdai",
+  firstName: "Adrien",
+  lastName: "Lachambre",
+  displayName: "Adrien Lachambre",
+  username: "lelouchzr",
   gender: "male",
   pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
+  bio: "Software Engineering student interested in AI, backend systems and emerging technologies.",
   flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer.",
-    "Open source contributor.",
-    "I own a vintage iPhone.",
+    "Software Engineer.",
+    "AI and backend systems.",
+    "Emerging technologies.",
+    "Building impactful digital products.",
   ],
-  address: "Ho Chi Minh City, Viet Nam",
-  phoneNumberB64: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  emailB64: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
-  jobTitle: "Design Engineer",
+  address: "Nice, France",
+  phoneNumberB64: "KzMzIDYgMjAgMjkgMjcgNDg=", // E.164 format, base64 encoded
+  emailB64: "YWRyaWVuLmxhY2hhbWJyZUBwbS5tZQ==", // base64 encoded
+  website: "https://adrienlachambre.com",
+  jobTitle: "Software Engineer",
   jobs: [
     {
-      title: "Design Engineer",
-      company: "shadcncraft",
-      website: "https://shadcncraft.com?atp=ncdai",
-      experienceId: "shadcncraft",
-    },
-    {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
-      experienceId: "quaric",
+      title: "Studying Software Engineering",
+      company: "EPITECH",
+      website: "https://epitech.eu",
+      experienceId: "epitech",
     },
   ],
-  about: `I’m Chánh Đại (call me Dai) — a Design Engineer with 5+ years of experience, known for pixel-perfect execution and an obsessive attention to detail.
+  about: `I’m Adrien Lachambre, a Software Engineering student at EPITECH, interested in artificial intelligence, backend systems, emerging technologies and building impactful digital products.
 
-Passionate about exploring new technologies and turning ideas into reality through polished, thoughtfully crafted projects.
+Through my experiences at Apimo, I contributed to REST APIs and backend solutions using Symfony, PHP and SQL while working in Agile teams on large-scale software projects.
 
-Creator of [chanhdai.com](https://github.com/ncdai/chanhdai.com) (2k stars), [React Wheel Picker](https://react-wheel-picker.chanhdai.com) (30k+ weekly downloads, ▲Vercel OSS Program), and [ZaDark](https://zadark.com) (80k+ downloads, 30k+ users) — peak metrics.
+I enjoy building personal projects around AI, language learning, developer tools and web applications. These projects help me improve my technical skills while exploring new technologies, product ideas and clean software architecture.
+
+After an academic exchange program in South Korea, I developed a strong interest in international environments and cross-cultural collaboration. I’m actively learning Korean and preparing for TOPIK, TOEIC and IELTS, with the goal of working in an international setting.
 `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.webp",
+  avatar: "/images/portfolio/adrien-avatar.webp",
   avatarVariants: {
-    lightOff: "https://assets.chanhdai.com/images/avatar-light-off.webp",
-    lightOn: "https://assets.chanhdai.com/images/avatar-light-on.webp",
-    darkOff: "https://assets.chanhdai.com/images/avatar-dark-off.webp",
-    darkOn: "https://assets.chanhdai.com/images/avatar-dark-on.webp",
+    lightOff: "/images/portfolio/adrien-avatar.webp",
+    lightOn: "/images/portfolio/adrien-avatar.webp",
+    darkOff: "/images/portfolio/adrien-avatar.webp",
+    darkOn: "/images/portfolio/adrien-avatar.webp",
   },
   ogImage:
     "https://assets.chanhdai.com/images/screenshot-og-image-dark.png?t=1778602757",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
-  timeZone: "Asia/Ho_Chi_Minh",
+  namePronunciationUrl: "",
+  timeZone: "Europe/Paris",
   keywords: [
-    "ncdai",
-    "nguyenchanhdai",
-    "nguyen chanh dai",
-    "chanhdai",
-    "chanh dai",
-    "iamncdai",
-    "quaric",
-    "zadark",
-    "nguyễn chánh đại",
-    "chánh đại",
+    "Adrien Lachambre",
+    "adrienlachambre",
+    "lelouchzr",
+    "software engineer",
+    "software engineering student",
+    "epitech",
+    "python",
+    "c++",
+    "ai",
+    "backend",
+    "rag",
+    "lost haven",
+    "flashcardstudy",
   ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  dateCreated: "2026-07-09", // YYYY-MM-DD
 }

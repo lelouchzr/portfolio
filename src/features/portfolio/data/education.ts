@@ -2,78 +2,52 @@ import type { Education } from "@/features/portfolio/types/education"
 
 export const EDUCATION: Education[] = [
   {
-    id: "hcmus",
-    school: "University of Science — VNUHCM",
-    degree: "Bachelor’s degree",
-    fieldOfStudy: "Information Systems",
+    id: "epitech",
+    school: "EPITECH - European Institute of Technology",
+    degree: "Master's Degree",
+    fieldOfStudy: "Software Engineering / Computer Science",
     period: {
-      start: "08.2018",
-      end: "08.2026",
+      start: "09.2022",
+      end: "08.2027",
     },
-    description: `- Currently studying for a Bachelor’s degree in Information Systems.
-- Language Proficiency: B1 level in English (CEFR).
-- Achieved several awards, including:
-  - Bronze Medal — 10th Design, Manufacturing, and Application Award 2022
-  - 2nd Prize — Business Startup Competition 2019`,
+    description: `- Project-based curriculum focused on software engineering, software development and solving complex technical problems.
+- Participated in numerous individual and team-based projects in a demanding technical environment.
+- Developed skills in web development, systems programming, database design, software architecture and project management.
+- Completed collaborative projects that fostered autonomy, teamwork, adaptability and continuous learning.`,
     skills: [
-      "C++",
-      "Java",
-      "Python",
-      "PHP",
-      "DSA",
-      "Advanced Databases",
-      "Systems Design",
-      "Distributed Systems",
       "Software Engineering",
+      "Computer Science",
+      "Teamwork",
+      "Full-stack Development",
+      "Systems Programming",
+      "Database Design",
+      "Software Architecture",
+      "Project Management",
     ],
+    isExpanded: true,
   },
   {
-    id: "chuyenlytutrong",
-    school: "Ly Tu Trong High School for the Gifted",
-    fieldOfStudy: "Computer Science",
+    id: "inha-university",
+    school: "Inha University",
+    degree: "University Exchange Program",
+    fieldOfStudy: "Software Engineering / Computer Science",
     period: {
-      start: "08.2015",
-      end: "06.2018",
+      start: "09.2025",
+      end: "06.2026",
     },
-    description: `- Student of the Specialized Computer Science Program.
-- Granted direct admission to university due to achieving 3rd Prize at the national level.
-- [Achieved numerous awards](https://baocantho.com.vn/nguyen-chanh-dai-17-tuoi-va-19-giai-thuong-a97348.html) at city and national levels, including:
-  - [3rd Prize](https://muctim.tuoitre.vn/cong-cu-ho-tro-viec-day-va-hoc-55107.htm) — National Science and Engineering Fair 2018 (ViSEF)
-  - 1st Prize — Can Tho City Science and Engineering Fair 2018
-  - Creativity Award — Binh Duong Hackathon 2017
-  - Consolation Prize — National Youth and Children’s Creativity Contest 2016
-  - [1st Prize](https://www.youtube.com/watch?v=OYgugvjqU4A) — Can Tho City Youth and Children’s Creativity Contest 2016
-  - 3rd Prize — National Young Informatics Contest 2016
-- Achieved the title of Outstanding Student from Grade 10-12.
-- Selected for the National Excellent Student Contest in Informatics for two consecutive years during high school.
-- Honored on the school’s “Hall of Fame” for academic achievements.
-- Developed a feature using Node.js and Pandoc to recognize multiple-choice questions from .docx files and upload them to an [online quiz platform](https://youtu.be/QjR99wdmTyo) I created.
-- Developed websites based on Laravel framework.
-- Built websites with PHP and MySQL, following the MVC architecture.`,
+    description: `- One-year university exchange program in South Korea in the field of software engineering.
+- Collaborated with students from diverse backgrounds in a multicultural academic environment.
+- Coursework and projects focused on Python, C, C++, Linux, databases and artificial intelligence technologies.
+- Strengthened autonomy, cross-cultural collaboration and problem-solving skills while learning Korean.`,
     skills: [
-      "Algorithms",
+      "Python",
+      "C",
       "C++",
-      "PHP",
-      "MySQL",
-      "Laravel",
-      "Node.js",
-      "Pandoc",
+      "Linux",
+      "Databases",
+      "Artificial Intelligence",
+      "Object-Oriented Programming",
+      "Teamwork",
     ],
-  },
-  {
-    id: "thcsthuanhung",
-    school: "Thuan Hung Secondary School",
-    period: {
-      start: "08.2011",
-      end: "06.2015",
-    },
-    description: `- Recognized as the most outstanding student of the district.
-- Achieved numerous awards at city and national levels:
-  - Consolation Prize — National Young Informatics Contest 2015
-  - Consolation Prize — National Young Informatics Contest 2014
-  - 1st Prize — Can Tho City Young Informatics Contest 2014
-- Achieved the title of Outstanding Student from Grade 6-9.
-- Developed websites using the open-source NukeViet CMS.`,
-    skills: ["Pascal", "HTML", "CSS", "JavaScript", "NukeViet"],
   },
 ]

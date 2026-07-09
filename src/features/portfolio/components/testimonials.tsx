@@ -27,7 +27,6 @@ import {
 } from "@/registry/transformed/components/testimonial"
 import { TestimonialSpotlight } from "@/registry/transformed/components/testimonial-spotlight"
 import { Twemoji } from "@/registry/transformed/components/twemoji/twemoji"
-import { SOCIAL } from "@/features/portfolio/data/social-links"
 import {
   TESTIMONIALS_1,
   TESTIMONIALS_2,
@@ -64,13 +63,7 @@ export function Testimonials() {
   return (
     <Panel ref={ref} id={ID}>
       <PanelHeader>
-        <PanelTitle>
-          Trusted by
-          <span className="block sm:hidden" /> top builders on{" "}
-          <a href={SOCIAL.x.href} target="_blank" rel="noopener" aria-label="X">
-            𝕏
-          </a>
-        </PanelTitle>
+        <PanelTitle>Feedback from builders</PanelTitle>
       </PanelHeader>
 
       <div className="grid gap-4 py-4 sm:hidden">
@@ -115,7 +108,7 @@ export function Testimonials() {
           nativeButton={false}
           render={<Link href="/testimonials" />}
         >
-          All builders
+          All testimonials
           <ArrowRightIcon />
         </Button>
       </div>
