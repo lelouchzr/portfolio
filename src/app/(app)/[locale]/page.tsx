@@ -94,7 +94,7 @@ export default async function HomePage({ params }: LocalePageProps) {
           <ProfileHeader user={user} />
           <Separator />
 
-          <Overview user={user} labels={messages.overview} />
+          <Overview user={user} labels={messages.overview} locale={locale} />
           <SocialLinks />
           <Separator />
 

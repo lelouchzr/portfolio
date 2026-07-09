@@ -51,6 +51,7 @@ import {
   getPortfolioMessages,
   type PortfolioMessages,
 } from "@/features/portfolio/data/localized"
+import { getResumeDownload } from "@/features/portfolio/data/resume"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
 import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
@@ -151,15 +152,18 @@ function getLanguageLinkItems(pathname: string | null): CommandLinkItem[] {
 }
 
 function getOtherLinkItems(
+  locale: Locale,
   messages: PortfolioMessages["commandMenu"]
 ): CommandLinkItem[] {
+  const resume = getResumeDownload(locale)
+
   return [
     {
       title: messages.downloadResume,
-      href: "/adrien-lachambre-resume.pdf",
+      href: resume.href,
       kind: "command",
       icon: <FileTextIcon />,
-      download: "adrien-lachambre-resume.pdf",
+      download: resume.filename,
     },
     {
       title: messages.downloadVCard,
@@ -412,7 +416,7 @@ export function CommandMenu({
 
             <CommandLinkGroup
               heading={messages.other}
-              links={getOtherLinkItems(messages)}
+              links={getOtherLinkItems(locale, messages)}
               onLinkHighlight={handleLinkHighlight}
               onLinkSelect={handleOpenLink}
             />

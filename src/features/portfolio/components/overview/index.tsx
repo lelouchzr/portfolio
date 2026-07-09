@@ -1,3 +1,4 @@
+import type { Locale } from "@/i18n/config"
 import { urlToName } from "@/utils/url"
 import {
   DownloadIcon,
@@ -9,6 +10,7 @@ import {
 } from "lucide-react"
 
 import type { PortfolioMessages } from "@/features/portfolio/data/localized"
+import { getResumeDownload } from "@/features/portfolio/data/resume"
 import { USER } from "@/features/portfolio/data/user"
 import type { User } from "@/features/portfolio/types/user"
 
@@ -24,8 +26,6 @@ import {
 import { JobItem } from "./job-item"
 import { PhoneItem } from "./phone-item"
 
-const RESUME_URL = "/adrien-lachambre-resume.pdf"
-
 const DEFAULT_LABELS: PortfolioMessages["overview"] = {
   title: "Overview",
   locationAriaLabel: "Location",
@@ -38,10 +38,14 @@ const DEFAULT_LABELS: PortfolioMessages["overview"] = {
 export function Overview({
   user = USER,
   labels = DEFAULT_LABELS,
+  locale = "en",
 }: {
   user?: User
   labels?: PortfolioMessages["overview"]
+  locale?: Locale
 }) {
+  const resume = getResumeDownload(locale)
+
   return (
     <Panel className="screen-line-bottom-none">
       <h2 className="sr-only">{labels.title}</h2>
@@ -85,8 +89,8 @@ export function Overview({
           </IntroItemIcon>
           <IntroItemContent>
             <IntroItemLink
-              href={RESUME_URL}
-              download="adrien-lachambre-resume.pdf"
+              href={resume.href}
+              download={resume.filename}
               aria-label={labels.resumeAriaLabel}
             >
               {labels.resume}
