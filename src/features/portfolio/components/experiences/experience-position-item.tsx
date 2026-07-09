@@ -18,8 +18,12 @@ import type { ExperiencePosition } from "@/features/portfolio/types/experiences"
 
 export function ExperiencePositionItem({
   position,
+  labels = { present: "Present" },
 }: {
   position: ExperiencePosition
+  labels?: {
+    present: string
+  }
 }) {
   const { start, end } = position.employmentPeriod
   const isOngoing = !end
@@ -84,7 +88,7 @@ export function ExperiencePositionItem({
               {isOngoing ? (
                 <InfinityIcon
                   className="size-4.5 translate-y-[0.5px]"
-                  aria-label="Present"
+                  aria-label={labels.present}
                   strokeWidth={1.5}
                 />
               ) : (

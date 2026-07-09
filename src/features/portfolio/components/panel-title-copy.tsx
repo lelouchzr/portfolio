@@ -9,9 +9,11 @@ import { createHeadingUrl } from "@/components/heading"
 export function PanelTitleCopy({
   id,
   className,
+  label = "Copy link to section",
   ...props
 }: Omit<React.ComponentProps<typeof CopyButton>, "id" | "text"> & {
   id: string
+  label?: string
 }) {
   return (
     <CopyButton
@@ -22,7 +24,7 @@ export function PanelTitleCopy({
       variant="ghost"
       text={() => createHeadingUrl(id || "")}
       idleIcon={<LinkIcon />}
-      aria-label="Copy link to section"
+      aria-label={label}
       {...props}
     />
   )

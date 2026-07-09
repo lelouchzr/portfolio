@@ -31,7 +31,7 @@ export type Experience = {
   /** URL to the company's website. */
   companyWebsite?: string
   location?: string
-  locationType?: "On-site" | "Hybrid" | "Remote"
+  locationType?: string
   /** Roles held at this company; keep newest first for display. */
   positions: ExperiencePosition[]
   /** Marks the company as the current employer for highlighting. */

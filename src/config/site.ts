@@ -44,7 +44,7 @@ export const MAIN_NAV: NavItem<Route>[] = [
 export const MOBILE_NAV: NavItem<Route>[] = [
   {
     title: "Home",
-    href: "/",
+    href: "/en" as Route,
   },
   ...MAIN_NAV,
 ]

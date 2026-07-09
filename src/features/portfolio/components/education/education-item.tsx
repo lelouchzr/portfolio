@@ -15,7 +15,15 @@ import { Prose } from "@/components/base/ui/typography"
 import { Markdown } from "@/components/markdown"
 import type { Education } from "@/features/portfolio/types/education"
 
-export function EducationItem({ item }: { item: Education }) {
+export function EducationItem({
+  item,
+  labels = { present: "Present" },
+}: {
+  item: Education
+  labels?: {
+    present: string
+  }
+}) {
   const { start, end } = item.period
   const isOngoing = !end
 
@@ -65,7 +73,7 @@ export function EducationItem({ item }: { item: Education }) {
                 {isOngoing ? (
                   <InfinityIcon
                     className="size-4.5 translate-y-[0.5px]"
-                    aria-label="Present"
+                    aria-label={labels.present}
                     strokeWidth={1.5}
                   />
                 ) : (

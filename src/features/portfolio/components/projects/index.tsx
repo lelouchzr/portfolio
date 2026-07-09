@@ -6,27 +6,51 @@ import {
   PanelTitleSup,
 } from "@/features/portfolio/components/panel"
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
+import type { PortfolioMessages } from "@/features/portfolio/data/localized"
 import { PROJECTS } from "@/features/portfolio/data/projects"
+import type { Project } from "@/features/portfolio/types/projects"
 
 import { ProjectItem } from "./project-item"
 
 const ID = "projects"
 
-export function Projects() {
+type ProjectLabels = Pick<
+  PortfolioMessages["actions"],
+  "showMore" | "showLess" | "present" | "openProject"
+>
+
+const DEFAULT_LABELS: ProjectLabels = {
+  showMore: "Show more",
+  showLess: "Show less",
+  present: "Present",
+  openProject: "Open project",
+}
+
+export function Projects({
+  projects = PROJECTS,
+  title = "Projects",
+  labels = DEFAULT_LABELS,
+}: {
+  projects?: Project[]
+  title?: string
+  labels?: ProjectLabels
+}) {
   return (
     <Panel id={ID}>
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Projects</a>
-          <PanelTitleSup>({PROJECTS.length})</PanelTitleSup>
+          <a href={`#${ID}`}>{title}</a>
+          <PanelTitleSup>({projects.length})</PanelTitleSup>
           <PanelTitleCopy id={ID} />
         </PanelTitle>
       </PanelHeader>
 
       <CollapsibleList
-        items={PROJECTS}
+        items={projects}
         max={4}
-        renderItem={(item) => <ProjectItem project={item} />}
+        showMoreLabel={labels.showMore}
+        showLessLabel={labels.showLess}
+        renderItem={(item) => <ProjectItem project={item} labels={labels} />}
       />
     </Panel>
   )

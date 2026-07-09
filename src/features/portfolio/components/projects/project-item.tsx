@@ -25,9 +25,17 @@ import type { Project } from "../../types/projects"
 export function ProjectItem({
   className,
   project,
+  labels = {
+    present: "Present",
+    openProject: "Open project",
+  },
 }: {
   className?: string
   project: Project
+  labels?: {
+    present: string
+    openProject: string
+  }
 }) {
   const { start, end } = project.period
   const isOngoing = !end
@@ -70,7 +78,7 @@ export function ProjectItem({
                       {isOngoing ? (
                         <InfinityIcon
                           className="size-4.5 translate-y-[0.5px]"
-                          aria-label="Present"
+                          aria-label={labels.present}
                         />
                       ) : (
                         <span>{end}</span>
@@ -90,14 +98,14 @@ export function ProjectItem({
                       href={addQueryParams(project.link, UTM_PARAMS)}
                       target="_blank"
                       rel="noopener"
-                      aria-label="Open project"
+                      aria-label={labels.openProject}
                     >
                       <LinkIcon className="pointer-events-none size-4" />
                     </a>
                   }
                 />
                 <TooltipContent>
-                  <p>Open project</p>
+                  <p>{labels.openProject}</p>
                 </TooltipContent>
               </Tooltip>
             )}

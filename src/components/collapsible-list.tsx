@@ -11,12 +11,16 @@ import {
 export function CollapsibleList<T>({
   items,
   max = 3,
+  showMoreLabel = "Show more",
+  showLessLabel = "Show less",
 
   keyExtractor,
   renderItem,
 }: {
   items: T[]
   max?: number
+  showMoreLabel?: string
+  showLessLabel?: string
 
   keyExtractor?: (item: T) => string
   renderItem: (item: T) => React.ReactNode
@@ -61,11 +65,11 @@ export function CollapsibleList<T>({
                 size="sm"
               >
                 <span className="hidden group-data-closed/collapsible:block">
-                  Show more
+                  {showMoreLabel}
                 </span>
 
                 <span className="hidden group-data-open/collapsible:block">
-                  Show less
+                  {showLessLabel}
                 </span>
 
                 <ChevronDownIcon className="group-data-open/collapsible:rotate-180" />

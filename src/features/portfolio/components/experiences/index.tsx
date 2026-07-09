@@ -13,6 +13,7 @@ import {
 } from "@/features/portfolio/components/panel"
 import { PanelTitleCopy } from "@/features/portfolio/components/panel-title-copy"
 import { EXPERIENCES } from "@/features/portfolio/data/experiences"
+import type { PortfolioMessages } from "@/features/portfolio/data/localized"
 import type { Experience } from "@/features/portfolio/types/experiences"
 
 import { ExperienceItem } from "./experience-item"
@@ -20,24 +21,49 @@ import { ExperienceItem } from "./experience-item"
 const ID = "experience"
 const MAX = 3
 
-export function Experiences() {
+type ExperienceLabels = Pick<
+  PortfolioMessages["actions"],
+  "showMore" | "showLess" | "present"
+>
+
+const DEFAULT_LABELS: ExperienceLabels = {
+  showMore: "Show more",
+  showLess: "Show less",
+  present: "Present",
+}
+
+export function Experiences({
+  experiences = EXPERIENCES,
+  title = "Experience",
+  labels = DEFAULT_LABELS,
+}: {
+  experiences?: Experience[]
+  title?: string
+  labels?: ExperienceLabels
+}) {
   return (
     <Panel id={ID}>
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Experience</a>
+          <a href={`#${ID}`}>{title}</a>
           <PanelTitleCopy id={ID} />
         </PanelTitle>
       </PanelHeader>
 
       <div className="pr-2 pl-4">
-        <ExperienceList experiences={EXPERIENCES.slice(0, MAX)} />
+        <ExperienceList
+          experiences={experiences.slice(0, MAX)}
+          labels={labels}
+        />
       </div>
 
-      {EXPERIENCES.length > MAX && (
+      {experiences.length > MAX && (
         <Collapsible className="group/collapsible">
           <CollapsibleContent render={<div className="pr-2 pl-4" />}>
-            <ExperienceList experiences={EXPERIENCES.slice(MAX)} />
+            <ExperienceList
+              experiences={experiences.slice(MAX)}
+              labels={labels}
+            />
           </CollapsibleContent>
 
           <div className="-mt-px flex items-center justify-center py-2">
@@ -49,11 +75,11 @@ export function Experiences() {
                   size="sm"
                 >
                   <span className="hidden group-data-closed/collapsible:block">
-                    Show more
+                    {labels.showMore}
                   </span>
 
                   <span className="hidden group-data-open/collapsible:block">
-                    Show less
+                    {labels.showLess}
                   </span>
 
                   <ChevronDownIcon className="group-data-open/collapsible:rotate-180" />
@@ -67,11 +93,21 @@ export function Experiences() {
   )
 }
 
-function ExperienceList({ experiences }: { experiences: Experience[] }) {
+function ExperienceList({
+  experiences,
+  labels,
+}: {
+  experiences: Experience[]
+  labels: ExperienceLabels
+}) {
   return (
     <>
       {experiences.map((experience) => (
-        <ExperienceItem key={experience.id} experience={experience} />
+        <ExperienceItem
+          key={experience.id}
+          experience={experience}
+          labels={labels}
+        />
       ))}
     </>
   )

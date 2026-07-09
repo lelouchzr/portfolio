@@ -1,10 +1,19 @@
+"use client"
+
+import { usePathname } from "next/navigation"
+import { getLocaleFromPathname } from "@/i18n/config"
+
 import { LICENSE, SOURCE_CODE_GITHUB_URL } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { DmcaIcon, GitHubIcon, LinkedInIcon } from "@/components/icons"
 import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
+import { getPortfolioMessages } from "@/features/portfolio/data/localized"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
 
 export function SiteFooter() {
+  const pathname = usePathname()
+  const locale = getLocaleFromPathname(pathname)
+  const messages = getPortfolioMessages(locale).footer
   const githubLink = SOCIAL.github
   const linkedinLink = SOCIAL.linkedin
 
@@ -17,7 +26,7 @@ export function SiteFooter() {
 
         <dl className="flex flex-col gap-4 py-8 font-mono [&_dd]:text-sm [&_dt]:text-right [&_dt]:text-sm [&_dt]:text-muted-foreground [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2">
           <Item>
-            <dt>Crafted by</dt>
+            <dt>{messages.craftedBy}</dt>
             <dd>
               <a
                 className="link-underline"
@@ -31,7 +40,7 @@ export function SiteFooter() {
           </Item>
 
           <Item>
-            <dt>Inspired by</dt>
+            <dt>{messages.inspiredBy}</dt>
             <dd>
               <ul>
                 <li>Tailwind CSS</li>
@@ -46,12 +55,12 @@ export function SiteFooter() {
           </Item>
 
           <Item>
-            <dt>Deployed on</dt>
+            <dt>{messages.deployedOn}</dt>
             <dd>Vercel</dd>
           </Item>
 
           <Item>
-            <dt>Source code</dt>
+            <dt>{messages.sourceCode}</dt>
             <dd>
               <a
                 className="link-underline"
@@ -65,7 +74,7 @@ export function SiteFooter() {
           </Item>
 
           <Item>
-            <dt>Based on</dt>
+            <dt>{messages.basedOn}</dt>
             <dd>
               <a
                 className="link-underline"
@@ -79,7 +88,7 @@ export function SiteFooter() {
           </Item>
 
           <Item>
-            <dt>License</dt>
+            <dt>{messages.license}</dt>
             <dd>
               <a
                 className="link-underline"
@@ -100,7 +109,7 @@ export function SiteFooter() {
               href={githubLink.href}
               target="_blank"
               rel="noopener"
-              aria-label="GitHub Profile"
+              aria-label={messages.githubProfile}
             >
               <GitHubIcon className="size-4" />
             </a>
@@ -112,7 +121,7 @@ export function SiteFooter() {
               href={linkedinLink.href}
               target="_blank"
               rel="noopener"
-              aria-label="LinkedIn Profile"
+              aria-label={messages.linkedinProfile}
             >
               <LinkedInIcon className="size-4" />
             </a>
@@ -127,7 +136,7 @@ export function SiteFooter() {
               }
               target="_blank"
               rel="noopener"
-              aria-label="DMCA.com Protection Status"
+              aria-label={messages.dmcaStatus}
             >
               <DmcaIcon className="h-4.5 w-auto" />
             </a>

@@ -1,6 +1,16 @@
 "use client"
 
 import React, { useCallback, useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
+import {
+  getLocaleFromPathname,
+  LOCALE_LABELS,
+  LOCALE_SHORT_LABELS,
+  LOCALES,
+  localizePath,
+  switchLocalePathname,
+  type Locale,
+} from "@/i18n/config"
 import { copyToClipboardWithEvent } from "@/utils/copy"
 import { useRouter } from "@bprogress/next/app"
 import { useTiks } from "@rexa-developer/tiks/react"
@@ -11,6 +21,7 @@ import {
   DownloadIcon,
   FileTextIcon,
   GraduationCapIcon,
+  LanguagesIcon,
   LayersIcon,
   MonitorIcon,
   MoonStarIcon,
@@ -36,6 +47,10 @@ import {
 } from "@/components/ui/command"
 import type { DocPreview } from "@/features/doc/types/document"
 import { SOCIAL_ICONS } from "@/features/portfolio/components/social-link-icons"
+import {
+  getPortfolioMessages,
+  type PortfolioMessages,
+} from "@/features/portfolio/data/localized"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
 import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
@@ -64,48 +79,58 @@ type BlockItem = {
   categories: string[]
 }
 
-const MENU_LINKS: CommandLinkItem[] = [
-  {
-    title: "Home",
-    href: "/",
-    kind: "page",
-    icon: <ChanhDaiMark />,
-    shortcut: "GH",
-  },
-]
+function getMenuLinks(
+  locale: Locale,
+  messages: PortfolioMessages["commandMenu"]
+): CommandLinkItem[] {
+  return [
+    {
+      title: messages.home,
+      href: `/${locale}`,
+      kind: "page",
+      icon: <ChanhDaiMark />,
+      shortcut: "GH",
+    },
+  ]
+}
 
-const PORTFOLIO_LINKS: CommandLinkItem[] = [
-  {
-    title: "Hello",
-    href: "/#hello",
-    kind: "page",
-    icon: <TextInitialIcon />,
-  },
-  {
-    title: "Stack",
-    href: "/#stack",
-    kind: "page",
-    icon: <LayersIcon />,
-  },
-  {
-    title: "Experience",
-    href: "/#experience",
-    kind: "page",
-    icon: <BriefcaseBusinessIcon />,
-  },
-  {
-    title: "Education",
-    href: "/#education",
-    kind: "page",
-    icon: <GraduationCapIcon />,
-  },
-  {
-    title: "Projects",
-    href: "/#projects",
-    kind: "page",
-    icon: <BoxIcon />,
-  },
-]
+function getPortfolioLinks(
+  locale: Locale,
+  messages: PortfolioMessages["commandMenu"]
+): CommandLinkItem[] {
+  return [
+    {
+      title: messages.hello,
+      href: localizePath("/#hello", locale),
+      kind: "page",
+      icon: <TextInitialIcon />,
+    },
+    {
+      title: messages.stack,
+      href: localizePath("/#stack", locale),
+      kind: "page",
+      icon: <LayersIcon />,
+    },
+    {
+      title: messages.experience,
+      href: localizePath("/#experience", locale),
+      kind: "page",
+      icon: <BriefcaseBusinessIcon />,
+    },
+    {
+      title: messages.education,
+      href: localizePath("/#education", locale),
+      kind: "page",
+      icon: <GraduationCapIcon />,
+    },
+    {
+      title: messages.projects,
+      href: localizePath("/#projects", locale),
+      kind: "page",
+      icon: <BoxIcon />,
+    },
+  ]
+}
 
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   title: item.title,
@@ -115,28 +140,53 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   openInNewTab: true,
 }))
 
-const OTHER_LINK_ITEMS: CommandLinkItem[] = [
-  {
-    title: "Download Resume",
-    href: "/adrien-lachambre-resume.pdf",
-    kind: "command",
-    icon: <FileTextIcon />,
-    download: "adrien-lachambre-resume.pdf",
-  },
-  {
-    title: "Download vCard",
-    href: "/vcard",
-    kind: "command",
-    icon: <DownloadIcon />,
-  },
-  {
-    title: "llms.txt",
-    href: "/llms.txt",
-    kind: "link",
-    icon: <FileTextIcon />,
-    openInNewTab: true,
-  },
-]
+function getLanguageLinkItems(pathname: string | null): CommandLinkItem[] {
+  return LOCALES.map((locale) => ({
+    title: LOCALE_LABELS[locale],
+    href: switchLocalePathname(pathname, locale),
+    kind: "page",
+    icon: <LanguagesIcon />,
+    shortcut: LOCALE_SHORT_LABELS[locale],
+  }))
+}
+
+function getOtherLinkItems(
+  messages: PortfolioMessages["commandMenu"]
+): CommandLinkItem[] {
+  return [
+    {
+      title: messages.downloadResume,
+      href: "/adrien-lachambre-resume.pdf",
+      kind: "command",
+      icon: <FileTextIcon />,
+      download: "adrien-lachambre-resume.pdf",
+    },
+    {
+      title: messages.downloadVCard,
+      href: "/vcard",
+      kind: "command",
+      icon: <DownloadIcon />,
+    },
+    {
+      title: "llms.txt",
+      href: "/llms.txt",
+      kind: "link",
+      icon: <FileTextIcon />,
+      openInNewTab: true,
+    },
+  ]
+}
+
+function getSearchTriggerLabel(locale: Locale): string {
+  switch (locale) {
+    case "fr":
+      return "Recherche"
+    case "kr":
+      return "검색"
+    case "en":
+      return "Search"
+  }
+}
 
 export function CommandMenu({
   enabledHotkeys = false,
@@ -146,6 +196,9 @@ export function CommandMenu({
   enabledHotkeys?: boolean
 }) {
   const router = useRouter()
+  const pathname = usePathname()
+  const locale = getLocaleFromPathname(pathname)
+  const messages = getPortfolioMessages(locale).commandMenu
 
   const { setTheme } = useTheme()
 
@@ -213,7 +266,7 @@ export function CommandMenu({
         router.push(href)
       }
     },
-    [router]
+    [router, setOpen]
   )
 
   const handleCopyText = useCallback(
@@ -229,7 +282,7 @@ export function CommandMenu({
       toast.success(message)
       tiksSuccess()
     },
-    [tiksSuccess]
+    [setOpen, tiksSuccess]
   )
 
   const createThemeHandler = useCallback(
@@ -247,7 +300,7 @@ export function CommandMenu({
 
       setTheme(theme)
     },
-    [click, setTheme]
+    [click, setOpen, setTheme]
   )
 
   const handleLinkHighlight = useCallback((link: CommandLinkItem) => {
@@ -261,6 +314,7 @@ export function CommandMenu({
   return (
     <>
       <CommandMenuTrigger
+        label={getSearchTriggerLabel(locale)}
         onClick={() => {
           setOpen(true)
           trackEvent({
@@ -273,63 +327,63 @@ export function CommandMenu({
       />
 
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandMenuInput />
+        <CommandMenuInput placeholder={messages.search} />
 
         <div className="rounded-xl bg-background ring-1 ring-border">
           <CommandList className="min-h-80 scroll-fade">
-            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandEmpty>{messages.noResults}</CommandEmpty>
 
             <CommandLinkGroup
-              heading="Menu"
-              links={MENU_LINKS}
+              heading={messages.menu}
+              links={getMenuLinks(locale, messages)}
               onLinkHighlight={handleLinkHighlight}
               onLinkSelect={handleOpenLink}
             />
 
             <CommandLinkGroup
-              heading="Portfolio"
-              links={PORTFOLIO_LINKS}
+              heading={messages.portfolio}
+              links={getPortfolioLinks(locale, messages)}
               onLinkHighlight={handleLinkHighlight}
               onLinkSelect={handleOpenLink}
             />
 
             <CommandLinkGroup
-              heading="Social Links"
+              heading={messages.socialLinks}
               links={SOCIAL_LINK_ITEMS}
               onLinkHighlight={handleLinkHighlight}
               onLinkSelect={handleOpenLink}
             />
 
-            <CommandGroup heading="Brand Assets">
+            <CommandGroup heading={messages.brandAssets}>
               <CommandMenuItem
                 onHighlight={handleCommandHighlight}
                 onSelect={() => {
-                  handleCopyText(getMarkSVG(), "Mark as SVG copied")
+                  handleCopyText(getMarkSVG(), messages.copyMarkSuccess)
                 }}
               >
                 <ChanhDaiMark />
-                Copy Mark as SVG
+                {messages.copyMark}
               </CommandMenuItem>
 
               <CommandMenuItem
                 onHighlight={handleCommandHighlight}
                 onSelect={() => {
-                  handleCopyText(getWordmarkSVG(), "Logotype as SVG copied")
+                  handleCopyText(getWordmarkSVG(), messages.copyLogotypeSuccess)
                 }}
               >
                 <TypeIcon />
-                Copy Logotype as SVG
+                {messages.copyLogotype}
               </CommandMenuItem>
             </CommandGroup>
 
-            <CommandGroup heading="Theme">
+            <CommandGroup heading={messages.theme}>
               <CommandMenuItem
                 keywords={["theme"]}
                 onHighlight={handleCommandHighlight}
                 onSelect={createThemeHandler("light")}
               >
                 <SunMediumIcon />
-                Light
+                {messages.light}
               </CommandMenuItem>
               <CommandMenuItem
                 keywords={["theme"]}
@@ -337,7 +391,7 @@ export function CommandMenu({
                 onSelect={createThemeHandler("dark")}
               >
                 <MoonStarIcon />
-                Dark
+                {messages.dark}
               </CommandMenuItem>
               <CommandMenuItem
                 keywords={["theme"]}
@@ -345,20 +399,30 @@ export function CommandMenu({
                 onSelect={createThemeHandler("system")}
               >
                 <MonitorIcon />
-                System
+                {messages.system}
               </CommandMenuItem>
             </CommandGroup>
 
             <CommandLinkGroup
-              heading="Other"
-              links={OTHER_LINK_ITEMS}
+              heading={messages.language}
+              links={getLanguageLinkItems(pathname)}
+              onLinkHighlight={handleLinkHighlight}
+              onLinkSelect={handleOpenLink}
+            />
+
+            <CommandLinkGroup
+              heading={messages.other}
+              links={getOtherLinkItems(messages)}
               onLinkHighlight={handleLinkHighlight}
               onLinkSelect={handleOpenLink}
             />
           </CommandList>
         </div>
 
-        <CommandMenuFooter selectedCommandKind={selectedCommandKind} />
+        <CommandMenuFooter
+          selectedCommandKind={selectedCommandKind}
+          messages={messages}
+        />
       </CommandDialog>
     </>
   )
@@ -366,7 +430,12 @@ export function CommandMenu({
 
 export default CommandMenu
 
-function CommandMenuTrigger({ ...props }: React.ComponentProps<typeof Button>) {
+function CommandMenuTrigger({
+  label,
+  ...props
+}: React.ComponentProps<typeof Button> & {
+  label: string
+}) {
   return (
     <Button
       data-slot="command-menu-trigger"
@@ -377,7 +446,7 @@ function CommandMenuTrigger({ ...props }: React.ComponentProps<typeof Button>) {
     >
       <SearchIcon />
 
-      <span className="font-sans text-sm/4 font-medium sm:hidden">Search…</span>
+      <span className="font-sans text-sm/4 font-medium sm:hidden">{label}</span>
 
       <KbdGroup className="hidden gap-0.75 sm:in-[.os-macos_&]:flex">
         <Kbd className="w-5 min-w-auto">⌘</Kbd>
@@ -392,7 +461,7 @@ function CommandMenuTrigger({ ...props }: React.ComponentProps<typeof Button>) {
   )
 }
 
-function CommandMenuInput() {
+function CommandMenuInput({ placeholder }: { placeholder: string }) {
   const [searchValue, setSearchValue] = useState("")
 
   useEffect(() => {
@@ -413,7 +482,7 @@ function CommandMenuInput() {
 
   return (
     <CommandInput
-      placeholder="Type a command or search…"
+      placeholder={placeholder}
       value={searchValue}
       onValueChange={setSearchValue}
     />
@@ -505,17 +574,19 @@ function CommandLinkGroup({
   )
 }
 
-const ENTER_ACTION_LABELS: Record<CommandKind, string> = {
-  command: "Run command",
-  page: "Go to page",
-  link: "Open link",
-}
-
 function CommandMenuFooter({
   selectedCommandKind,
+  messages,
 }: {
   selectedCommandKind: CommandKind | null
+  messages: PortfolioMessages["commandMenu"]
 }) {
+  const enterActionLabels: Record<CommandKind, string> = {
+    command: messages.runCommand,
+    page: messages.goToPage,
+    link: messages.openLink,
+  }
+
   return (
     <>
       <div className="flex h-10" />
@@ -524,7 +595,7 @@ function CommandMenuFooter({
         <ChanhDaiMark className="size-6 text-muted-foreground" />
 
         <div className="flex items-center gap-2 max-sm:hidden">
-          <span>{ENTER_ACTION_LABELS[selectedCommandKind ?? "page"]}</span>
+          <span>{enterActionLabels[selectedCommandKind ?? "page"]}</span>
           <Kbd>
             <CornerDownLeftIcon />
           </Kbd>

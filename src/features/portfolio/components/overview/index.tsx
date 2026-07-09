@@ -8,6 +8,7 @@ import {
   VenusIcon,
 } from "lucide-react"
 
+import type { PortfolioMessages } from "@/features/portfolio/data/localized"
 import { USER } from "@/features/portfolio/data/user"
 import type { User } from "@/features/portfolio/types/user"
 
@@ -25,13 +26,28 @@ import { PhoneItem } from "./phone-item"
 
 const RESUME_URL = "/adrien-lachambre-resume.pdf"
 
-export function Overview() {
+const DEFAULT_LABELS: PortfolioMessages["overview"] = {
+  title: "Overview",
+  locationAriaLabel: "Location",
+  resume: "Resume",
+  resumeAriaLabel: "Download resume",
+  websiteAriaLabel: "Personal website",
+  pronounsAriaLabel: "Pronouns",
+}
+
+export function Overview({
+  user = USER,
+  labels = DEFAULT_LABELS,
+}: {
+  user?: User
+  labels?: PortfolioMessages["overview"]
+}) {
   return (
     <Panel className="screen-line-bottom-none">
-      <h2 className="sr-only">Overview</h2>
+      <h2 className="sr-only">{labels.title}</h2>
 
       <PanelContent className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
-        {USER.jobs.map((job, index) => {
+        {user.jobs.map((job, index) => {
           return (
             <JobItem
               key={index}
@@ -49,19 +65,19 @@ export function Overview() {
           </IntroItemIcon>
           <IntroItemContent>
             <IntroItemLink
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(USER.address)}`}
-              aria-label={`Location: ${USER.address}`}
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(user.address)}`}
+              aria-label={`${labels.locationAriaLabel}: ${user.address}`}
             >
-              {USER.address}
+              {user.address}
             </IntroItemLink>
           </IntroItemContent>
         </IntroItem>
 
-        <CurrentLocalTimeItem timeZone={USER.timeZone} />
+        <CurrentLocalTimeItem timeZone={user.timeZone} />
 
-        <PhoneItem phoneNumberB64={USER.phoneNumberB64} />
+        <PhoneItem phoneNumberB64={user.phoneNumberB64} />
 
-        <EmailItem emailB64={USER.emailB64} />
+        <EmailItem emailB64={user.emailB64} />
 
         <IntroItem>
           <IntroItemIcon>
@@ -71,9 +87,9 @@ export function Overview() {
             <IntroItemLink
               href={RESUME_URL}
               download="adrien-lachambre-resume.pdf"
-              aria-label="Download resume"
+              aria-label={labels.resumeAriaLabel}
             >
-              Resume
+              {labels.resume}
             </IntroItemLink>
           </IntroItemContent>
         </IntroItem>
@@ -84,18 +100,20 @@ export function Overview() {
           </IntroItemIcon>
           <IntroItemContent>
             <IntroItemLink
-              href={USER.website}
-              aria-label={`Personal website: ${urlToName(USER.website)}`}
+              href={user.website}
+              aria-label={`${labels.websiteAriaLabel}: ${urlToName(user.website)}`}
             >
-              {urlToName(USER.website)}
+              {urlToName(user.website)}
             </IntroItemLink>
           </IntroItemContent>
         </IntroItem>
 
         <IntroItem>
-          <IntroItemIcon>{getGenderIcon(USER.gender)}</IntroItemIcon>
-          <IntroItemContent aria-label={`Pronouns: ${USER.pronouns}`}>
-            {USER.pronouns}
+          <IntroItemIcon>{getGenderIcon(user.gender)}</IntroItemIcon>
+          <IntroItemContent
+            aria-label={`${labels.pronounsAriaLabel}: ${user.pronouns}`}
+          >
+            {user.pronouns}
           </IntroItemContent>
         </IntroItem>
       </PanelContent>

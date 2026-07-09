@@ -1,3 +1,4 @@
+import type { PortfolioMessages } from "../data/localized"
 import { TECH_STACK } from "../data/tech-stack"
 import type { TechStack as TechStackType } from "../types/tech-stack"
 import { Panel, PanelHeader, PanelTitle } from "./panel"
@@ -5,12 +6,22 @@ import { PanelTitleCopy } from "./panel-title-copy"
 
 const ID = "stack"
 
-export function TechStack() {
+const DEFAULT_SECTION_TITLE = "Stack"
+
+export function TechStack({
+  items = TECH_STACK,
+  title = DEFAULT_SECTION_TITLE,
+  categoryLabels = {},
+}: {
+  items?: TechStackType[]
+  title?: string
+  categoryLabels?: PortfolioMessages["stackCategories"]
+}) {
   return (
     <Panel id={ID}>
       <PanelHeader>
         <PanelTitle>
-          <a href={`#${ID}`}>Stack</a>
+          <a href={`#${ID}`}>{title}</a>
           <PanelTitleCopy id={ID} />
         </PanelTitle>
       </PanelHeader>
@@ -21,8 +32,9 @@ export function TechStack() {
           aria-hidden
         />
 
-        {Object.entries(groupByCategory(TECH_STACK)).map(
+        {Object.entries(groupByCategory(items)).map(
           ([category, items], index) => {
+            const displayCategory = categoryLabels[category] ?? category
             const categoryId = `${ID}-${category
               .toLowerCase()
               .replace(/[^a-z0-9]+/g, "-")
@@ -43,7 +55,7 @@ export function TechStack() {
                   >
                     {(index + 1).toString().padStart(2, "0")}
                   </span>
-                  {category}
+                  {displayCategory}
                 </div>
 
                 <ul
