@@ -101,7 +101,7 @@ export type LocalizedPortfolio = {
 const messages: Record<Locale, PortfolioMessages> = {
   en: {
     metadata: {
-      title: "Adrien LACHAMBRE - Software Engineer",
+      title: "Adrien - Software Engineer",
       description: USER.bio,
     },
     overview: {
