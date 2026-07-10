@@ -16,7 +16,7 @@ export const USER: User = {
   ],
   address: "Nice, France",
   phoneNumberB64: "KzMzIDYgMjAgMjkgMjcgNDg=", // E.164 format, base64 encoded
-  emailB64: "YWRyaWVuLmxhY2hhbWJyZUBwbS5tZQ==", // base64 encoded
+  emailB64: "Y29udGFjdEBhZHJpZW5sYWNoYW1icmUuY29t", // base64 encoded
   website: "https://adrienlachambre.com",
   jobTitle: "Software Engineer",
   jobs: [
