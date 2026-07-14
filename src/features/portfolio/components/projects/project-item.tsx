@@ -3,6 +3,7 @@ import { addQueryParams } from "@/utils/url"
 import { BoxIcon, InfinityIcon, LinkIcon } from "lucide-react"
 
 import { UTM_PARAMS } from "@/config/site"
+import { cn } from "@/lib/utils"
 import { Tag } from "@/components/ui/tag"
 import {
   Collapsible,
@@ -51,7 +52,10 @@ export function ProjectItem({
             width={32}
             height={32}
             quality={100}
-            className="mx-4 flex size-6 shrink-0 grayscale select-none group-hover/project:grayscale-0"
+            className={cn(
+              "mx-4 flex size-6 shrink-0 grayscale select-none group-hover/project:grayscale-0",
+              project.invertLogoInDarkMode && "dark:invert"
+            )}
             unoptimized
             aria-hidden
           />

@@ -9,6 +9,7 @@ export const PROJECTS: Project[] = [
     },
     link: "https://flashcardstudy.com",
     logo: "/images/portfolio/flashcardstudy-logo.png",
+    invertLogoInDarkMode: true,
     skills: [
       "Full-stack SaaS",
       "React 19",
@@ -68,6 +69,7 @@ export const PROJECTS: Project[] = [
     },
     link: "https://github.com/lelouchzr/python-rag-framework",
     logo: "/images/portfolio/python-rag-framework-logo.png",
+    invertLogoInDarkMode: true,
     skills: [
       "AI",
       "RAG",
@@ -97,6 +99,7 @@ export const PROJECTS: Project[] = [
     },
     link: "https://github.com/lelouchzr/python-agent-runtime",
     logo: "/images/portfolio/python-agent-runtime-logo.png",
+    invertLogoInDarkMode: true,
     skills: [
       "AI Agents",
       "Python",
@@ -123,6 +126,7 @@ export const PROJECTS: Project[] = [
     },
     link: "https://github.com/lelouchzr/python-doc-generator",
     logo: "/images/portfolio/python-doc-generator-logo.png",
+    invertLogoInDarkMode: true,
     skills: [
       "AI",
       "Python",
@@ -151,6 +155,7 @@ export const PROJECTS: Project[] = [
     },
     link: "https://github.com/lelouchzr/lem_in",
     logo: "/images/portfolio/lem-in-logo.png",
+    invertLogoInDarkMode: true,
     skills: [
       "EPITECH Project",
       "C",
@@ -177,6 +182,7 @@ export const PROJECTS: Project[] = [
     },
     link: "https://github.com/lelouchzr/corewar",
     logo: "/images/portfolio/corewar-logo.png",
+    invertLogoInDarkMode: true,
     skills: [
       "EPITECH Project",
       "C",
