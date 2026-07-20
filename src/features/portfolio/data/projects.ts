@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     id: "flashcardstudy",
     title: "FlashCardStudy",
     period: {
-      start: "05.2026",
+      start: "04.2026",
     },
     link: "https://flashcardstudy.com",
     logo: "/images/portfolio/flashcardstudy-logo.png",
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     id: "losthaven",
     title: "LostHaven",
     period: {
-      start: "2025",
+      start: "09.2025",
     },
     link: "https://lost-haven.com",
     logo: "/images/portfolio/losthaven-logo-rune.png",
