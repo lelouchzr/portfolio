@@ -18,7 +18,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/base/ui/tooltip"
-import { Prose } from "@/components/base/ui/typography"
 import { Markdown } from "@/components/markdown"
 
 import type { Project } from "../../types/projects"
@@ -124,9 +123,9 @@ export function ProjectItem({
       <CollapsibleContent className="overflow-hidden">
         <div className="space-y-4 border-t border-line p-4">
           {project.description && (
-            <Prose>
+            <div className="typeset typeset-description">
               <Markdown>{project.description}</Markdown>
-            </Prose>
+            </div>
           )}
 
           {project.skills.length > 0 && (

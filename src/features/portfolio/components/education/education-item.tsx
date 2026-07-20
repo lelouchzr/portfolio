@@ -11,7 +11,6 @@ import {
   CollapsibleTrigger,
 } from "@/components/base/ui/collapsible"
 import { Separator } from "@/components/base/ui/separator"
-import { Prose } from "@/components/base/ui/typography"
 import { Markdown } from "@/components/markdown"
 import type { Education } from "@/features/portfolio/types/education"
 
@@ -116,9 +115,9 @@ export function EducationItem({
 
         <CollapsibleContent className="overflow-hidden">
           {item.description && (
-            <Prose className="pt-2 pl-9">
+            <div className="typeset typeset-description pt-3 pb-1 pl-9">
               <Markdown>{item.description}</Markdown>
-            </Prose>
+            </div>
           )}
         </CollapsibleContent>
 

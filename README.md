@@ -34,7 +34,7 @@ A pixel-perfect dev portfolio and shadcn registry showcasing my work as a Design
 - AI-ready with [/llms.txt](https://llmstxt.org)
 - Spam-protected email
 - Installable as PWA
-- Analytics with [PostHog](https://posthog.com) and [OpenPanel](https://openpanel.dev)
+- Analytics with [OpenPanel](https://openpanel.dev)
 
 ### Content
 
@@ -84,6 +84,20 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
+        <a href="https://claude.com?utm_source=chanhdai.com">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/claude-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/claude.svg"
+              alt="Claude"
+            />
+          </picture>
+        </a>
+      </td>
+      <td>
         <a href="https://openpanel.dev/open-source?utm_source=chanhdai.com">
           <picture>
             <source
@@ -111,7 +125,6 @@ This project is proudly supported by:
           </picture>
         </a>
       </td>
-      <td></td>
     </tr>
     <tr>
       <td colspan="3"><strong>Gold Sponsors</strong></td>
@@ -267,9 +280,3 @@ This project is proudly supported by:
 ## Stats
 
 ![Stats](https://repobeats.axiom.co/api/embed/583bf08fbdef57c3921d3cfda902d546df3e6ed1.svg "Repobeats analytics image")
-
-## Star history
-
-<p>
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/chart/github/stars/ncdai/chanhdai.com.svg?font=geist&amp;theme=zinc" /><img alt="chart" src="https://shieldcn.dev/chart/github/stars/ncdai/chanhdai.com.svg?mode=light&amp;font=geist&amp;theme=zinc" /></picture>
-</p>
