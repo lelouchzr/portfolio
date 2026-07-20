@@ -2,6 +2,30 @@ import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
+    id: "handwriting-recognition",
+    title: "Python Handwriting Recognition",
+    period: {
+      start: "07.2026",
+    },
+    link: "https://github.com/lelouchzr/Handwriting-Recognition",
+    skills: [
+      "Python",
+      "OCR",
+      "Computer Vision",
+      "Tesseract",
+      "Pillow",
+      "Typer",
+      "CLI",
+      "Image Processing",
+      "Testing",
+    ],
+    description: `Local handwriting recognition pipeline built in Python for exploring a complete OCR workflow.
+- Built image loading, grayscale and threshold preprocessing, optional deskewing and text-region segmentation.
+- Added selectable fake and Tesseract OCR backends behind a typed interface, with confidence metadata where available.
+- Created a Typer CLI and public Python API with text, JSON and Markdown exports, plus debug images and region visualizations.
+- Covered the package with tests, linting, type checking, examples and focused documentation.`,
+  },
+  {
     id: "flashcardstudy",
     title: "FlashCardStudy",
     period: {
