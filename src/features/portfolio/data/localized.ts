@@ -668,6 +668,24 @@ const projectTranslations: Partial<
   Record<Locale, Record<string, Partial<Project>>>
 > = {
   fr: {
+    oriel: {
+      description: `Oriel est une application macOS native et open source permettant d'afficher des widgets légers en HTML, CSS et JavaScript directement sur le bureau, avec une architecture locale et orientée sécurité.
+- Développement de l'application avec Swift 6, SwiftUI, AppKit et WebKit, en utilisant des WKWebViews isolées et non persistantes pour chaque widget.
+- Conception d'un système de fenêtres qui maintient les widgets derrière les fenêtres classiques, avec prise en charge de plusieurs écrans, mode édition, déplacement et redimensionnement.
+- Mise en place de la persistance locale de chaque instance de widget : position, taille, état d'activation et configuration utilisateur, sans compte, télémétrie ni service cloud.
+- Implémentation de l'installation depuis des dossiers locaux et des packages signés, avec aperçu des domaines demandés, de l'auteur et de l'état de signature avant l'installation.
+- Ajout de l'édition et de la prévisualisation du HTML, CSS et JavaScript directement dans l'application, ainsi que du rechargement automatique lors de la modification des fichiers de widgets.
+- Création d'un SDK sécurisé avec une CLI, un schéma JSON et des définitions TypeScript ; les widgets reçoivent uniquement un contexte limité en lecture seule et l'accès réseau est désactivé par défaut.
+- Ajout d'un système de consentement réseau domaine par domaine, sans accès libre au système de fichiers, au shell, aux bridges natifs ni aux secrets.`,
+    },
+    "handwriting-recognition": {
+      title: "Reconnaissance d'écriture manuscrite en Python",
+      description: `Pipeline local de reconnaissance d'écriture manuscrite en Python, conçu pour explorer un workflow OCR complet.
+- Implémentation du chargement d'images, de la conversion en niveaux de gris, du seuillage, du redressement optionnel et de la segmentation des zones de texte.
+- Ajout de backends OCR interchangeables, simulé et Tesseract, derrière une interface typée avec des métadonnées de confiance lorsque disponibles.
+- Création d'une CLI Typer et d'une API Python publique, avec exports texte, JSON et Markdown, images de débogage et visualisations des zones détectées.
+- Couverture du package avec des tests, du linting, du typage statique, des exemples et une documentation ciblée.`,
+    },
     flashcardstudy: {
       description: `Application web SaaS full-stack pour l'apprentissage des langues, construite autour de flashcards, du partage de decks publics, de cartes avec images et de la répétition espacée.
 - Développement d'un frontend React 19 + TypeScript + Vite avec Tailwind CSS, shadcn/ui, TanStack Query, React Router et Framer Motion.
@@ -726,6 +744,24 @@ const projectTranslations: Partial<
     },
   },
   kr: {
+    oriel: {
+      description: `Oriel은 가벼운 HTML, CSS, JavaScript 위젯을 데스크톱에 직접 배치할 수 있는 오픈 소스 네이티브 macOS 애플리케이션으로, 로컬 우선과 보안을 중심으로 설계되었습니다.
+- Swift 6, SwiftUI, AppKit, WebKit으로 애플리케이션을 개발하고, 각 위젯을 격리된 비영구 WKWebView에서 렌더링.
+- 위젯을 일반 창 뒤에 유지하는 데스크톱 창 시스템을 구축하고, 다중 디스플레이 지원, 명시적인 편집 모드, 위치 이동과 크기 조절 기능 구현.
+- 계정, 텔레메트리, 클라우드 서비스 없이 각 위젯 인스턴스의 위치, 크기, 활성화 상태, 사용자 설정을 로컬에 저장.
+- 로컬 폴더와 서명된 디렉터리 패키지에서 위젯을 설치하고, 설치 전 요청 도메인, 작성자 정보, 서명 상태를 미리 확인하도록 구현.
+- 패키지에 포함된 HTML, CSS, JavaScript의 앱 내 편집과 미리 보기 기능을 추가하고, FSEvents를 통해 위젯 파일 변경 시 자동 새로고침 지원.
+- CLI, JSON Schema, TypeScript 선언을 포함한 보안 위젯 SDK를 만들고, 위젯에는 제한된 읽기 전용 컨텍스트만 제공하며 네트워크 접근은 기본적으로 차단.
+- 선언된 네트워크 권한에 대해 도메인별 동의 흐름을 추가하여, 제한 없는 파일 시스템 접근, 셸 실행, 네이티브 브리지, 비밀 정보 노출을 방지.`,
+    },
+    "handwriting-recognition": {
+      title: "Python 손글씨 인식",
+      description: `완전한 OCR 워크플로를 탐색하기 위해 Python으로 구축한 로컬 손글씨 인식 파이프라인.
+- 이미지 로딩, 그레이스케일 변환, 임계값 전처리, 선택적 기울기 보정, 텍스트 영역 분할 구현.
+- 타입이 지정된 인터페이스 뒤에 교체 가능한 모의 OCR 및 Tesseract OCR 백엔드를 추가하고, 가능한 경우 신뢰도 메타데이터 제공.
+- 텍스트, JSON, Markdown 내보내기와 디버그 이미지, 영역 시각화를 지원하는 Typer CLI 및 공개 Python API 구축.
+- 테스트, 린팅, 정적 타입 검사, 예제, 집중된 문서화로 패키지 품질 관리.`,
+    },
     flashcardstudy: {
       description: `플래시카드, 공개 덱 공유, 이미지 기반 카드, 간격 반복 학습을 중심으로 만든 언어 학습용 풀스택 SaaS 웹 애플리케이션.
 - React 19, TypeScript, Vite, Tailwind CSS, shadcn/ui, TanStack Query, React Router, Framer Motion 기반 프론트엔드 개발.

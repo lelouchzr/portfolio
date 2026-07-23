@@ -2,6 +2,37 @@ import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
+    id: "oriel",
+    title: "Oriel",
+    period: {
+      start: "07.2026",
+    },
+    link: "https://github.com/lelouchzr/Oriel",
+    skills: [
+      "macOS",
+      "Swift 6",
+      "SwiftUI",
+      "AppKit",
+      "WebKit",
+      "WKWebView",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Swift Package Manager",
+      "CLI",
+      "Local-first",
+      "Security",
+    ],
+    description: `Oriel is an open-source native macOS application for placing lightweight HTML, CSS, and JavaScript widgets directly on the desktop, with a local-first and security-conscious architecture.
+- Developed the application with Swift 6, SwiftUI, AppKit, and WebKit, using isolated non-persistent WKWebViews to render each widget.
+- Built a desktop-window system that keeps widgets behind regular windows, with multi-display support, explicit edit mode, and position and resize controls.
+- Designed local persistence for every widget instance, including its position, size, enabled state, and user configuration, without accounts, telemetry, or cloud services.
+- Implemented widget installation from local folders and signed directory packages, with previews of requested domains, author details, and signature state before installation.
+- Added in-app source editing and previewing for package-contained HTML, CSS, and JavaScript, plus live reloads when widget files change through FSEvents.
+- Created a secure widget SDK with a CLI, JSON Schema, and TypeScript declarations; widgets receive only bounded read-only context and network access is denied by default.
+- Added an explicit per-domain consent flow for declared network permissions, preventing unrestricted filesystem access, shell execution, native bridges, and secret exposure.`,
+  },
+  {
     id: "handwriting-recognition",
     title: "Python Handwriting Recognition",
     period: {
