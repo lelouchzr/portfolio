@@ -68,9 +68,11 @@ npx shadcn@latest add @ncdai/github-contributions
 
 ## Setup
 
-Set the API base URL. It is required, and the fetcher throws without it:
+The component uses the public GitHub Contributions API by default. Set the
+variable below only when you need to override its base URL:
 
 ```bash title=".env.local"
+# Optional: override the default public API endpoint
 NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL=https://github-contributions-api.jogruber.de/v4
 ```
 
