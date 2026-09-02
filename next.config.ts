@@ -1,5 +1,9 @@
 import type { NextConfig } from "next"
 
+const GITHUB_CONTRIBUTIONS_API_URL =
+  process.env.NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL ||
+  "https://github-contributions-api.jogruber.de/v4"
+
 /**
  * Component slugs that used to also render under /blog/<slug> (a shared MDX
  * pool) and were indexed there. After splitting content into category folders
@@ -59,6 +63,8 @@ const nextConfig: NextConfig = {
    */
   env: {
     BUILD_TIMESTAMP: new Date().toISOString(),
+    // Keep static builds independent from deployment-specific configuration.
+    NEXT_PUBLIC_GITHUB_CONTRIBUTIONS_API_URL: GITHUB_CONTRIBUTIONS_API_URL,
   },
   reactStrictMode: true,
   typedRoutes: true,
