@@ -616,4 +616,41 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "timescale-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("timescale")],
+    files: [
+      {
+        path: "examples/timescale-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "status-button-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("status-button")],
+    files: [
+      {
+        path: "examples/status-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "status-button-form-demo",
+    type: "registry:example",
+    registryDependencies: [
+      "field",
+      "input",
+      getRegistryItemUrl("status-button"),
+    ],
+    files: [
+      {
+        path: "examples/status-button-form-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

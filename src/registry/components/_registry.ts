@@ -806,4 +806,54 @@ export const components: Registry["items"] = [
     categories: ["effects"],
     docs: "https://chanhdai.com/components/spotlight-logo",
   },
+  {
+    name: "timescale",
+    type: "registry:component",
+    title: "Timescale",
+    description:
+      "Ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
+    files: [
+      {
+        path: "components/timescale/timescale.tsx",
+        type: "registry:component",
+        target: "@components/timescale.tsx",
+      },
+    ],
+    categories: ["data-display"],
+    docs: "https://chanhdai.com/components/timescale",
+  },
+  {
+    name: "status-button",
+    type: "registry:component",
+    title: "Status Button",
+    description:
+      "Button that shows loading and success feedback for async actions.",
+    dependencies: ["motion", "radix-ui"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "components/status-button/status-button.tsx",
+        type: "registry:component",
+        target: "@components/status-button.tsx",
+      },
+    ],
+    cssVars: {
+      theme: {
+        "--animate-spinner-opacity":
+          "spinner-opacity var(--tw-animation-duration, var(--tw-duration, 1s)) linear infinite",
+      },
+    },
+    css: {
+      "@keyframes spinner-opacity": {
+        from: {
+          opacity: "1",
+        },
+        to: {
+          opacity: "0.15",
+        },
+      },
+    },
+    categories: ["controls"],
+    docs: "https://chanhdai.com/components/status-button",
+  },
 ]

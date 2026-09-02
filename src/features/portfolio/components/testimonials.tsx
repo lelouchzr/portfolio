@@ -33,7 +33,7 @@ import {
 } from "@/features/portfolio/data/testimonials"
 import type { Testimonial as TestimonialType } from "@/features/portfolio/types/testimonials"
 
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel"
+import { Panel, PanelContent } from "./panel"
 
 const ID = "testimonials"
 
@@ -62,9 +62,17 @@ export function Testimonials() {
 
   return (
     <Panel ref={ref} id={ID}>
-      <PanelHeader>
-        <PanelTitle>Feedback from builders</PanelTitle>
-      </PanelHeader>
+      <div className="h-px" />
+      <div className="h-4" />
+      <div className="screen-line-bottom h-px" />
+
+      <div className="flex items-center justify-center py-4">
+        <h2 className="text-center text-sm/none font-medium text-muted-foreground">
+          Feedback from builders
+        </h2>
+      </div>
+
+      <div className="screen-line-bottom h-px" />
 
       <div className="grid gap-4 py-4 sm:hidden">
         {TESTIMONIALS_MOBILE.map((item) => (
@@ -76,11 +84,11 @@ export function Testimonials() {
         ))}
       </div>
 
-      <PanelContent className="hidden gap-1 sm:grid sm:grid-cols-2">
+      <PanelContent className="hidden gap-2 p-2 sm:grid sm:grid-cols-2">
         {TESTIMONIALS_FEATURED.map((item) => (
           <TestimonialSpotlight
             key={item.url}
-            className="bg-background inset-ring-foreground/20 [--spotlight-size:50%]"
+            className="bg-background inset-ring-foreground/15 [--spotlight-size:50%]"
           >
             <TestimonialItem {...item} showIcon />
           </TestimonialSpotlight>
@@ -100,15 +108,15 @@ export function Testimonials() {
         />
       </PanelContent>
 
-      <div className="screen-line-top flex justify-center py-2">
+      <div className="screen-line-top flex justify-center py-4">
         <Button
-          className="gap-2 pr-2.5 pl-3"
+          className="gap-2 pr-2.5 pl-3 shadow-[inset_0_0_1px] shadow-foreground/20"
           variant="secondary"
           size="sm"
           nativeButton={false}
           render={<Link href="/testimonials" />}
         >
-          All testimonials
+          All builders
           <ArrowRightIcon />
         </Button>
       </div>
@@ -142,7 +150,7 @@ function TestimonialsMarquee({
         {data.map((item) => (
           <MarqueeItem
             key={item.url}
-            className="mx-0.5 h-full w-xs rounded-xl bg-background inset-ring-1 inset-ring-border transition-[background-color] ease-out hover:bg-accent-muted"
+            className="mx-1 h-full w-xs rounded-xl bg-background inset-ring-1 inset-ring-foreground/15 transition-[background-color] ease-out hover:bg-accent-muted"
           >
             <TestimonialItem {...item} />
           </MarqueeItem>

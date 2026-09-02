@@ -5,16 +5,32 @@ import type { User } from "@/features/portfolio/types/user"
 import { AvatarLightsToggle } from "./avatar-lights-toggle"
 import { ChanhDaiMarkIsometric } from "./chanhdai-mark-isometric"
 import { FlipSentences } from "./flip-sentences"
+import { HandwrittenArrow, HandwrittenNote } from "./handwritten-note"
 import { PronounceMyName } from "./pronounce-my-name"
 import { VerifiedIcon } from "./verified-icon"
 
 export function ProfileHeader({ user = USER }: { user?: User }) {
   return (
-    <div className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
+    <div className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x screen-line-bottom-border after:z-1">
       <figure className="relative col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4">
         <ChanhDaiMarkIsometric />
-        <figcaption className="pointer-events-none absolute right-2 bottom-2 font-mono text-xs leading-none text-zinc-400 select-none sm:right-4 dark:text-zinc-700">
-          FIG_001
+
+        {/* w-36 needs ~1088px before the gutter can hold it without clipping,
+            and the mark ignores coarse pointers, so nothing to annotate there. */}
+        <HandwrittenNote
+          className="bottom-20 left-full hidden w-36 flex-col items-start pointer-fine:xl:flex"
+          aria-hidden
+        >
+          <HandwrittenArrow className="-scale-y-100 -rotate-6" />
+          <span className="ml-1 -rotate-6">
+            follows your cursor
+            <span className="block" />
+            click for a sound
+          </span>
+        </HandwrittenNote>
+
+        <figcaption className="pointer-events-none absolute right-2 bottom-2 text-sm leading-none tracking-wide text-[color-mix(in_oklab,var(--muted-foreground)_60%,var(--background))] tabular-nums select-none sm:right-4 sm:bottom-4">
+          Fig. 1.
         </figcaption>
       </figure>
 

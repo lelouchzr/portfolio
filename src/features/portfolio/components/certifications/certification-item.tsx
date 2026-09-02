@@ -1,8 +1,11 @@
 import Image from "next/image"
+import { CopyrightIcon, Stamp01Icon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 import { format } from "date-fns"
 import { ArrowUpRightIcon, CircleCheckBigIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { IconTile } from "@/components/ui/icon-tile"
 import { Separator } from "@/components/base/ui/separator"
 import {
   AccentureIcon,
@@ -17,17 +20,20 @@ import {
 import type { Certification } from "../../types/certifications"
 
 /**
- * Issuer logos referenced by name in the data layer (`issuerIconName`).
+ * Icons referenced by name in the data layer (`issuerIconName`): issuer
+ * brand logos plus credential-kind marks ("trademark", "copyright").
  * Closed map so the bundle only retains the icons that can actually appear
  * here; unknown names fall back to a generic check badge in the UI below.
  */
 const ISSUER_ICONS: Record<string, React.ReactNode> = {
   accenture: <AccentureIcon />,
   animationsdev: <AnimationsDevIcon />,
+  copyright: <HugeiconsIcon icon={CopyrightIcon} />,
   coursera: <CourseraIcon />,
   google: <GoogleIcon />,
   meta: <MetaIcon />,
   microsoft: <MicrosoftIcon />,
+  trademark: <HugeiconsIcon icon={Stamp01Icon} />,
   vercel: <VercelIcon />,
 }
 
@@ -57,17 +63,11 @@ export function CertificationItem({
           aria-hidden
         />
       ) : (
-        <div
-          className={cn(
-            "mx-4 flex size-6 shrink-0 items-center justify-center rounded-md select-none",
-            "border border-muted-foreground/15 ring-1 ring-line ring-offset-1 ring-offset-background",
-            "bg-muted text-muted-foreground [&_svg]:size-4"
-          )}
-        >
+        <IconTile className="mx-4">
           {(certification.issuerIconName
             ? ISSUER_ICONS[certification.issuerIconName]
             : null) ?? <CircleCheckBigIcon />}
-        </div>
+        </IconTile>
       )}
 
       <div className="flex-1 space-y-1 border-l border-dashed border-line p-4 pr-2">
@@ -78,7 +78,7 @@ export function CertificationItem({
           </a>
         </h3>
 
-        <dl className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+        <dl className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground">
           <div>
             <dt className="sr-only">Issued by</dt>
             <dd>

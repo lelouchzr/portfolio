@@ -1,4 +1,4 @@
-import { VercelIcon } from "@/components/icons"
+import { ClaudeIcon, VercelIcon } from "@/components/icons"
 
 import type { Award } from "../types/awards"
 
@@ -21,7 +21,7 @@ export const AWARDS: Award[] = [
     date: "2014-09",
     grade: "Grade 8",
     description:
-      "- Organized in Hanoi, Viet Nam\n- Field: Creative Software\n- Project: Website Hành Trình Khám Phá Miền Tây",
+      "- Organized in Ha Noi, Viet Nam\n- Field: Creative Software\n- Project: Website Hành Trình Khám Phá Miền Tây",
     referenceLink:
       "https://drive.google.com/file/d/16OOVuKBxFAnROU-pmhkDFkbljkmeO-kc/view?usp=sharing",
   },
@@ -118,7 +118,7 @@ export const AWARDS: Award[] = [
     date: "2016-08",
     grade: "Grade 10",
     description:
-      "- Organized in Quang Binh, Viet Nam\n- Field: Hardware Programming\n- Project: IoT Technology Application for Smart Home Control",
+      "- Organized in Binh Dinh, Viet Nam\n- Field: Hardware Programming\n- Project: IoT Technology Application for Smart Home Control",
     referenceLink:
       "https://drive.google.com/file/d/1kf3AR8StAEb3he67pTD1QE53b9_nzklS/view?usp=sharing",
   },
@@ -129,7 +129,7 @@ export const AWARDS: Award[] = [
     date: "2016-10",
     grade: "Grade 10",
     description:
-      "- Organized in Hanoi, Viet Nam\n- Field: Software\n- Project: Study English",
+      "- Organized in Ha Noi, Viet Nam\n- Field: Software\n- Project: Study English",
     referenceLink:
       "https://drive.google.com/file/d/1FZXB2CeW0rrZmKnL4bHJjzXt0r_WeU2q/view?usp=sharing",
   },
@@ -279,13 +279,23 @@ export const AWARDS: Award[] = [
   {
     id: "05e1c61b-6dc1-11f0-8000-679dd01e0504",
     prize: "Summer 2025 cohort",
-    title: "▲Vercel OSS Program",
+    title: "Vercel OSS Program",
     date: "2025-07",
-    grade: "Personal project",
+    grade: "Open source project",
     icon: <VercelIcon />,
     description:
-      "- Selected for [▲Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort\n- Received $3,600 in platform credits, OSS Starter Pack, and priority community support\n- Project: [React Wheel Picker](https://react-wheel-picker.chanhdai.com)",
+      "- Selected for [▲ Vercel OSS Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort\n- Received $3,600 in platform credits, OSS Starter Pack, and priority community support\n- Project: [React Wheel Picker](https://react-wheel-picker.chanhdai.com)",
     referenceLink:
       "https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker",
+  },
+  {
+    id: "1b4db7eb-4057-5ddf-91e0-36dec72071f5",
+    prize: "Claude Max 20x",
+    title: "Claude for Open Source Program",
+    date: "2026-07",
+    grade: "Open source project",
+    icon: <ClaudeIcon />,
+    description:
+      "- Selected for [Claude for Open Source Program](https://claude.com/contact-sales/claude-for-oss)\n- Received 6 months of Claude Max 20x in support of my open source work\n- Projects: [chanhdai.com](https://github.com/ncdai/chanhdai.com) and [React Wheel Picker](https://github.com/ncdai/react-wheel-picker)",
   },
 ]

@@ -1,5 +1,6 @@
-import { formatDuration } from "@/utils/format"
+import { formatDuration, formatNumber } from "@/utils/format"
 import { format } from "date-fns"
+import { TrendingDownIcon, TrendingUpIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import Grid from "@/components/charts/grid"
@@ -45,28 +46,40 @@ export async function Insights() {
 
         <dl className="grid grid-cols-2 md:grid-cols-4">
           <Metric>
-            <MetricLabel>Unique visitors</MetricLabel>
+            <MetricLabel>
+              Unique visitors
+              <MetricChange value={data.changes.unique_visitors} />
+            </MetricLabel>
             <MetricValue>
-              {data.summary.unique_visitors.toLocaleString()}
+              {formatNumber(data.summary.unique_visitors)}
             </MetricValue>
           </Metric>
 
           <Metric>
-            <MetricLabel>Sessions</MetricLabel>
+            <MetricLabel>
+              Sessions
+              <MetricChange value={data.changes.total_sessions} />
+            </MetricLabel>
             <MetricValue>
-              {data.summary.total_sessions.toLocaleString()}
+              {formatNumber(data.summary.total_sessions)}
             </MetricValue>
           </Metric>
 
           <Metric>
-            <MetricLabel>Views</MetricLabel>
+            <MetricLabel>
+              Views
+              <MetricChange value={data.changes.total_screen_views} />
+            </MetricLabel>
             <MetricValue>
-              {data.summary.total_screen_views.toLocaleString()}
+              {formatNumber(data.summary.total_screen_views)}
             </MetricValue>
           </Metric>
 
           <Metric>
-            <MetricLabel>Session duration</MetricLabel>
+            <MetricLabel>
+              Session duration
+              <MetricChange value={data.changes.avg_session_duration} />
+            </MetricLabel>
             <MetricValue>
               {formatDuration(data.summary.avg_session_duration)}
             </MetricValue>
@@ -109,8 +122,20 @@ export async function Insights() {
           </div>
         )}
 
-        <figcaption className="pointer-events-none absolute right-2 bottom-2 bg-background font-mono text-xs leading-none text-zinc-400 select-none sm:right-4 dark:text-zinc-700">
-          FIG_002
+        <figcaption className="screen-line-top px-4 py-3 text-center text-sm text-balance">
+          <span className="mr-2 tracking-wide text-muted-foreground/80">
+            Fig. 3.
+          </span>
+          Daily unique visitors and sessions. Source:{" "}
+          <a
+            href="https://openpanel.dev"
+            className="link-underline"
+            target="_blank"
+            rel="noopener"
+          >
+            OpenPanel
+          </a>
+          .
         </figcaption>
       </figure>
     </Panel>
@@ -122,7 +147,9 @@ function Metric({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="metric"
       className={cn(
-        "flex flex-col gap-2 p-4",
+        // `justify-between` keeps values aligned across a row when a label
+        // wraps to two lines in a narrow column.
+        "flex flex-col justify-between gap-2 p-4",
         "max-sm:nth-[2n+1]:screen-line-bottom sm:nth-[3n+1]:screen-line-bottom",
         className
       )}
@@ -135,9 +162,46 @@ function MetricLabel({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <dt
       data-slot="metric-label"
-      className={cn("text-sm leading-none text-muted-foreground", className)}
+      className={cn(
+        "flex items-start justify-between gap-2 text-sm/4 text-muted-foreground",
+        className
+      )}
       {...props}
     />
+  )
+}
+
+/**
+ * Every metric shown here is one where higher is better, so up maps to green.
+ * The arrow carries the direction too, so the meaning survives without color.
+ */
+function MetricChange({ value }: { value: number | null }) {
+  if (value === null) {
+    return null
+  }
+
+  const percent = Math.round(value * 10) / 10
+  const Icon = percent > 0 ? TrendingUpIcon : TrendingDownIcon
+
+  return (
+    <span
+      data-slot="metric-change"
+      className={cn(
+        "flex shrink-0 items-center gap-0.5 text-xs/4 tabular-nums",
+        // Shades differ per color scheme so each clears 4.5:1 on its background.
+        percent > 0 && "text-green-700 dark:text-green-500",
+        percent < 0 && "text-red-700 dark:text-red-400"
+      )}
+    >
+      {percent !== 0 && (
+        <>
+          <Icon className="size-3.5" aria-hidden />
+          <span className="sr-only">{percent > 0 ? "Up by " : "Down by "}</span>
+        </>
+      )}
+      {formatNumber(Math.abs(percent))}%
+      <span className="sr-only"> compared to the previous period</span>
+    </span>
   )
 }
 

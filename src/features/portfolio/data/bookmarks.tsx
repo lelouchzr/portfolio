@@ -94,7 +94,6 @@ export const BOOKMARKS: Bookmark[] = [
     title: "Devouring Details",
     url: "https://devouringdetails.com",
     author: "Rauno",
-    icon: <Circle />,
     category: BookmarkCategory.COURSE,
     bookmarkedAt: "2026-04-14",
   },
@@ -102,7 +101,6 @@ export const BOOKMARKS: Bookmark[] = [
     title: "React handbook",
     url: "https://devouringdetails.com/resources/react-handbook",
     author: "Rauno",
-    icon: <Circle />,
     category: BookmarkCategory.REFERENCE,
     bookmarkedAt: "2026-04-14",
   },
@@ -171,12 +169,31 @@ export const BOOKMARKS: Bookmark[] = [
     category: BookmarkCategory.COURSE,
     bookmarkedAt: "2026-07-03",
   },
+  {
+    title: "Invisible Details",
+    url: "https://invisibledetails.com",
+    author: "Dmytro",
+    category: BookmarkCategory.COURSE,
+    bookmarkedAt: "2026-07-25",
+  },
+  {
+    title: "Copper",
+    url: "https://shadcn.com/copper",
+    author: "shadcn",
+    icon: (
+      // Designed by shadcn.
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          fill="currentColor"
+          d="M20.041 4.824a10.125 10.125 0 1 0 0 14.352 2.11 2.11 0 1 0-2.976-2.99 5.906 5.906 0 1 1 0-8.372 2.11 2.11 0 1 0 2.976-2.99"
+        />
+        <path
+          fill="currentColor"
+          d="M18.807 10.453h-1.631a.844.844 0 0 0-.844.844v1.406c0 .466.378.844.844.844h1.631a.844.844 0 0 0 .844-.844v-1.406a.844.844 0 0 0-.844-.844"
+        />
+      </svg>
+    ),
+    category: BookmarkCategory.SOFTWARE,
+    bookmarkedAt: "2026-07-30",
+  },
 ]
-
-function Circle() {
-  return (
-    <svg viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="currentColor" />
-    </svg>
-  )
-}

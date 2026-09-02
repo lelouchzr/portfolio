@@ -29,18 +29,16 @@ import {
 } from "lucide-react"
 
 import { ChanhDaiMark } from "@/components/chanhdai-mark"
-import { AppleIcon, ReactIcon, XIcon } from "@/components/icons"
+import {
+  AppleIcon,
+  ReactIcon,
+  ReactWheelPickerIcon,
+  XIcon,
+} from "@/components/icons"
 
 const COMPONENT_ICONS: Record<string, React.ReactNode> = {
   "work-experience-component": <BriefcaseBusinessIcon />,
-  "react-wheel-picker": (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden>
-      <path
-        d="M144,16H112A64.07,64.07,0,0,0,48,80v96a64.07,64.07,0,0,0,64,64h32a64.07,64.07,0,0,0,64-64V80A64.07,64.07,0,0,0,144,16Zm2.34,146.34a8,8,0,0,1,11.32,11.32l-24,24a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L120,172.69V83.31L109.66,93.66A8,8,0,0,1,98.34,82.34l24-24a8,8,0,0,1,11.32,0l24,24a8,8,0,0,1-11.32,11.32L136,83.31v89.38Z"
-        fill="currentColor"
-      />
-    </svg>
-  ),
+  "react-wheel-picker": <ReactWheelPickerIcon />,
   "theme-switcher": <MoonStarIcon />,
   "apple-hello-effect": <AppleIcon />,
   "shimmering-text": <ZapIcon />,
@@ -146,6 +144,115 @@ const COMPONENT_ICONS: Record<string, React.ReactNode> = {
   "line-nav": <IconBaselineDensitySmall />,
   "share-menu": <ShareIcon />,
   "spotlight-logo": <ChanhDaiMark />,
+  timescale: (
+    // Icon designed by @ncdai
+    <svg
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <line x1="3" y1="7" x2="3" y2="17" />
+      <line x1="21" y1="7" x2="21" y2="17" />
+      <path d="M6 12H8" />
+      <path d="M16 12H18" />
+      <path d="M11 12H13" />
+    </svg>
+  ),
+  "status-button": (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        transform="rotate(288 12 12)"
+      />
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        transform="rotate(324 12 12)"
+        opacity="0.9"
+      />
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        opacity="0.8"
+      />
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        transform="rotate(36 12 12)"
+        opacity="0.7"
+      />
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        transform="rotate(72 12 12)"
+        opacity="0.6"
+      />
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        transform="rotate(108 12 12)"
+        opacity="0.5"
+      />
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        transform="rotate(144 12 12)"
+        opacity="0.4"
+      />
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        transform="rotate(180 12 12)"
+        opacity="0.3"
+      />
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        transform="rotate(216 12 12)"
+        opacity="0.2"
+      />
+      <rect
+        x="17.76"
+        y="10.875"
+        width="6"
+        height="2.25"
+        rx="1.125"
+        transform="rotate(252 12 12)"
+        opacity="0.15"
+      />
+    </svg>
+  ),
 }
 
 export function ComponentIcon({ slug }: { slug: string }) {

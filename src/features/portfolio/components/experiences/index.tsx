@@ -66,11 +66,11 @@ export function Experiences({
             />
           </CollapsibleContent>
 
-          <div className="-mt-px flex items-center justify-center py-2">
+          <div className="-mt-px flex items-center justify-center py-4">
             <CollapsibleTrigger
               render={
                 <Button
-                  className="gap-2 pr-2.5 pl-3"
+                  className="gap-2 pr-2.5 pl-3 shadow-[inset_0_0_1px] shadow-foreground/20"
                   variant="secondary"
                   size="sm"
                 >

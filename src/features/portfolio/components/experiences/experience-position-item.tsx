@@ -2,6 +2,7 @@ import { differenceInMonths, parse } from "date-fns"
 import { BriefcaseBusinessIcon, InfinityIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { IconTile } from "@/components/ui/icon-tile"
 import { Tag } from "@/components/ui/tag"
 import {
   Collapsible,
@@ -47,16 +48,7 @@ export function ExperiencePositionItem({
         )}
       >
         <div className="relative z-1 mb-1 flex items-start gap-3 text-base">
-          <div
-            className={cn(
-              "flex size-6 shrink-0 items-center justify-center rounded-md",
-              "bg-muted text-muted-foreground",
-              "border border-muted-foreground/15 ring-1 ring-line ring-offset-1 ring-offset-background",
-              "[&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-            )}
-          >
-            {position.icon ?? <BriefcaseBusinessIcon />}
-          </div>
+          <IconTile>{position.icon ?? <BriefcaseBusinessIcon />}</IconTile>
 
           <h4 className="flex-1 font-medium text-balance">{position.title}</h4>
 
@@ -65,6 +57,7 @@ export function ExperiencePositionItem({
           </div>
         </div>
 
+        {/* Separators are aria-hidden: a dl may only expose dt/dd groups, and these dividers are decorative. */}
         <dl className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
           {position.employmentType && (
             <>
@@ -75,6 +68,7 @@ export function ExperiencePositionItem({
               <Separator
                 className="data-vertical:h-4 data-vertical:self-center"
                 orientation="vertical"
+                aria-hidden
               />
             </>
           )}
@@ -101,6 +95,7 @@ export function ExperiencePositionItem({
               <Separator
                 className="data-vertical:h-4 data-vertical:self-center"
                 orientation="vertical"
+                aria-hidden
               />
               <div>
                 <dt className="sr-only">Duration</dt>

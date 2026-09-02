@@ -26,6 +26,10 @@ import { RegistryCommandAnimated } from "@/components/registry-command-animated"
 import { ComponentIcon } from "@/features/doc/components/component-icon"
 import { getComponentDocs } from "@/features/doc/data/documents"
 import type { Doc } from "@/features/doc/types/document"
+import {
+  HandwrittenArrow,
+  HandwrittenNote,
+} from "@/features/portfolio/components/handwritten-note"
 
 import {
   ComponentItem,
@@ -137,13 +141,23 @@ export default function Page() {
 
         <div className="h-4" />
 
-        <div className="screen-line-top screen-line-bottom">
+        <div className="screen-line-top screen-line-bottom screen-line-bottom-border screen-line-top-border">
           <RegistryCommandAnimated />
         </div>
 
         <div className="stripe-divider" />
 
         <div className="screen-line-bottom h-px" />
+
+        <div className="relative">
+          <HandwrittenNote
+            className="top-1 left-full ml-1 hidden w-36 flex-col items-start lg:flex"
+            aria-hidden
+          >
+            <span className="-rotate-3">free, copy &amp; paste</span>
+            <HandwrittenArrow className="mt-2 -rotate-3" />
+          </HandwrittenNote>
+        </div>
 
         {newComponents.length > 0 && (
           <>
@@ -157,7 +171,7 @@ export default function Page() {
 
             <ComponentList items={newComponents} showNew={false} />
 
-            <div className="screen-line-top screen-line-bottom pb-px before:-top-px">
+            <div className="screen-line-top screen-line-bottom screen-line-top-border pb-px before:-top-px">
               <div className="stripe-divider" />
             </div>
           </>

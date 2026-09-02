@@ -1,6 +1,7 @@
 import { GraduationCapIcon, InfinityIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { IconTile } from "@/components/ui/icon-tile"
 import { Tag } from "@/components/ui/tag"
 import {
   Collapsible,
@@ -45,16 +46,9 @@ export function EducationItem({
           )}
         >
           <div className="relative z-1 mb-1 flex items-start gap-3 text-base">
-            <div
-              className={cn(
-                "flex size-6 shrink-0 items-center justify-center rounded-md",
-                "bg-muted text-muted-foreground",
-                "border border-muted-foreground/15 ring-1 ring-line ring-offset-1 ring-offset-background",
-                "[&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-              )}
-            >
+            <IconTile>
               <GraduationCapIcon />
-            </div>
+            </IconTile>
 
             <h3 className="flex-1 font-medium text-balance">{item.school}</h3>
 
@@ -65,7 +59,7 @@ export function EducationItem({
 
           <dl className="flex flex-wrap items-center gap-x-2 pl-9 text-sm text-muted-foreground">
             <div>
-              <dt className="sr-only">Employment period</dt>
+              <dt className="sr-only">Study period</dt>
               <dd className="flex items-center gap-0.5 tabular-nums">
                 <span>{start}</span>
                 <span className="font-mono">—</span>

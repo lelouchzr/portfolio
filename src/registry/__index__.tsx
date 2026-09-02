@@ -694,6 +694,40 @@ export const Index: Record<string, any> = {
     categories: ["effects"],
     meta: undefined,
   },
+  "timescale": {
+    name: "timescale",
+    description: "Ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/timescale/timescale.tsx",
+      type: "registry:component",
+      target: "@components/timescale.tsx",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/timescale/timescale.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "timescale"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["data-display"],
+    meta: undefined,
+  },
+  "status-button": {
+    name: "status-button",
+    description: "Button that shows loading and success feedback for async actions.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/status-button/status-button.tsx",
+      type: "registry:component",
+      target: "@components/status-button.tsx",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/status-button/status-button.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "status-button"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["controls"],
+    meta: undefined,
+  },
   "login-01": {
     name: "login-01",
     description: "A simple login form.",
@@ -908,6 +942,63 @@ export const Index: Record<string, any> = {
     }),
     categories: ["marketing"],
     meta: {"createdAt":"2026-06-26","previewClassName":"min-h-svh content-center-safe"},
+  },
+  "not-found-01": {
+    name: "not-found-01",
+    description: "A 404 page with a playable brick breaker game.",
+    type: "registry:block",
+    files: [{
+      path: "src/registry/blocks/not-found-01/page.tsx",
+      type: "registry:page",
+      target: "app/not-found.tsx",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/index.tsx",
+      type: "registry:component",
+      target: "@components/daikanoid/index.tsx",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/component.tsx",
+      type: "registry:component",
+      target: "@components/daikanoid/component.tsx",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/ball.ts",
+      type: "registry:component",
+      target: "@components/daikanoid/ball.ts",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/brick.ts",
+      type: "registry:component",
+      target: "@components/daikanoid/brick.ts",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/paddle.ts",
+      type: "registry:component",
+      target: "@components/daikanoid/paddle.ts",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/logos.ts",
+      type: "registry:component",
+      target: "@components/daikanoid/logos.ts",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/colors.ts",
+      type: "registry:component",
+      target: "@components/daikanoid/colors.ts",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/constants.ts",
+      type: "registry:component",
+      target: "@components/daikanoid/constants.ts",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/types.ts",
+      type: "registry:component",
+      target: "@components/daikanoid/types.ts",
+    },{
+      path: "src/registry/blocks/not-found-01/components/daikanoid/ui.ts",
+      type: "registry:component",
+      target: "@components/daikanoid/ui.ts",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/not-found-01/page.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "not-found-01"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["application"],
+    meta: {"createdAt":"2026-08-09"},
   },
   "text-flip-demo": {
     name: "text-flip-demo",
@@ -1805,6 +1896,57 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import("@/registry/examples/spotlight-logo-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "spotlight-logo-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "timescale-demo": {
+    name: "timescale-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/timescale-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/timescale-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "timescale-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "status-button-demo": {
+    name: "status-button-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/status-button-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/status-button-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "status-button-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "status-button-form-demo": {
+    name: "status-button-form-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/status-button-form-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/status-button-form-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "status-button-form-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

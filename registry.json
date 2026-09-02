@@ -272,8 +272,8 @@
       "registryDependencies": [
         "collapsible",
         "separator",
-        "https://acme.com/r/chevrons-up-down-icon.json",
-        "https://acme.com/r/typography.json"
+        "https://chanhdai.com/r/chevrons-up-down-icon.json",
+        "https://chanhdai.com/r/typography.json"
       ],
       "files": [
         {
@@ -318,7 +318,7 @@
         "motion"
       ],
       "registryDependencies": [
-        "https://acme.com/r/shimmering-text.json"
+        "https://chanhdai.com/r/shimmering-text.json"
       ],
       "files": [
         {
@@ -340,7 +340,7 @@
       "description": "Scrolling marquee to showcase user testimonials.",
       "registryDependencies": [
         "@kibo-ui/marquee",
-        "https://acme.com/r/testimonial.json"
+        "https://chanhdai.com/r/testimonial.json"
       ],
       "docs": "https://chanhdai.com/components/testimonials-marquee",
       "categories": [
@@ -517,7 +517,7 @@
       ],
       "registryDependencies": [
         "button",
-        "https://acme.com/r/icon-swap.json"
+        "https://chanhdai.com/r/icon-swap.json"
       ],
       "files": [
         {
@@ -548,8 +548,8 @@
         "jotai"
       ],
       "registryDependencies": [
-        "https://acme.com/r/icon-swap.json",
-        "https://acme.com/r/copy-button.json"
+        "https://chanhdai.com/r/icon-swap.json",
+        "https://chanhdai.com/r/copy-button.json"
       ],
       "files": [
         {
@@ -589,7 +589,7 @@
       "title": "Testimonial Spotlight",
       "description": "Testimonial card with spotlight effect on hover.",
       "registryDependencies": [
-        "https://acme.com/r/testimonial.json"
+        "https://chanhdai.com/r/testimonial.json"
       ],
       "files": [
         {
@@ -682,7 +682,7 @@
         "motion"
       ],
       "registryDependencies": [
-        "https://acme.com/r/use-controllable-state.json"
+        "https://chanhdai.com/r/use-controllable-state.json"
       ],
       "files": [
         {
@@ -729,7 +729,7 @@
       "registryDependencies": [
         "tooltip",
         "spinner",
-        "https://acme.com/r/contribution-graph.json"
+        "https://chanhdai.com/r/contribution-graph.json"
       ],
       "files": [
         {
@@ -1021,6 +1021,64 @@
       "author": "ncdai <dai@chanhdai.com>"
     },
     {
+      "name": "timescale",
+      "title": "Timescale",
+      "description": "Ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
+      "files": [
+        {
+          "path": "src/registry/components/timescale/timescale.tsx",
+          "type": "registry:component",
+          "target": "@components/timescale.tsx"
+        }
+      ],
+      "docs": "https://chanhdai.com/components/timescale",
+      "categories": [
+        "data-display"
+      ],
+      "type": "registry:component",
+      "author": "ncdai <dai@chanhdai.com>"
+    },
+    {
+      "name": "status-button",
+      "title": "Status Button",
+      "description": "Button that shows loading and success feedback for async actions.",
+      "dependencies": [
+        "motion",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/status-button/status-button.tsx",
+          "type": "registry:component",
+          "target": "@components/status-button.tsx"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "--animate-spinner-opacity": "spinner-opacity var(--tw-animation-duration, var(--tw-duration, 1s)) linear infinite"
+        }
+      },
+      "css": {
+        "@keyframes spinner-opacity": {
+          "from": {
+            "opacity": "1"
+          },
+          "to": {
+            "opacity": "0.15"
+          }
+        }
+      },
+      "docs": "https://chanhdai.com/components/status-button",
+      "categories": [
+        "controls"
+      ],
+      "type": "registry:component",
+      "author": "ncdai <dai@chanhdai.com>"
+    },
+    {
       "name": "login-01",
       "title": "Login 01",
       "description": "A simple login form.",
@@ -1058,7 +1116,7 @@
       "description": "A hero section with a golden spiral background.",
       "registryDependencies": [
         "button",
-        "https://acme.com/r/style.json"
+        "https://chanhdai.com/r/style.json"
       ],
       "files": [
         {
@@ -1121,7 +1179,7 @@
       ],
       "registryDependencies": [
         "button",
-        "https://acme.com/r/style.json"
+        "https://chanhdai.com/r/style.json"
       ],
       "files": [
         {
@@ -1150,7 +1208,7 @@
       "description": "A testimonials section with dual marquees.",
       "registryDependencies": [
         "https://www.kibo-ui.com/r/marquee.json",
-        "https://acme.com/r/testimonial-spotlight.json"
+        "https://chanhdai.com/r/testimonial-spotlight.json"
       ],
       "files": [
         {
@@ -1180,8 +1238,8 @@
       "description": "A testimonials section with a lined layout.",
       "registryDependencies": [
         "https://www.kibo-ui.com/r/marquee.json",
-        "https://acme.com/r/style.json",
-        "https://acme.com/r/testimonial.json"
+        "https://chanhdai.com/r/style.json",
+        "https://chanhdai.com/r/testimonial.json"
       ],
       "files": [
         {
@@ -1210,8 +1268,8 @@
       "title": "Experience 01",
       "description": "A work experience section with a lined layout.",
       "registryDependencies": [
-        "https://acme.com/r/style.json",
-        "https://acme.com/r/work-experience.json"
+        "https://chanhdai.com/r/style.json",
+        "https://chanhdai.com/r/work-experience.json"
       ],
       "files": [
         {
@@ -1234,7 +1292,7 @@
       "title": "Team 01",
       "description": "A team section with glowing cards.",
       "registryDependencies": [
-        "https://acme.com/r/glow-card-grid.json"
+        "https://chanhdai.com/r/glow-card-grid.json"
       ],
       "files": [
         {
@@ -1262,7 +1320,7 @@
       ],
       "registryDependencies": [
         "@bklit/line-chart",
-        "https://acme.com/r/style.json"
+        "https://chanhdai.com/r/style.json"
       ],
       "files": [
         {
@@ -1291,7 +1349,7 @@
       "title": "Social Links 01",
       "description": "A social links section with a lined grid layout.",
       "registryDependencies": [
-        "https://acme.com/r/style.json"
+        "https://chanhdai.com/r/style.json"
       ],
       "files": [
         {
@@ -1315,7 +1373,7 @@
       "title": "Social Proof 01",
       "description": "A social proof section with a logos carousel.",
       "registryDependencies": [
-        "https://acme.com/r/logos-carousel.json"
+        "https://chanhdai.com/r/logos-carousel.json"
       ],
       "files": [
         {
@@ -1330,6 +1388,106 @@
       },
       "categories": [
         "marketing"
+      ],
+      "type": "registry:block",
+      "author": "ncdai <dai@chanhdai.com>"
+    },
+    {
+      "name": "not-found-01",
+      "title": "Not Found 01",
+      "description": "A 404 page with a playable brick breaker game.",
+      "dependencies": [
+        "p5@^1.9.4",
+        "motion",
+        "next-themes"
+      ],
+      "devDependencies": [
+        "@types/p5@^1.7.7"
+      ],
+      "registryDependencies": [
+        "button",
+        "empty"
+      ],
+      "files": [
+        {
+          "path": "src/registry/blocks/not-found-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/not-found.tsx"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/index.tsx",
+          "type": "registry:component",
+          "target": "@components/daikanoid/index.tsx"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/component.tsx",
+          "type": "registry:component",
+          "target": "@components/daikanoid/component.tsx"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/ball.ts",
+          "type": "registry:component",
+          "target": "@components/daikanoid/ball.ts"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/brick.ts",
+          "type": "registry:component",
+          "target": "@components/daikanoid/brick.ts"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/paddle.ts",
+          "type": "registry:component",
+          "target": "@components/daikanoid/paddle.ts"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/logos.ts",
+          "type": "registry:component",
+          "target": "@components/daikanoid/logos.ts"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/colors.ts",
+          "type": "registry:component",
+          "target": "@components/daikanoid/colors.ts"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/constants.ts",
+          "type": "registry:component",
+          "target": "@components/daikanoid/constants.ts"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/types.ts",
+          "type": "registry:component",
+          "target": "@components/daikanoid/types.ts"
+        },
+        {
+          "path": "src/registry/blocks/not-found-01/components/daikanoid/ui.ts",
+          "type": "registry:component",
+          "target": "@components/daikanoid/ui.ts"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "dk-background": "#ffffff",
+          "dk-foreground": "#09090b",
+          "dk-muted-foreground": "#a1a1aa",
+          "dk-brick": "#a1a1aa",
+          "dk-brick-highlight": "rgba(255, 255, 255, 0.5)",
+          "dk-brick-shadow": "#71717a"
+        },
+        "dark": {
+          "dk-background": "#09090b",
+          "dk-foreground": "#fafafa",
+          "dk-muted-foreground": "#71717a",
+          "dk-brick": "#71717a",
+          "dk-brick-highlight": "rgba(255, 255, 255, 0.3)",
+          "dk-brick-shadow": "#3f3f46"
+        }
+      },
+      "meta": {
+        "createdAt": "2026-08-09"
+      },
+      "categories": [
+        "application"
       ],
       "type": "registry:block",
       "author": "ncdai <dai@chanhdai.com>"

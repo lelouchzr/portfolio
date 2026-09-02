@@ -28,7 +28,7 @@ export function TechStack({
 
       <div className="relative [--badge-height:--spacing(6)] [--col-left-width:--spacing(48)]">
         <div
-          className="pointer-events-none absolute inset-y-0 left-(--col-left-width) -z-1 w-px bg-[linear-gradient(to_bottom,var(--line)_4px,transparent_2px)] bg-size-[1px_6px] bg-repeat-y max-sm:hidden"
+          className="pointer-events-none absolute inset-y-0 left-(--col-left-width) -z-1 w-px border-r border-dashed border-line max-sm:hidden"
           aria-hidden
         />
 
@@ -45,12 +45,9 @@ export function TechStack({
                 key={category}
                 className="grid items-start gap-y-2 border-b border-line py-4 last:border-none sm:grid-cols-[var(--col-left-width)_1fr]"
               >
-                <div
-                  id={categoryId}
-                  className="pl-4 text-sm/(--badge-height) text-muted-foreground"
-                >
+                <div id={categoryId} className="pl-4 text-sm/(--badge-height)">
                   <span
-                    className="mr-1.5 font-mono text-muted-foreground/50 select-none"
+                    className="mr-1.5 font-mono text-muted-foreground/80 select-none"
                     aria-hidden
                   >
                     {(index + 1).toString().padStart(2, "0")}

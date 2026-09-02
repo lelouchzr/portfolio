@@ -42,7 +42,7 @@ Centralized document system powered by MDX:
 
 - Unified content layer for blog posts and component docs
 - Category-based content organization
-- Raw `.mdx` endpoints for AI readability
+- Raw `.md` endpoints for AI readability
 - Syntax highlighting with code blocks
 - Dynamic OG images for rich link previews
 - RSS feed for content distribution
@@ -63,9 +63,9 @@ Please refer to the [Development Guide](./DEVELOPMENT.md) for more details.
 
 ## License
 
-Licensed under the [MIT license](./LICENSE).
+Everything in this repository is licensed under the [MIT license](./LICENSE), with one exception: my name and my logo, which are covered by the [trademark and brand policy](./TRADEMARK.md).
 
-You're free to use my code! Just make sure to <ins>remove all my personal information</ins> before publishing your website. It's awesome to see my code being useful to someone!
+So the code and the writing are yours. Fork it, copy it, quote it, translate it. Just make sure to <ins>remove all my personal information</ins> and swap the branding before publishing your website. It's awesome to see my code being useful to someone!
 
 ## Contributors
 
@@ -125,6 +125,27 @@ This project is proudly supported by:
           </picture>
         </a>
       </td>
+    </tr>
+    <tr>
+      <td colspan="3"><strong>Platinum Sponsors</strong></td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://www.nixtla.io?utm_source=chanhdai.com">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/nixtla-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/nixtla.svg"
+              alt="Nixtla"
+            />
+          </picture>
+        </a>
+      </td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="3"><strong>Gold Sponsors</strong></td>
@@ -193,7 +214,7 @@ This project is proudly supported by:
         </a>
       </td>
       <td>
-        <a href="https://reactbits.dev?utm_source=chanhdai.com">
+        <a href="https://pro.reactbits.dev?atp=ncdai&utm_source=chanhdai.com">
           <picture>
             <source
               media="(prefers-color-scheme: dark)"
@@ -206,6 +227,24 @@ This project is proudly supported by:
           </picture>
         </a>
       </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://obelinf.com?utm_source=chanhdai.com">
+          <picture>
+            <source
+              media="(prefers-color-scheme: dark)"
+              srcset="https://assets.chanhdai.com/images/sponsors/obelinf-dark.svg"
+            />
+            <img
+              src="https://assets.chanhdai.com/images/sponsors/obelinf.svg"
+              alt="Obelinf"
+            />
+          </picture>
+        </a>
+      </td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td colspan="3"><strong>Spark Supporters</strong></td>
