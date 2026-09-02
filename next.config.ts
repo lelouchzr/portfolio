@@ -55,7 +55,9 @@ const legacyBlogComponentRedirects = LEGACY_BLOG_COMPONENT_SLUGS.map(
 )
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // Vercel provides its own build adapter; standalone remains enabled for
+  // Docker/Openship deployments where the minimal server bundle is required.
+  output: process.env.VERCEL ? undefined : "standalone",
   /**
    * Stamped once per build and inlined. Reading the clock at render time would
    * instead report whenever a page was regenerated, which drifts on the ISR
