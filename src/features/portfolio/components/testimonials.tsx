@@ -7,7 +7,7 @@ import { useInView, usePageInView } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
-import { Button } from "@/components/base/ui/button"
+import { Button } from "@/components/ui/button"
 import type { MarqueeContentProps } from "@/components/kibo-ui/marquee"
 import {
   Marquee,
@@ -24,9 +24,9 @@ import {
   TestimonialAvatarImg,
   TestimonialAvatarRing,
   TestimonialQuote,
-} from "@/registry/transformed/components/testimonial"
-import { TestimonialSpotlight } from "@/registry/transformed/components/testimonial-spotlight"
-import { Twemoji } from "@/registry/transformed/components/twemoji/twemoji"
+} from "@/registry/components/testimonial"
+import { TestimonialSpotlight } from "@/registry/components/testimonial-spotlight"
+import { Twemoji } from "@/registry/components/twemoji/twemoji"
 import {
   TESTIMONIALS_1,
   TESTIMONIALS_2,
@@ -41,7 +41,7 @@ const TESTIMONIALS = [...TESTIMONIALS_1, ...TESTIMONIALS_2].sort(
   (a, b) => Number(a.order ?? 999) - Number(b.order ?? 999)
 )
 
-const TESTIMONIALS_MOBILE = TESTIMONIALS.slice(0, 8)
+const TESTIMONIALS_MOBILE = TESTIMONIALS.slice(0, 9)
 
 const TESTIMONIALS_FEATURED = TESTIMONIALS.filter((item) => item.isFeatured)
 
@@ -64,7 +64,7 @@ export function Testimonials() {
     <Panel ref={ref} id={ID}>
       <div className="h-px" />
       <div className="h-4" />
-      <div className="screen-line-bottom h-px" />
+      <div className="screen-line-bottom h-px screen-line-bottom-border" />
 
       <div className="flex items-center justify-center py-4">
         <h2 className="text-center text-sm/none font-medium text-muted-foreground">

@@ -4,21 +4,21 @@ import { BoxIcon, InfinityIcon, LinkIcon } from "lucide-react"
 
 import { UTM_PARAMS } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { IconTile } from "@/components/ui/icon-tile"
-import { Tag } from "@/components/ui/tag"
-import {
-  Collapsible,
-  CollapsibleChevronsUpDownIcon,
-} from "@/components/base/collapsible-animated"
 import {
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/base/ui/collapsible"
+} from "@/components/ui/collapsible"
+import { IconTile } from "@/components/ui/icon-tile"
+import { Tag } from "@/components/ui/tag"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/base/ui/tooltip"
+} from "@/components/ui/tooltip"
+import {
+  Collapsible,
+  CollapsibleChevronsUpDownIcon,
+} from "@/components/collapsible-animated"
 import { Markdown } from "@/components/markdown"
 
 import type { Project } from "../../types/projects"
@@ -44,7 +44,9 @@ export function ProjectItem({
 
   return (
     <Collapsible className={className} defaultOpen={project.isExpanded}>
-      <CollapsibleTrigger className="group/project flex w-full items-center text-left hover:bg-accent-muted">
+      {/* Only the title toggles the details; the project link remains an
+          independent action above the full-row trigger overlay. */}
+      <div className="group/project relative flex items-center hover:bg-accent-muted">
         {project.logo ? (
           <Image
             src={project.logo}
@@ -63,10 +65,13 @@ export function ProjectItem({
           <IconTile className="mx-4">{project.icon ?? <BoxIcon />}</IconTile>
         )}
 
-        <div className="flex flex-1 items-center gap-2 border-l border-dashed border-line p-4 pr-2">
+        <div className="flex flex-1 items-center gap-2 border-l border-dashed border-line p-4">
           <div className="flex-1">
             <h3 className="mb-1 leading-snug font-medium text-balance">
-              {project.title}
+              <CollapsibleTrigger className="text-left">
+                <span className="absolute inset-0" aria-hidden />
+                {project.title}
+              </CollapsibleTrigger>
             </h3>
 
             <dl className="text-sm text-muted-foreground">
@@ -115,7 +120,7 @@ export function ProjectItem({
             <CollapsibleChevronsUpDownIcon duration={0.15} />
           </div>
         </div>
-      </CollapsibleTrigger>
+      </div>
 
       <CollapsibleContent className="overflow-hidden">
         <div className="space-y-4 border-t border-line p-4">

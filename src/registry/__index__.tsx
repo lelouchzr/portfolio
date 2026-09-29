@@ -168,6 +168,23 @@ export const Index: Record<string, any> = {
     categories: ["text-effects"],
     meta: undefined,
   },
+  "swipe-actions": {
+    name: "swipe-actions",
+    description: "Swipe a row in a list to reveal actions on the left or right.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/swipe-actions/swipe-actions.tsx",
+      type: "registry:component",
+      target: "@components/swipe-actions.tsx",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/swipe-actions/swipe-actions.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "swipe-actions"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["controls"],
+    meta: undefined,
+  },
   "wheel-picker": {
     name: "wheel-picker",
     description: "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
@@ -351,7 +368,7 @@ export const Index: Record<string, any> = {
       type: "registry:component",
       target: "@components/code-block-command.tsx",
     },{
-      path: "src/components/base/ui/tabs.tsx",
+      path: "src/components/ui/tabs.tsx",
       type: "registry:component",
       target: "@components/tabs.tsx",
     }],
@@ -626,6 +643,23 @@ export const Index: Record<string, any> = {
     categories: ["marketing"],
     meta: undefined,
   },
+  "logos-flip": {
+    name: "logos-flip",
+    description: "Flip cards in a staggered wave to reveal the next batch of logos.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/logos-flip/logos-flip.tsx",
+      type: "registry:component",
+      target: "@components/logos-flip.tsx",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/logos-flip/logos-flip.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-flip"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["marketing"],
+    meta: undefined,
+  },
   "testimonial-2": {
     name: "testimonial-2",
     description: "Display a testimonial quote with author attribution and source link.",
@@ -726,6 +760,57 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["controls"],
+    meta: undefined,
+  },
+  "carbon-ads": {
+    name: "carbon-ads",
+    description: "Display a Carbon Ads unit in Next.js apps, styled to match your shadcn/ui theme.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/carbon-ads/carbon-ads.tsx",
+      type: "registry:component",
+      target: "@components/carbon-ads.tsx",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/carbon-ads/carbon-ads.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "carbon-ads"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["utilities"],
+    meta: undefined,
+  },
+  "apple-carousel": {
+    name: "apple-carousel",
+    description: "Infinite autoplay carousel with progress dots, inspired by Apple’s website.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/apple-carousel/apple-carousel.tsx",
+      type: "registry:component",
+      target: "@components/apple-carousel.tsx",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/apple-carousel/apple-carousel.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "apple-carousel"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["marketing"],
+    meta: undefined,
+  },
+  "jpg-card-holder": {
+    name: "jpg-card-holder",
+    description: "Leather card holder shaped like a JPG file, with cards you can pull out.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/jpg-card-holder/jpg-card-holder.tsx",
+      type: "registry:component",
+      target: "@components/jpg-card-holder.tsx",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/jpg-card-holder/jpg-card-holder.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "jpg-card-holder"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["illustrations"],
     meta: undefined,
   },
   "login-01": {
@@ -1114,6 +1199,57 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import("@/registry/examples/theme-switcher-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "theme-switcher-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "swipe-actions-demo": {
+    name: "swipe-actions-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/swipe-actions-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/swipe-actions-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "swipe-actions-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: {"previewClassName":"mx-auto min-h-svh w-full max-w-3xl place-items-center-safe content-center-safe px-4"},
+  },
+  "swipe-actions-full-swipe-demo": {
+    name: "swipe-actions-full-swipe-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/swipe-actions-full-swipe-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/swipe-actions-full-swipe-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "swipe-actions-full-swipe-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "swipe-actions-minimal-demo": {
+    name: "swipe-actions-minimal-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/swipe-actions-minimal-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/swipe-actions-minimal-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "swipe-actions-minimal-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
@@ -1833,6 +1969,23 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: {"previewClassName":"min-h-svh place-items-center-safe content-center-safe"},
   },
+  "logos-flip-demo": {
+    name: "logos-flip-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/logos-flip-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/logos-flip-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "logos-flip-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: {"previewClassName":"container mx-auto min-h-svh place-items-center-safe content-center-safe"},
+  },
   "testimonial-2-demo": {
     name: "testimonial-2-demo",
     description: "",
@@ -1951,5 +2104,73 @@ export const Index: Record<string, any> = {
     }),
     categories: undefined,
     meta: undefined,
+  },
+  "carbon-ads-demo": {
+    name: "carbon-ads-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/carbon-ads-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/carbon-ads-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "carbon-ads-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "apple-carousel-demo": {
+    name: "apple-carousel-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/apple-carousel-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/apple-carousel-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "apple-carousel-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: {"previewClassName":"min-h-svh content-center-safe py-8"},
+  },
+  "apple-carousel-caption-demo": {
+    name: "apple-carousel-caption-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/apple-carousel-caption-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/apple-carousel-caption-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "apple-carousel-caption-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: {"previewClassName":"min-h-svh content-center-safe py-8"},
+  },
+  "jpg-card-holder-demo": {
+    name: "jpg-card-holder-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/jpg-card-holder-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/jpg-card-holder-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "jpg-card-holder-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: {"previewClassName":"flex min-h-svh items-center justify-center"},
   },
 }

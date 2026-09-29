@@ -8,7 +8,7 @@ import {
   TestimonialAvatarRing,
   TestimonialQuote,
   TestimonialVerifiedBadge,
-} from "@/registry/transformed/components/testimonial"
+} from "@/registry/components/testimonial"
 
 export default function TestimonialDemo() {
   return (
@@ -28,7 +28,8 @@ export default function TestimonialDemo() {
         <TestimonialAuthor>
           <TestimonialAvatar>
             <TestimonialAvatarImg
-              src="https://unavatar.io/x/rauchg"
+              // Demo avatar only. Replace it with your own URL.
+              src="https://assets.chanhdai.com/avatars/x/rauchg.webp"
               alt="Guillermo Rauch"
             />
             <TestimonialAvatarRing />
@@ -45,7 +46,7 @@ export default function TestimonialDemo() {
               </svg>
             </TestimonialVerifiedBadge>
           </TestimonialAuthorName>
-          <TestimonialAuthorTagline>CEO @Vercel</TestimonialAuthorTagline>
+          <TestimonialAuthorTagline>CEO at Vercel</TestimonialAuthorTagline>
         </TestimonialAuthor>
       </Testimonial>
     </a>

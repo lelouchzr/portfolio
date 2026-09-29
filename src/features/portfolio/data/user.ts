@@ -36,6 +36,7 @@ I enjoy building personal projects around AI, language learning, developer tools
 After an academic exchange program in South Korea, I developed a strong interest in international environments and cross-cultural collaboration. I’m actively learning Korean and preparing for TOPIK, TOEIC and IELTS, with the goal of working in an international setting.
 `,
   avatar: "/images/portfolio/adrien-avatar.webp",
+  avatarSketch: "/images/portfolio/adrien-avatar.webp",
   avatarVariants: {
     lightOff: "/images/portfolio/adrien-avatar.webp",
     lightOn: "/images/portfolio/adrien-avatar.webp",

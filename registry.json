@@ -14,7 +14,7 @@
           "target": "@lib/haptic.ts"
         }
       ],
-      "docs": "https://chanhdai.com/components/haptic-feedback",
+      "docs": "https://chanhdai.com/components/haptic",
       "categories": [
         "utilities"
       ],
@@ -64,7 +64,8 @@
       "description": "Toggle between system, light, and dark themes in Next.js apps.",
       "dependencies": [
         "next-themes",
-        "motion"
+        "motion",
+        "lucide-react"
       ],
       "files": [
         {
@@ -186,6 +187,28 @@
       "author": "ncdai <dai@chanhdai.com>"
     },
     {
+      "name": "swipe-actions",
+      "title": "Swipe Actions",
+      "description": "Swipe a row in a list to reveal actions on the left or right.",
+      "dependencies": [
+        "@ncdai/react-swipe-actions",
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/swipe-actions/swipe-actions.tsx",
+          "type": "registry:component",
+          "target": "@components/swipe-actions.tsx"
+        }
+      ],
+      "docs": "https://chanhdai.com/components/swipe-actions",
+      "categories": [
+        "controls"
+      ],
+      "type": "registry:component",
+      "author": "ncdai <dai@chanhdai.com>"
+    },
+    {
       "name": "wheel-picker",
       "title": "Wheel Picker",
       "description": "iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
@@ -267,7 +290,8 @@
       "description": "Display work experiences with role details, company logos, and durations.",
       "dependencies": [
         "react-markdown",
-        "date-fns"
+        "date-fns",
+        "lucide-react"
       ],
       "registryDependencies": [
         "collapsible",
@@ -513,7 +537,8 @@
       "dependencies": [
         "motion",
         "@rexa-developer/tiks",
-        "web-haptics"
+        "web-haptics",
+        "lucide-react"
       ],
       "registryDependencies": [
         "button",
@@ -545,7 +570,8 @@
       "dependencies": [
         "@base-ui/react",
         "motion",
-        "jotai"
+        "jotai",
+        "lucide-react"
       ],
       "registryDependencies": [
         "https://chanhdai.com/r/icon-swap.json",
@@ -558,7 +584,7 @@
           "target": "@components/code-block-command.tsx"
         },
         {
-          "path": "src/components/base/ui/tabs.tsx",
+          "path": "src/components/ui/tabs.tsx",
           "type": "registry:component",
           "target": "@components/tabs.tsx"
         }
@@ -616,6 +642,7 @@
           "target": "@components/glow-card-grid.tsx"
         }
       ],
+      "docs": "https://chanhdai.com/components/glow-card-grid",
       "categories": [
         "effects"
       ],
@@ -803,11 +830,12 @@
       "title": "Brand Assets Menu",
       "description": "Context menu for copying brand SVGs and opening asset links.",
       "dependencies": [
-        "@rexa-developer/tiks"
+        "@rexa-developer/tiks",
+        "lucide-react"
       ],
       "registryDependencies": [
         "context-menu",
-        "sonner"
+        "toast"
       ],
       "files": [
         {
@@ -935,6 +963,27 @@
       "author": "ncdai <dai@chanhdai.com>"
     },
     {
+      "name": "logos-flip",
+      "title": "Logos Flip",
+      "description": "Flip cards in a staggered wave to reveal the next batch of logos.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/logos-flip/logos-flip.tsx",
+          "type": "registry:component",
+          "target": "@components/logos-flip.tsx"
+        }
+      ],
+      "docs": "https://chanhdai.com/components/logos-flip",
+      "categories": [
+        "marketing"
+      ],
+      "type": "registry:component",
+      "author": "ncdai <dai@chanhdai.com>"
+    },
+    {
       "name": "testimonial-2",
       "title": "Testimonial 2",
       "description": "Display a testimonial quote with author attribution and source link.",
@@ -977,10 +1026,13 @@
       "name": "share-menu",
       "title": "Share Menu",
       "description": "Share menu to copy a link or post to X, LinkedIn, and the native share sheet.",
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "button",
         "dropdown-menu",
-        "sonner"
+        "toast"
       ],
       "files": [
         {
@@ -1044,10 +1096,11 @@
       "description": "Button that shows loading and success feedback for async actions.",
       "dependencies": [
         "motion",
-        "radix-ui"
+        "lucide-react"
       ],
       "registryDependencies": [
-        "button"
+        "button",
+        "https://chanhdai.com/r/use-controllable-state.json"
       ],
       "files": [
         {
@@ -1074,6 +1127,78 @@
       "docs": "https://chanhdai.com/components/status-button",
       "categories": [
         "controls"
+      ],
+      "type": "registry:component",
+      "author": "ncdai <dai@chanhdai.com>"
+    },
+    {
+      "name": "carbon-ads",
+      "title": "Carbon Ads",
+      "description": "Display a Carbon Ads unit in Next.js apps, styled to match your shadcn/ui theme.",
+      "files": [
+        {
+          "path": "src/registry/components/carbon-ads/carbon-ads.tsx",
+          "type": "registry:component",
+          "target": "@components/carbon-ads.tsx"
+        }
+      ],
+      "css": {
+        "#carbonads #carbon-responsive": {
+          "--carbon-padding": "calc(var(--spacing) * 3)",
+          "--carbon-bg-primary": "color-mix(in oklab, var(--muted) 50%, var(--background))",
+          "--carbon-bg-secondary": "var(--border)",
+          "--carbon-text-color": "var(--foreground)",
+          "@apply gap-2 font-sans": {}
+        },
+        "#carbonads #carbon-responsive .carbon-poweredby": {
+          "@apply text-xs text-muted-foreground/80 opacity-100": {}
+        }
+      },
+      "docs": "https://chanhdai.com/components/carbon-ads",
+      "categories": [
+        "utilities"
+      ],
+      "type": "registry:component",
+      "author": "ncdai <dai@chanhdai.com>"
+    },
+    {
+      "name": "apple-carousel",
+      "title": "Apple Carousel",
+      "description": "Infinite autoplay carousel with progress dots, inspired by Apple’s website.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/apple-carousel/apple-carousel.tsx",
+          "type": "registry:component",
+          "target": "@components/apple-carousel.tsx"
+        }
+      ],
+      "docs": "https://chanhdai.com/components/apple-carousel",
+      "categories": [
+        "marketing"
+      ],
+      "type": "registry:component",
+      "author": "ncdai <dai@chanhdai.com>"
+    },
+    {
+      "name": "jpg-card-holder",
+      "title": "JPG Card Holder",
+      "description": "Leather card holder shaped like a JPG file, with cards you can pull out.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "src/registry/components/jpg-card-holder/jpg-card-holder.tsx",
+          "type": "registry:component",
+          "target": "@components/jpg-card-holder.tsx"
+        }
+      ],
+      "docs": "https://chanhdai.com/components/jpg-card-holder",
+      "categories": [
+        "illustrations"
       ],
       "type": "registry:component",
       "author": "ncdai <dai@chanhdai.com>"
@@ -1114,6 +1239,9 @@
       "name": "hero-01",
       "title": "Hero 01",
       "description": "A hero section with a golden spiral background.",
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "button",
         "https://chanhdai.com/r/style.json"
@@ -1144,7 +1272,8 @@
       "title": "Blog 01",
       "description": "A blog section with a grid layout.",
       "dependencies": [
-        "date-fns"
+        "date-fns",
+        "lucide-react"
       ],
       "registryDependencies": [
         "button"
@@ -1175,7 +1304,8 @@
       "title": "Blog 02",
       "description": "A blog section with a lined grid layout.",
       "dependencies": [
-        "date-fns"
+        "date-fns",
+        "lucide-react"
       ],
       "registryDependencies": [
         "button",
@@ -1267,6 +1397,9 @@
       "name": "experience-01",
       "title": "Experience 01",
       "description": "A work experience section with a lined layout.",
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "https://chanhdai.com/r/style.json",
         "https://chanhdai.com/r/work-experience.json"
@@ -1316,7 +1449,8 @@
       "title": "Metrics 01",
       "description": "A metrics section with a line chart.",
       "dependencies": [
-        "date-fns"
+        "date-fns",
+        "lucide-react"
       ],
       "registryDependencies": [
         "@bklit/line-chart",
@@ -1348,6 +1482,9 @@
       "name": "social-links-01",
       "title": "Social Links 01",
       "description": "A social links section with a lined grid layout.",
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [
         "https://chanhdai.com/r/style.json"
       ],
@@ -1399,7 +1536,8 @@
       "dependencies": [
         "p5@^1.9.4",
         "motion",
-        "next-themes"
+        "next-themes",
+        "lucide-react"
       ],
       "devDependencies": [
         "@types/p5@^1.7.7"

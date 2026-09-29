@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useCallback, useEffect, useState } from "react"
+import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { usePathname } from "next/navigation"
 import {
   getLocaleFromPathname,
@@ -31,7 +31,6 @@ import {
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useHotkeys } from "react-hotkeys-hook"
-import { toast } from "sonner"
 
 import { trackEvent } from "@/lib/events"
 import { useClickSound } from "@/hooks/soundcn/use-click-sound"
@@ -45,6 +44,8 @@ import {
   CommandList,
   CommandShortcut,
 } from "@/components/ui/command"
+import { toast } from "@/components/ui/toast"
+import { ComponentIcon } from "@/features/doc/components/component-icon"
 import type { DocPreview } from "@/features/doc/types/document"
 import { SOCIAL_ICONS } from "@/features/portfolio/components/social-link-icons"
 import {
@@ -56,11 +57,11 @@ import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
 import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
 import { getWordmarkSVG } from "./chanhdai-wordmark"
-import { SearchIcon } from "./icons"
+import { GridViewIcon, NewsIcon, ReactIcon, SearchIcon } from "./icons"
 import { Button } from "./ui/button"
 import { Kbd, KbdGroup } from "./ui/kbd"
 
-type CommandKind = "command" | "page" | "link"
+type CommandKind = "command" | "page" | "link" | "component" | "block"
 
 type CommandLinkItem = {
   title: string
@@ -91,6 +92,27 @@ function getMenuLinks(
       kind: "page",
       icon: <ChanhDaiMark />,
       shortcut: "GH",
+    },
+    {
+      title: "Components",
+      href: "/components",
+      kind: "page",
+      icon: <ReactIcon />,
+      shortcut: "GC",
+    },
+    {
+      title: "Blocks",
+      href: "/blocks",
+      kind: "page",
+      icon: <GridViewIcon />,
+      shortcut: "GB",
+    },
+    {
+      title: "Blog",
+      href: "/blog",
+      kind: "page",
+      icon: <NewsIcon />,
+      shortcut: "GL",
     },
   ]
 }
@@ -193,6 +215,8 @@ function getSearchTriggerLabel(locale: Locale): string {
 }
 
 export function CommandMenu({
+  docs,
+  blocks,
   enabledHotkeys = false,
 }: {
   docs: DocPreview[]
@@ -283,7 +307,7 @@ export function CommandMenu({
           text: text,
         },
       })
-      toast.success(message)
+      toast.add({ type: "success", title: message })
       tiksSuccess()
     },
     [setOpen, tiksSuccess]
@@ -305,6 +329,90 @@ export function CommandMenu({
       setTheme(theme)
     },
     [click, setOpen, setTheme]
+  )
+
+  const components = useMemo(
+    () =>
+      docs
+        .filter((doc) => doc.category === "components")
+        .sort((a, b) =>
+          a.title.localeCompare(b.title, "en", {
+            sensitivity: "base",
+          })
+        ),
+    [docs]
+  )
+
+  const componentsGroup = useMemo(() => {
+    if (!components || components.length === 0) {
+      return null
+    }
+
+    return (
+      <CommandGroup heading="Components">
+        {components.map((component) => {
+          return (
+            <CommandMenuItem
+              key={component.slug}
+              keywords={["component"]}
+              onHighlight={() => {
+                setSelectedCommandKind("component")
+              }}
+              onSelect={() => {
+                handleOpenLink(`/components/${component.slug}`)
+              }}
+            >
+              <ComponentIcon slug={component.slug} />
+              <p className="line-clamp-1">{component.title}</p>
+            </CommandMenuItem>
+          )
+        })}
+      </CommandGroup>
+    )
+  }, [components, handleOpenLink])
+
+  const blocksGroup = useMemo(() => {
+    if (!blocks || blocks.length === 0) {
+      return null
+    }
+
+    return (
+      <CommandGroup heading="Blocks">
+        {blocks.map((block) => {
+          return (
+            <CommandMenuItem
+              key={block.name}
+              keywords={["block"]}
+              onHighlight={() => {
+                setSelectedCommandKind("block")
+              }}
+              onSelect={() => {
+                handleOpenLink(`/blocks/${block.categories[0]}/${block.name}`)
+              }}
+            >
+              <GridViewIcon />
+              <p className="line-clamp-1">{block.description}</p>
+              <span className="ml-auto font-mono text-xs font-normal text-muted-foreground tabular-nums max-sm:hidden">
+                {block.name}
+              </span>
+            </CommandMenuItem>
+          )
+        })}
+      </CommandGroup>
+    )
+  }, [blocks, handleOpenLink])
+
+  const blogLinks = useMemo(
+    () =>
+      docs
+        .filter((doc) => doc.category === "blog")
+        .map<CommandLinkItem>((doc) => ({
+          title: doc.title,
+          href: `/blog/${doc.slug}`,
+          kind: "page",
+          keywords: ["blog"],
+        })),
+    [docs]
   )
 
   const handleLinkHighlight = useCallback((link: CommandLinkItem) => {
@@ -347,6 +455,18 @@ export function CommandMenu({
             <CommandLinkGroup
               heading={messages.portfolio}
               links={getPortfolioLinks(locale, messages)}
+              onLinkHighlight={handleLinkHighlight}
+              onLinkSelect={handleOpenLink}
+            />
+
+            {componentsGroup}
+
+            {blocksGroup}
+
+            <CommandLinkGroup
+              heading="Blog"
+              links={blogLinks}
+              fallbackIcon={<NewsIcon />}
               onLinkHighlight={handleLinkHighlight}
               onLinkSelect={handleOpenLink}
             />
@@ -452,12 +572,14 @@ function CommandMenuTrigger({
 
       <span className="font-sans text-sm/4 font-medium sm:hidden">{label}</span>
 
-      <KbdGroup className="hidden gap-0.75 sm:in-[.os-macos_&]:flex">
+      {/* Tablets rarely have a keyboard, and the header has no room for the
+      hint until md. */}
+      <KbdGroup className="hidden gap-0.75 md:in-[.os-macos_&]:flex">
         <Kbd className="w-5 min-w-auto">⌘</Kbd>
         <Kbd className="w-5 min-w-auto">K</Kbd>
       </KbdGroup>
 
-      <KbdGroup className="hidden gap-0.75 sm:not-[.os-macos_&]:flex">
+      <KbdGroup className="hidden gap-0.75 md:not-[.os-macos_&]:flex">
         <Kbd>Ctrl</Kbd>
         <Kbd className="w-5 min-w-auto">K</Kbd>
       </KbdGroup>
@@ -589,6 +711,8 @@ function CommandMenuFooter({
     command: messages.runCommand,
     page: messages.goToPage,
     link: messages.openLink,
+    component: "Go to component",
+    block: "Go to block",
   }
 
   return (

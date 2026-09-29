@@ -9,14 +9,15 @@ import { JSON_LD_ID } from "@/config/json-ld"
 // import { X_HANDLE } from "@/config/site"
 import { jsonLdBreadcrumbList, JsonLdScript } from "@/lib/json-ld"
 import { absoluteUrl } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import { Kbd } from "@/components/ui/kbd"
-import { Button } from "@/components/base/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/base/ui/tooltip"
-import { Prose } from "@/components/base/ui/typography"
+} from "@/components/ui/tooltip"
+import { Prose } from "@/components/ui/typography"
+import { CarbonAds } from "@/components/carbon-ads"
 import { MDX } from "@/components/mdx"
 import { TOCInline } from "@/components/toc-inline"
 import { TOCMinimap } from "@/components/toc-minimap"
@@ -270,6 +271,10 @@ export default async function Page({ params }: PageProps<"/blog/[slug]">) {
               <p className="text-muted-foreground">
                 {doc.metadata.description}
               </p>
+
+              {doc.metadata.ads !== false && (
+                <CarbonAds className="not-prose my-[1.25em] flex justify-center" />
+              )}
 
               <TOCInline className="lg:hidden" items={toc} />
 

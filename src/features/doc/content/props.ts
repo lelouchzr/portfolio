@@ -1,8 +1,11 @@
 import type { ComponentProps } from "react"
 import type { motion } from "motion/react"
 
-import type { Button as UIButton } from "@/components/ui/button"
-import type { Button } from "@/components/base/ui/button"
+import type { Button } from "@/components/ui/button"
+import type {
+  AppleCarouselControls,
+  AppleCarouselRoot,
+} from "@/registry/components/apple-carousel"
 import type { AppleHelloEffectEnglish } from "@/registry/components/apple-hello-effect/apple-hello-effect-english"
 import type { CopyButton } from "@/registry/components/copy-button"
 import type { GitHubContributions } from "@/registry/components/github-contributions"
@@ -10,6 +13,7 @@ import type {
   GlowCard,
   GlowCardGrid,
 } from "@/registry/components/glow-card-grid/glow-card-grid"
+import type { LogosFlip } from "@/registry/components/logos-flip"
 import type { MiddleTruncation } from "@/registry/components/middle-truncation/middle-truncation"
 import type { ScrollFadeEffect } from "@/registry/components/scroll-fade-effect"
 import type { ShimmeringText } from "@/registry/components/shimmering-text"
@@ -21,6 +25,16 @@ import type { SpinningCircularText } from "@/registry/components/spinning-circul
 import type { StatusButton } from "@/registry/components/status-button"
 import type { TestimonialSpotlight } from "@/registry/components/testimonial-spotlight"
 import type { TimescaleRoot } from "@/registry/components/timescale"
+
+export type AppleCarouselRootProps = Omit<
+  ComponentProps<typeof AppleCarouselRoot>,
+  keyof ComponentProps<"div">
+>
+
+export type AppleCarouselControlsProps = Omit<
+  ComponentProps<typeof AppleCarouselControls>,
+  keyof ComponentProps<"div">
+>
 
 export type AppleHelloEffectProps = Omit<
   ComponentProps<typeof AppleHelloEffectEnglish>,
@@ -87,6 +101,11 @@ export type GlowCardGridProps = Omit<
 
 export type GlowCardProps = ComponentProps<typeof GlowCard>
 
+export type LogosFlipProps = Omit<
+  ComponentProps<typeof LogosFlip>,
+  keyof Omit<ComponentProps<"div">, "children">
+>
+
 export type MiddleTruncationProps = Omit<
   ComponentProps<typeof MiddleTruncation>,
   keyof Omit<ComponentProps<"span">, "children" | "className">
@@ -108,5 +127,5 @@ export type TimescaleRootProps = Omit<
 
 export type StatusButtonProps = Omit<
   ComponentProps<typeof StatusButton>,
-  Exclude<keyof ComponentProps<typeof UIButton>, "onClick">
+  Exclude<keyof ComponentProps<typeof Button>, "onClick">
 >

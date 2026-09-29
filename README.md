@@ -186,7 +186,7 @@ This project is proudly supported by:
     </tr>
     <tr>
       <td>
-        <a href="https://shadcncraft.com?atp=ncdai&utm_source=chanhdai.com">
+        <a href="https://shadcncraft.com?utm_source=chanhdai.com">
           <picture>
             <source
               media="(prefers-color-scheme: dark)"
@@ -200,7 +200,7 @@ This project is proudly supported by:
         </a>
       </td>
       <td>
-        <a href="https://www.shadcnblocks.com?via=ncdai&utm_source=chanhdai.com">
+        <a href="https://www.shadcnblocks.com?utm_source=chanhdai.com">
           <picture>
             <source
               media="(prefers-color-scheme: dark)"
@@ -214,7 +214,7 @@ This project is proudly supported by:
         </a>
       </td>
       <td>
-        <a href="https://pro.reactbits.dev?atp=ncdai&utm_source=chanhdai.com">
+        <a href="https://reactbits.dev?utm_source=chanhdai.com">
           <picture>
             <source
               media="(prefers-color-scheme: dark)"
@@ -310,6 +310,11 @@ This project is proudly supported by:
       </td>
       <td align="center"><a href="https://github.com/raksalim">Raksa Lim</a></td>
       <td align="center"><a href="https://lndev.me?utm_source=chanhdai.com">Leonel Ngoya</a></td>
+    </tr>
+    <tr>
+      <td align="center"><a href="https://github.com/fadymondy">Fady Mondy</a></td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
 </table>

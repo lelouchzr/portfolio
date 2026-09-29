@@ -85,6 +85,43 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "swipe-actions-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("swipe-actions")],
+    files: [
+      {
+        path: "examples/swipe-actions-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName:
+        "mx-auto min-h-svh w-full max-w-3xl place-items-center-safe content-center-safe px-4",
+    },
+  },
+  {
+    name: "swipe-actions-full-swipe-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("swipe-actions")],
+    files: [
+      {
+        path: "examples/swipe-actions-full-swipe-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "swipe-actions-minimal-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("swipe-actions")],
+    files: [
+      {
+        path: "examples/swipe-actions-minimal-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "wheel-picker-demo",
     type: "registry:example",
     registryDependencies: [getRegistryItemUrl("wheel-picker")],
@@ -570,6 +607,21 @@ export const examples: Registry["items"] = [
     },
   },
   {
+    name: "logos-flip-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("logos-flip")],
+    files: [
+      {
+        path: "examples/logos-flip-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName:
+        "container mx-auto min-h-svh place-items-center-safe content-center-safe",
+    },
+  },
+  {
     name: "testimonial-2-demo",
     type: "registry:example",
     registryDependencies: [getRegistryItemUrl("testimonial-2")],
@@ -652,5 +704,58 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
+  },
+  {
+    name: "carbon-ads-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("carbon-ads")],
+    files: [
+      {
+        path: "examples/carbon-ads-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "apple-carousel-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("apple-carousel")],
+    files: [
+      {
+        path: "examples/apple-carousel-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName: "min-h-svh content-center-safe py-8",
+    },
+  },
+  {
+    name: "apple-carousel-caption-demo",
+    type: "registry:example",
+    registryDependencies: ["button", getRegistryItemUrl("apple-carousel")],
+    files: [
+      {
+        path: "examples/apple-carousel-caption-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName: "min-h-svh content-center-safe py-8",
+    },
+  },
+  {
+    name: "jpg-card-holder-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("jpg-card-holder")],
+    files: [
+      {
+        path: "examples/jpg-card-holder-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName: "flex min-h-svh items-center justify-center",
+    },
   },
 ]

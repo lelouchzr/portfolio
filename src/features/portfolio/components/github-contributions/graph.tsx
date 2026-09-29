@@ -9,7 +9,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/base/ui/tooltip"
+} from "@/components/ui/tooltip"
 import type { Activity } from "@/registry/components/contribution-graph"
 import {
   ContributionGraph,
@@ -78,8 +78,8 @@ export function GitHubContributionGraph({
                   Fig. 2.
                 </span>
                 {formatNumber(totalCount)} contributions,{" "}
-                {format(parseISO(data[0].date), "dd.MM.yyyy")} –{" "}
-                {format(parseISO(data[data.length - 1].date), "dd.MM.yyyy")}.
+                {format(parseISO(data[0].date), "d MMM yyyy")} –{" "}
+                {format(parseISO(data[data.length - 1].date), "d MMM yyyy")}.
                 Source:{" "}
                 <a
                   href={SOCIAL.github.href}

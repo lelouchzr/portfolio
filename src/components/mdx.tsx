@@ -13,7 +13,6 @@ import {
   rehypeHighlightCode,
   rehypeHighlightCodeRawString,
 } from "@/lib/rehype-code-block"
-import { rehypeComponent } from "@/lib/rehype-component"
 import { rehypeNpmCommand } from "@/lib/rehype-npm-command"
 import { remarkCodeImport } from "@/lib/remark-code-import"
 import { cn } from "@/lib/utils"
@@ -31,8 +30,8 @@ import {
   TabsIndicator,
   TabsList,
   TabsTrigger,
-} from "@/components/base/ui/tabs"
-import { Code } from "@/components/base/ui/typography"
+} from "@/components/ui/tabs"
+import { Code } from "@/components/ui/typography"
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper"
 import { ComponentSource } from "@/components/component-source"
 import { AutoTypeTable } from "@/features/doc/components/auto-type-table"
@@ -107,7 +106,6 @@ const options: MDXRemoteProps["options"] = {
     rehypePlugins: [
       [rehypeExternalLinks, { target: "_blank", rel: "nofollow noopener" }],
       rehypeSlug,
-      rehypeComponent,
       rehypeCodeRawString,
       rehypeHighlightCode,
       rehypeHighlightCodeRawString,

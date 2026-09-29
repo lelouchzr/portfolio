@@ -1,11 +1,11 @@
 import { ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@/components/base/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/base/ui/collapsible"
+} from "@/components/ui/collapsible"
 import {
   Panel,
   PanelHeader,
@@ -50,7 +50,7 @@ export function Experiences({
         </PanelTitle>
       </PanelHeader>
 
-      <div className="pr-2 pl-4">
+      <div className="px-4">
         <ExperienceList
           experiences={experiences.slice(0, MAX)}
           labels={labels}
@@ -59,7 +59,7 @@ export function Experiences({
 
       {experiences.length > MAX && (
         <Collapsible className="group/collapsible">
-          <CollapsibleContent render={<div className="pr-2 pl-4" />}>
+          <CollapsibleContent render={<div className="px-4" />}>
             <ExperienceList
               experiences={experiences.slice(MAX)}
               labels={labels}

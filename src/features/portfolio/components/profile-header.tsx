@@ -1,8 +1,6 @@
-import { AvatarLights } from "@/features/portfolio/components/avatar-lights"
 import { USER } from "@/features/portfolio/data/user"
 import type { User } from "@/features/portfolio/types/user"
 
-import { AvatarLightsToggle } from "./avatar-lights-toggle"
 import { ChanhDaiMarkIsometric } from "./chanhdai-mark-isometric"
 import { FlipSentences } from "./flip-sentences"
 import { HandwrittenArrow, HandwrittenNote } from "./handwritten-note"
@@ -22,32 +20,47 @@ export function ProfileHeader({ user = USER }: { user?: User }) {
           aria-hidden
         >
           <HandwrittenArrow className="-scale-y-100 -rotate-6" />
-          <span className="ml-1 -rotate-6">
+          <span className="ml-3 -rotate-6">
             follows your cursor
             <span className="block" />
             click for a sound
           </span>
         </HandwrittenNote>
 
-        <figcaption className="pointer-events-none absolute right-2 bottom-2 text-sm leading-none tracking-wide text-[color-mix(in_oklab,var(--muted-foreground)_60%,var(--background))] tabular-nums select-none sm:right-4 sm:bottom-4">
+        <figcaption className="pointer-events-none absolute right-2 bottom-2 text-sm/none tracking-wide text-[color-mix(in_oklab,var(--muted-foreground)_60%,var(--background))] tabular-nums select-none sm:right-4 sm:bottom-4">
           Fig. 1.
         </figcaption>
       </figure>
 
       <div className="flex flex-col sm:row-span-2 sm:row-start-1">
         <div className="screen-line-top mt-auto shrink-0 border-r border-line">
-          <AvatarLightsToggle className="group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none">
+          <div className="mx-0.5 my-0.75 flex outline-none">
+            <div className="relative size-30 rounded-full min-[24rem]:size-32 sm:size-40">
+              <img
+                className="block size-full rounded-[inherit] object-cover select-none dark:hidden"
+                src={user.avatarSketch ?? user.avatar}
+                alt="Avatar with sketch style in light mode"
+              />
+              <img
+                className="hidden size-full rounded-[inherit] object-cover select-none dark:block"
+                src={user.avatar}
+                alt="Avatar in dark mode"
+              />
+              <div className="pointer-events-none absolute inset-0 rounded-[inherit] inset-ring-1 inset-ring-foreground/30 dark:inset-ring-foreground/10" />
+            </div>
+          </div>
+          {/* <AvatarLightsToggle className="group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none">
             <AvatarLights
               className="ring-border ring-offset-background group-focus-visible/avatar-lights-toggle:ring-1 group-focus-visible/avatar-lights-toggle:ring-offset-2"
               variants={user.avatarVariants}
             />
-          </AvatarLightsToggle>
+          </AvatarLightsToggle> */}
         </div>
       </div>
 
       <div className="flex flex-col">
         <div className="z-1 mt-auto border-t border-line">
-          <div className="flex items-center gap-2 pl-4">
+          <div className="flex -translate-x-px items-center gap-2 pl-4">
             <h1 className="-translate-y-px text-[2rem]/none font-medium tracking-tight">
               {user.displayName}
             </h1>

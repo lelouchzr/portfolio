@@ -37,7 +37,7 @@ export function PostItem({
       )}
 
       <div className="flex flex-col gap-1 p-2">
-        <Heading className="text-lg leading-snug font-medium text-balance">
+        <Heading className="text-lg/snug font-medium text-balance">
           <Link href={`/blog/${post.slug}`}>
             <span className="absolute inset-0" aria-hidden />
             {post.metadata.title}
@@ -56,7 +56,7 @@ export function PostItem({
           <dt className="sr-only">Published on</dt>
           <dd className="text-sm text-muted-foreground">
             <time dateTime={new Date(post.metadata.createdAt).toISOString()}>
-              {format(new Date(post.metadata.createdAt), "dd.MM.yyyy")}
+              {format(new Date(post.metadata.createdAt), "d MMM yyyy")}
             </time>
           </dd>
         </dl>

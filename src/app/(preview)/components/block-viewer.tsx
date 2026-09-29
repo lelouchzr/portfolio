@@ -26,6 +26,12 @@ import type {
 } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
+import { Button } from "@/components/ui/button"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 import {
   Command,
   CommandEmpty,
@@ -35,22 +41,16 @@ import {
   CommandList,
 } from "@/components/ui/command"
 import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
-import { Button } from "@/components/base/ui/button"
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/base/ui/collapsible"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/base/ui/popover"
-import { Separator } from "@/components/base/ui/separator"
+import { Separator } from "@/components/ui/separator"
 import {
   Sidebar,
   SidebarGroup,
@@ -61,20 +61,20 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarProvider,
-} from "@/components/base/ui/sidebar"
+} from "@/components/ui/sidebar"
 import {
   Tabs,
   TabsContent,
   TabsIndicator,
   TabsList,
   TabsTrigger,
-} from "@/components/base/ui/tabs"
-import { ToggleGroup, ToggleGroupItem } from "@/components/base/ui/toggle-group"
+} from "@/components/ui/tabs"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/base/ui/tooltip"
+} from "@/components/ui/tooltip"
 import {
   DesktopIcon,
   FolderIcon,
@@ -576,7 +576,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
             <SidebarMenuButton
               className={cn(
                 "rounded-none pl-(--index) whitespace-nowrap [&_svg]:text-muted-foreground",
-                "aria-[expanded=false]:*:data-[slot=folder]:block aria-expanded:*:data-[slot=folder-open]:block"
+                "not-data-panel-open:*:data-[slot=folder]:block data-panel-open:*:data-[slot=folder-open]:block"
               )}
               style={
                 {
@@ -692,7 +692,7 @@ function ThemePicker() {
             <PopoverTrigger
               render={
                 <Button
-                  className="bg-transparent px-1.75 shadow-none dark:border-border dark:bg-transparent dark:aria-expanded:bg-input/50"
+                  className="bg-transparent px-1.75 shadow-none active:scale-100 dark:border-border dark:bg-transparent dark:aria-expanded:bg-input/50"
                   variant="outline"
                   size="sm"
                   aria-label="Theme"
@@ -709,45 +709,48 @@ function ThemePicker() {
       </Tooltip>
 
       <PopoverContent
-        className="rounded-2xl p-0"
+        className="rounded-2xl bg-surface p-0"
         align="start"
         alignOffset={-8}
       >
         <Command
           className={cn(
+            "px-1 pb-1",
             "**:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-input-wrapper]_svg]:size-5 **:[[cmdk-input]]:h-10",
-            "**:[[cmdk-group]]:px-2",
+            "**:[[cmdk-group]]:px-1",
             "**:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:font-medium **:[[cmdk-group-heading]]:text-muted-foreground",
-            "[&_[cmdk-item]_svg]:size-5 **:[[cmdk-item]]:px-2 **:[[cmdk-item]]:py-2"
+            "[&_[cmdk-item]_svg]:size-5 **:[[cmdk-item]]:p-2"
           )}
         >
           <CommandInput placeholder="Search theme…" />
 
-          <CommandList className="min-h-80 scroll-fade">
-            <CommandEmpty>No results found.</CommandEmpty>
+          <div className="rounded-xl bg-background ring-1 ring-border">
+            <CommandList className="min-h-80 scroll-fade">
+              <CommandEmpty>No results found.</CommandEmpty>
 
-            <CommandGroup heading="Current theme">
-              <CommandItem onSelect={() => handleThemeSelect(null)}>
-                <ThemePalette />
-                Default
-                {!theme && <CheckIcon className="ml-auto" strokeWidth={3} />}
-              </CommandItem>
-            </CommandGroup>
+              <CommandGroup heading="Current theme">
+                <CommandItem onSelect={() => handleThemeSelect(null)}>
+                  <ThemePalette />
+                  Default
+                  {!theme && <CheckIcon className="ml-auto" strokeWidth={3} />}
+                </CommandItem>
+              </CommandGroup>
 
-            <ThemePickerGroup
-              title="shadcn/ui"
-              themes={shadcnThemes}
-              activeTheme={theme}
-              onThemeSelect={handleThemeSelect}
-            />
+              <ThemePickerGroup
+                title="shadcn/ui"
+                themes={shadcnThemes}
+                activeTheme={theme}
+                onThemeSelect={handleThemeSelect}
+              />
 
-            <ThemePickerGroup
-              title="tweakcn"
-              themes={tweakcnThemes}
-              activeTheme={theme}
-              onThemeSelect={handleThemeSelect}
-            />
-          </CommandList>
+              <ThemePickerGroup
+                title="tweakcn"
+                themes={tweakcnThemes}
+                activeTheme={theme}
+                onThemeSelect={handleThemeSelect}
+              />
+            </CommandList>
+          </div>
         </Command>
       </PopoverContent>
     </Popover>

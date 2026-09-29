@@ -8,7 +8,7 @@ export const components: Registry["items"] = [
     title: "Theme Switcher",
     description:
       "Toggle between system, light, and dark themes in Next.js apps.",
-    dependencies: ["next-themes", "motion"],
+    dependencies: ["next-themes", "motion", "lucide-react"],
     files: [
       {
         path: "components/theme-switcher/theme-switcher.tsx",
@@ -101,6 +101,23 @@ export const components: Registry["items"] = [
     docs: "https://chanhdai.com/components/apple-hello-effect",
   },
   {
+    name: "swipe-actions",
+    type: "registry:component",
+    title: "Swipe Actions",
+    description:
+      "Swipe a row in a list to reveal actions on the left or right.",
+    dependencies: ["@ncdai/react-swipe-actions", "motion"],
+    files: [
+      {
+        path: "components/swipe-actions/swipe-actions.tsx",
+        type: "registry:component",
+        target: "@components/swipe-actions.tsx",
+      },
+    ],
+    categories: ["controls"],
+    docs: "https://chanhdai.com/components/swipe-actions",
+  },
+  {
     name: "wheel-picker",
     type: "registry:component",
     title: "Wheel Picker",
@@ -174,7 +191,7 @@ export const components: Registry["items"] = [
     title: "Work Experience",
     description:
       "Display work experiences with role details, company logos, and durations.",
-    dependencies: ["react-markdown", "date-fns"],
+    dependencies: ["react-markdown", "date-fns", "lucide-react"],
     registryDependencies: [
       "collapsible",
       "separator",
@@ -392,7 +409,12 @@ export const components: Registry["items"] = [
     title: "Copy Button",
     description:
       "Copy text to clipboard with visual, haptic, and audio feedback.",
-    dependencies: ["motion", "@rexa-developer/tiks", "web-haptics"],
+    dependencies: [
+      "motion",
+      "@rexa-developer/tiks",
+      "web-haptics",
+      "lucide-react",
+    ],
     registryDependencies: ["button", getRegistryItemUrl("icon-swap")],
     files: [
       {
@@ -415,7 +437,7 @@ export const components: Registry["items"] = [
     title: "Code Block Command",
     description:
       "Display install commands with package manager switcher and copy button.",
-    dependencies: ["@base-ui/react", "motion", "jotai"],
+    dependencies: ["@base-ui/react", "motion", "jotai", "lucide-react"],
     registryDependencies: [
       getRegistryItemUrl("icon-swap"),
       getRegistryItemUrl("copy-button"),
@@ -427,7 +449,7 @@ export const components: Registry["items"] = [
         target: "@components/code-block-command.tsx",
       },
       {
-        path: "src/components/base/ui/tabs.tsx",
+        path: "src/components/ui/tabs.tsx",
         type: "registry:component",
         target: "@components/tabs.tsx",
       },
@@ -478,6 +500,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["effects"],
+    docs: "https://chanhdai.com/components/glow-card-grid",
   },
   {
     name: "middle-truncation",
@@ -632,8 +655,8 @@ export const components: Registry["items"] = [
     type: "registry:component",
     title: "Brand Assets Menu",
     description: "Context menu for copying brand SVGs and opening asset links.",
-    registryDependencies: ["context-menu", "sonner"],
-    dependencies: ["@rexa-developer/tiks"],
+    registryDependencies: ["context-menu", "toast"],
+    dependencies: ["@rexa-developer/tiks", "lucide-react"],
     files: [
       {
         path: "components/brand-assets-menu/brand-assets-menu.tsx",
@@ -739,6 +762,23 @@ export const components: Registry["items"] = [
     docs: "https://chanhdai.com/components/logos-carousel",
   },
   {
+    name: "logos-flip",
+    type: "registry:component",
+    title: "Logos Flip",
+    description:
+      "Flip cards in a staggered wave to reveal the next batch of logos.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "components/logos-flip/logos-flip.tsx",
+        type: "registry:component",
+        target: "@components/logos-flip.tsx",
+      },
+    ],
+    categories: ["marketing"],
+    docs: "https://chanhdai.com/components/logos-flip",
+  },
+  {
     name: "testimonial-2",
     type: "registry:component",
     title: "Testimonial 2",
@@ -777,7 +817,8 @@ export const components: Registry["items"] = [
     title: "Share Menu",
     description:
       "Share menu to copy a link or post to X, LinkedIn, and the native share sheet.",
-    registryDependencies: ["button", "dropdown-menu", "sonner"],
+    dependencies: ["lucide-react"],
+    registryDependencies: ["button", "dropdown-menu", "toast"],
     files: [
       {
         path: "components/share-menu/share-menu.tsx",
@@ -828,8 +869,11 @@ export const components: Registry["items"] = [
     title: "Status Button",
     description:
       "Button that shows loading and success feedback for async actions.",
-    dependencies: ["motion", "radix-ui"],
-    registryDependencies: ["button"],
+    dependencies: ["motion", "lucide-react"],
+    registryDependencies: [
+      "button",
+      getRegistryItemUrl("use-controllable-state"),
+    ],
     files: [
       {
         path: "components/status-button/status-button.tsx",
@@ -855,5 +899,68 @@ export const components: Registry["items"] = [
     },
     categories: ["controls"],
     docs: "https://chanhdai.com/components/status-button",
+  },
+  {
+    name: "carbon-ads",
+    type: "registry:component",
+    title: "Carbon Ads",
+    description:
+      "Display a Carbon Ads unit in Next.js apps, styled to match your shadcn/ui theme.",
+    files: [
+      {
+        path: "components/carbon-ads/carbon-ads.tsx",
+        type: "registry:component",
+        target: "@components/carbon-ads.tsx",
+      },
+    ],
+    css: {
+      "#carbonads #carbon-responsive": {
+        "--carbon-padding": "calc(var(--spacing) * 3)",
+        "--carbon-bg-primary":
+          "color-mix(in oklab, var(--muted) 50%, var(--background))",
+        "--carbon-bg-secondary": "var(--border)",
+        "--carbon-text-color": "var(--foreground)",
+        "@apply gap-2 font-sans": {},
+      },
+      "#carbonads #carbon-responsive .carbon-poweredby": {
+        "@apply text-xs text-muted-foreground/80 opacity-100": {},
+      },
+    },
+    categories: ["utilities"],
+    docs: "https://chanhdai.com/components/carbon-ads",
+  },
+  {
+    name: "apple-carousel",
+    type: "registry:component",
+    title: "Apple Carousel",
+    description:
+      "Infinite autoplay carousel with progress dots, inspired by Apple’s website.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "components/apple-carousel/apple-carousel.tsx",
+        type: "registry:component",
+        target: "@components/apple-carousel.tsx",
+      },
+    ],
+    categories: ["marketing"],
+    docs: "https://chanhdai.com/components/apple-carousel",
+  },
+  {
+    name: "jpg-card-holder",
+    type: "registry:component",
+    title: "JPG Card Holder",
+    description:
+      "Leather card holder shaped like a JPG file, with cards you can pull out.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "components/jpg-card-holder/jpg-card-holder.tsx",
+        type: "registry:component",
+        target: "@components/jpg-card-holder.tsx",
+      },
+    ],
+    categories: ["illustrations"],
+    docs: "https://chanhdai.com/components/jpg-card-holder",
   },
 ]

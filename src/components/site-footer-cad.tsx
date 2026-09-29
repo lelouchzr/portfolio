@@ -4,7 +4,7 @@ import { LICENSE, SOURCE_CODE_GITHUB_URL } from "@/config/site"
 import type { BuildInfo } from "@/lib/build-info"
 import { getBuildInfo, getStack } from "@/lib/build-info"
 import { cn } from "@/lib/utils"
-import { Separator } from "@/components/base/ui/separator"
+import { Separator } from "@/components/ui/separator"
 import { DmcaIcon, GitHubIcon, LinkedInIcon } from "@/components/icons"
 import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
@@ -117,7 +117,7 @@ export function SiteFooterCad() {
               </ul>
             </Field>
 
-            <Field className="col-span-2" label="Analytics">
+            <Field label="Analytics">
               <ul className="flex flex-col gap-0.5">
                 <li>
                   <a
@@ -130,6 +130,31 @@ export function SiteFooterCad() {
                   </a>
                 </li>
                 <li>Google Analytics</li>
+              </ul>
+            </Field>
+
+            <Field label="For agents">
+              <ul className="flex flex-col gap-0.5">
+                <li>
+                  <a
+                    className="link-underline"
+                    href="/llms.txt"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    llms.txt
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="link-underline"
+                    href="/index.md"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    index.md
+                  </a>
+                </li>
               </ul>
             </Field>
 

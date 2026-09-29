@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowRightIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/base/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   ComponentItem,
   ComponentItemDot,
@@ -33,10 +33,14 @@ export function Components() {
       </PanelHeader>
 
       <HandwrittenNote
-        className="top-4 left-full ml-1 hidden w-36 flex-col items-start xl:flex"
+        className="top-4 left-full ml-3 hidden w-36 flex-col items-start xl:flex"
         aria-hidden
       >
-        <span className="-rotate-3">free, copy &amp; paste</span>
+        <span className="-rotate-3">
+          free to copy
+          <span className="block" />
+          yours to keep
+        </span>
         <HandwrittenArrow className="mt-2 -rotate-3" />
       </HandwrittenNote>
 

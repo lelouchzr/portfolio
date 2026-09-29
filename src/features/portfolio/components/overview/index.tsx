@@ -47,21 +47,19 @@ export function Overview({
   const resume = getResumeDownload(locale)
 
   return (
-    <Panel className="screen-line-bottom-none">
+    <Panel className="screen-line-bottom-none screen-line-top-none">
       <h2 className="sr-only">{labels.title}</h2>
 
       <PanelContent className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
-        {user.jobs.map((job, index) => {
-          return (
-            <JobItem
-              key={index}
-              title={job.title}
-              company={job.company}
-              website={job.website}
-              experienceId={job.experienceId}
-            />
-          )
-        })}
+        {user.jobs.map((job, index) => (
+          <JobItem
+            key={index}
+            title={job.title}
+            company={job.company}
+            website={job.website}
+            experienceId={job.experienceId}
+          />
+        ))}
 
         <IntroItem>
           <IntroItemIcon>
@@ -78,9 +76,7 @@ export function Overview({
         </IntroItem>
 
         <CurrentLocalTimeItem timeZone={user.timeZone} />
-
         <PhoneItem phoneNumberB64={user.phoneNumberB64} />
-
         <EmailItem emailB64={user.emailB64} />
 
         <IntroItem>

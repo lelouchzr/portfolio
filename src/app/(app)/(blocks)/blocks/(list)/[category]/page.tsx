@@ -29,7 +29,7 @@ export async function generateMetadata({
     return {}
   }
 
-  const title = item.name
+  const title = item.title
   const description = item.description
 
   const categoryUrl = `/blocks/${item.name}`
@@ -123,7 +123,7 @@ export default async function BlocksPage({
         ])}
       />
 
-      <BlockList blocks={blocks} />
+      <BlockList blocks={blocks} showAds />
     </>
   )
 }

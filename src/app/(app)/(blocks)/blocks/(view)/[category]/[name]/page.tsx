@@ -11,13 +11,14 @@ import { getAllBlockStaticParams } from "@/lib/blocks"
 import { jsonLdBreadcrumbList, JsonLdScript } from "@/lib/json-ld"
 import { getRegistryItem } from "@/lib/registry"
 import { absoluteUrl } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import { Kbd } from "@/components/ui/kbd"
-import { Button } from "@/components/base/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/base/ui/tooltip"
+} from "@/components/ui/tooltip"
+import { CarbonAds } from "@/components/carbon-ads"
 import { BlockDisplay } from "@/app/(preview)/components/block-display"
 import { DocKeyboardShortcuts } from "@/features/doc/components/doc-keyboard-shortcuts"
 import { DocShareMenu } from "@/features/doc/components/doc-share-menu"
@@ -162,9 +163,11 @@ export default async function BlockViewPage({
         next={next ? (`/blocks/${next}` as Route) : null}
       />
 
+      <CarbonAds className="mx-2 mb-2 flex justify-center" />
+
       <div className="screen-line-bottom flex h-px" />
 
-      <div className="flex items-center justify-between p-2 pl-4">
+      <div className="flex items-center justify-between gap-4 p-2 pl-4">
         <Button
           className="h-7 gap-2 border-none px-0 text-muted-foreground hover:text-foreground"
           variant="link"
@@ -179,8 +182,6 @@ export default async function BlockViewPage({
         />
 
         <div className="flex items-center gap-2">
-          <DocShareMenu title={name} url={`/blocks/${category}/${name}`} />
-
           {previous && (
             <Tooltip>
               <TooltipTrigger
@@ -239,16 +240,14 @@ export default async function BlockViewPage({
               </TooltipContent>
             </Tooltip>
           )}
+
+          <DocShareMenu title={name} url={`/blocks/${category}/${name}`} />
         </div>
       </div>
 
       <div className="screen-line-top h-px" />
 
       <BlockDisplay name={name} />
-
-      <div className="screen-line-top h-px" />
-
-      <div className="stripe-divider" />
     </>
   )
 }
