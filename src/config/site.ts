@@ -6,7 +6,12 @@ import { USER } from "@/features/portfolio/data/user"
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.NEXT_PUBLIC_APP_URL || "https://adrienlachambre.com",
+  // Public exports and canonical links must use the owner's domain even when
+  // the deployment still has an outdated app URL configured.
+  url:
+    process.env.NODE_ENV === "production"
+      ? USER.website
+      : process.env.NEXT_PUBLIC_APP_URL || USER.website,
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,
