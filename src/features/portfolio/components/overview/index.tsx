@@ -47,7 +47,7 @@ export function Overview({
   const resume = getResumeDownload(locale)
 
   return (
-    <Panel className="screen-line-bottom-none screen-line-top-none">
+    <Panel>
       <h2 className="sr-only">{labels.title}</h2>
 
       <PanelContent className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">

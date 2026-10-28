@@ -1,13 +1,10 @@
 "use client"
 
 import { useRef } from "react"
-import Link from "next/link"
-import { ArrowRightIcon } from "lucide-react"
 import { useInView, usePageInView } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
-import { Button } from "@/components/ui/button"
 import type { MarqueeContentProps } from "@/components/kibo-ui/marquee"
 import {
   Marquee,
@@ -33,6 +30,7 @@ import {
 } from "@/features/portfolio/data/testimonials"
 import type { Testimonial as TestimonialType } from "@/features/portfolio/types/testimonials"
 
+import { HandwrittenArrow, HandwrittenNote } from "./handwritten-note"
 import { Panel, PanelContent } from "./panel"
 
 const ID = "testimonials"
@@ -64,10 +62,10 @@ export function Testimonials() {
     <Panel ref={ref} id={ID}>
       <div className="h-px" />
       <div className="h-4" />
-      <div className="screen-line-bottom h-px screen-line-bottom-border" />
+      <div className="screen-line-bottom h-px" />
 
       <div className="flex items-center justify-center py-4">
-        <h2 className="text-center text-sm/none font-medium text-muted-foreground">
+        <h2 className="text-center text-sm/none font-medium tracking-wide text-muted-foreground uppercase">
           Feedback from builders
         </h2>
       </div>
@@ -88,7 +86,7 @@ export function Testimonials() {
         {TESTIMONIALS_FEATURED.map((item) => (
           <TestimonialSpotlight
             key={item.url}
-            className="bg-background inset-ring-foreground/15 [--spotlight-size:50%]"
+            className="bg-background inset-ring-foreground/20 [--spotlight-size:50%]"
           >
             <TestimonialItem {...item} showIcon />
           </TestimonialSpotlight>
@@ -108,7 +106,7 @@ export function Testimonials() {
         />
       </PanelContent>
 
-      <div className="screen-line-top flex justify-center py-4">
+      {/* <div className="screen-line-top flex justify-center py-4">
         <Button
           className="gap-2 pr-2.5 pl-3 shadow-[inset_0_0_1px] shadow-foreground/20"
           variant="secondary"
@@ -119,7 +117,19 @@ export function Testimonials() {
           All builders
           <ArrowRightIcon />
         </Button>
-      </div>
+      </div> */}
+
+      <HandwrittenNote
+        className="top-8 left-full ml-3 hidden w-36 flex-col items-start xl:flex"
+        aria-hidden
+      >
+        <span className="-rotate-3">
+          made my day,
+          <span className="block" />
+          keeps me going
+        </span>
+        <HandwrittenArrow className="mt-2 -rotate-3" />
+      </HandwrittenNote>
     </Panel>
   )
 }
@@ -150,7 +160,7 @@ function TestimonialsMarquee({
         {data.map((item) => (
           <MarqueeItem
             key={item.url}
-            className="mx-1 h-full w-xs rounded-xl bg-background inset-ring-1 inset-ring-foreground/15 transition-[background-color] ease-out hover:bg-accent-muted"
+            className="mx-1 h-full w-xs rounded-xl bg-background inset-ring-1 inset-ring-foreground/20 transition-[background-color] ease-out hover:bg-accent-muted"
           >
             <TestimonialItem {...item} />
           </MarqueeItem>

@@ -796,6 +796,23 @@ export const Index: Record<string, any> = {
     categories: ["marketing"],
     meta: undefined,
   },
+  "apple-accordion": {
+    name: "apple-accordion",
+    description: "Accordion whose items morph from pills into cards, inspired by Apple’s product pages.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/apple-accordion/apple-accordion.tsx",
+      type: "registry:component",
+      target: "@components/apple-accordion.tsx",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/apple-accordion/apple-accordion.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "apple-accordion"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["marketing"],
+    meta: undefined,
+  },
   "jpg-card-holder": {
     name: "jpg-card-holder",
     description: "Leather card holder shaped like a JPG file, with cards you can pull out.",
@@ -808,6 +825,156 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import("@/registry/components/jpg-card-holder/jpg-card-holder.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "jpg-card-holder"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["illustrations"],
+    meta: undefined,
+  },
+  "foldable": {
+    name: "foldable",
+    description: "Folded card that opens like the iPhone Duo, blurring as the cover turns.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/foldable/foldable.tsx",
+      type: "registry:component",
+      target: "@components/foldable.tsx",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/foldable/foldable.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "foldable"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["illustrations"],
+    meta: undefined,
+  },
+  "ipod-classic": {
+    name: "ipod-classic",
+    description: "iPod classic with a working click wheel, menus, and music playback.",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/components/ipod-classic/index.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/index.ts",
+    },{
+      path: "src/registry/components/ipod-classic/components/brick-game.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/brick-game.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/components/click-wheel.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/click-wheel.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/components/icons.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/icons.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/components/marquee.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/marquee.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/components/menu-list.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/menu-list.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/components/now-playing.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/now-playing.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/components/progress-bar.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/progress-bar.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/components/screen.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/screen.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/components/title-bar.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/title-bar.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/components/use-screen-keyboard.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/components/use-screen-keyboard.ts",
+    },{
+      path: "src/registry/components/ipod-classic/ipod-classic.module.css",
+      type: "registry:file",
+      target: "@components/ipod-classic/ipod-classic.module.css",
+    },{
+      path: "src/registry/components/ipod-classic/ipod-classic.tsx",
+      type: "registry:component",
+      target: "@components/ipod-classic/ipod-classic.tsx",
+    },{
+      path: "src/registry/components/ipod-classic/lib/acceleration.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/acceleration.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/assets.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/assets.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/atoms.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/atoms.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/brick-engine.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/brick-engine.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/catalog.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/catalog.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/click-sound.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/click-sound.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/constants.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/constants.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/engine.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/engine.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/menu-controller.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/menu-controller.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/menu.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/menu.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/now-playing-modes.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/now-playing-modes.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/playback.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/playback.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/player.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/player.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/timers.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/timers.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/types.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/types.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/wheel-gesture.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/wheel-gesture.ts",
+    },{
+      path: "src/registry/components/ipod-classic/lib/wheel-scroll.ts",
+      type: "registry:component",
+      target: "@components/ipod-classic/lib/wheel-scroll.ts",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/ipod-classic/index.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "ipod-classic"
       return { default: mod.default || mod[exportName] }
     }),
     categories: ["illustrations"],
@@ -1076,6 +1243,10 @@ export const Index: Record<string, any> = {
       path: "src/registry/blocks/not-found-01/components/daikanoid/ui.ts",
       type: "registry:component",
       target: "@components/daikanoid/ui.ts",
+    },{
+      path: "src/hooks/use-media-query.ts",
+      type: "registry:hook",
+      target: "@hooks/use-media-query.ts",
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/blocks/not-found-01/page.tsx")
@@ -2156,6 +2327,23 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: {"previewClassName":"min-h-svh content-center-safe py-8"},
   },
+  "apple-accordion-demo": {
+    name: "apple-accordion-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/apple-accordion-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/apple-accordion-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "apple-accordion-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: {"previewClassName":"min-h-svh content-center-safe px-4 py-8 sm:px-8"},
+  },
   "jpg-card-holder-demo": {
     name: "jpg-card-holder-demo",
     description: "",
@@ -2168,6 +2356,57 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import("@/registry/examples/jpg-card-holder-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "jpg-card-holder-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: {"previewClassName":"flex min-h-svh items-center justify-center"},
+  },
+  "foldable-demo": {
+    name: "foldable-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/foldable-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/foldable-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "foldable-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: {"previewClassName":"flex min-h-svh items-center justify-center"},
+  },
+  "foldable-spread-demo": {
+    name: "foldable-spread-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/foldable-spread-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/foldable-spread-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "foldable-spread-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: {"previewClassName":"flex min-h-svh items-center justify-center"},
+  },
+  "ipod-classic-demo": {
+    name: "ipod-classic-demo",
+    description: "",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/ipod-classic-demo.tsx",
+      type: "registry:example",
+      target: "",
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/examples/ipod-classic-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "ipod-classic-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

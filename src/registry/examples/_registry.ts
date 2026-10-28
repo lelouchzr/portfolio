@@ -745,12 +745,68 @@ export const examples: Registry["items"] = [
     },
   },
   {
+    name: "apple-accordion-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("apple-accordion")],
+    files: [
+      {
+        path: "examples/apple-accordion-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName: "min-h-svh content-center-safe px-4 py-8 sm:px-8",
+    },
+  },
+  {
     name: "jpg-card-holder-demo",
     type: "registry:example",
     registryDependencies: [getRegistryItemUrl("jpg-card-holder")],
     files: [
       {
         path: "examples/jpg-card-holder-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName: "flex min-h-svh items-center justify-center",
+    },
+  },
+  {
+    name: "foldable-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("foldable")],
+    files: [
+      {
+        path: "examples/foldable-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName: "flex min-h-svh items-center justify-center",
+    },
+  },
+  {
+    name: "foldable-spread-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("foldable")],
+    files: [
+      {
+        path: "examples/foldable-spread-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName: "flex min-h-svh items-center justify-center",
+    },
+  },
+  {
+    name: "ipod-classic-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("ipod-classic")],
+    files: [
+      {
+        path: "examples/ipod-classic-demo.tsx",
         type: "registry:example",
       },
     ],

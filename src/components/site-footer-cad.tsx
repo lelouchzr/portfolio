@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator"
 import { DmcaIcon, GitHubIcon, LinkedInIcon } from "@/components/icons"
 import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
+import { USER } from "@/features/portfolio/data/user"
 
 // Imported here rather than through `@/config/site`, which client components
 // pull in, to keep the manifest out of client bundles.
@@ -20,6 +21,7 @@ const INSPIRED_BY = [
   "Tailwind CSS",
   "shadcn/ui",
   "Vercel",
+  "Apple",
   "Evil Charts",
   "Devouring Details",
   "Skiper UI",
@@ -46,8 +48,8 @@ export function SiteFooterCad() {
 
   return (
     <footer className="max-w-screen overflow-x-clip px-2">
-      <div className="mx-auto border-x group-has-data-[slot=layout-wide]/layout:container md:max-w-3xl">
-        <div className="screen-line-top screen-line-bottom screen-line-top-border before:z-1">
+      <div className="mx-auto border-x border-x-line group-has-data-[slot=layout-wide]/layout:container md:max-w-3xl">
+        <div className="screen-line-top screen-line-bottom before:z-1">
           <div className="stripe-divider h-12" />
         </div>
 
@@ -110,7 +112,7 @@ export function SiteFooterCad() {
             <Field label="Typeface">Geist</Field>
 
             <Field className="col-span-2" label="Stack">
-              <ul className="flex flex-col gap-0.5">
+              <ul className="flex flex-col gap-1">
                 {stack.map((entry) => (
                   <li key={entry}>{entry}</li>
                 ))}
@@ -118,7 +120,7 @@ export function SiteFooterCad() {
             </Field>
 
             <Field label="Analytics">
-              <ul className="flex flex-col gap-0.5">
+              <ul className="flex flex-col gap-1">
                 <li>
                   <a
                     className="link-underline"
@@ -134,7 +136,7 @@ export function SiteFooterCad() {
             </Field>
 
             <Field label="For agents">
-              <ul className="flex flex-col gap-0.5">
+              <ul className="flex flex-col gap-1">
                 <li>
                   <a
                     className="link-underline"
@@ -158,33 +160,32 @@ export function SiteFooterCad() {
               </ul>
             </Field>
 
-            <Field className="col-span-2 md:col-span-4" label="Inspired by">
-              {/*
-                Cancelling the cell padding and repeating the parent's column
-                count and gap lands these columns on the same grid lines as the
-                cells above, rather than dividing the padded width.
-              */}
-              <ol className="-mx-4 grid grid-cols-2 gap-x-px gap-y-0.5 font-sans md:grid-cols-4">
-                {INSPIRED_BY.map((name, index) => (
-                  <li className="flex gap-2 px-4" key={name}>
-                    {/* Hidden: the list element already conveys the position. */}
-                    <span
-                      className="font-mono text-muted-foreground/80"
-                      aria-hidden
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+            <Field className="col-span-2" label="Inspired by">
+              <ol className="-mx-4 grid grid-cols-2 gap-x-px gap-y-1">
+                {INSPIRED_BY.map((name) => (
+                  <li className="px-4" key={name}>
                     {name}
                   </li>
                 ))}
               </ol>
+            </Field>
+
+            <Field className="col-span-2" label="Approved by">
+              <div className="flex h-full flex-col justify-end gap-2">
+                <span className="ml-1 font-handwritten text-3xl text-blue-900 dark:text-foreground">
+                  {USER.displayName}
+                </span>
+                <span className="border-t border-line pt-2 font-sans text-sm/none font-medium tracking-wide uppercase">
+                  {USER.displayName}
+                </span>
+              </div>
             </Field>
           </dl>
         </div>
 
         <div className="screen-line-top h-4" />
 
-        <div className="screen-line-top screen-line-bottom flex items-center gap-3 screen-line-bottom-border px-4 py-3 text-muted-foreground">
+        <div className="screen-line-top screen-line-bottom flex items-center gap-3 px-4 py-3 text-muted-foreground">
           <Link
             href="/"
             className="mr-auto text-muted-foreground transition-[color] hover:text-foreground"
@@ -295,7 +296,7 @@ function Field({
       <dt className="text-[0.625rem]/4 font-medium tracking-wider text-muted-foreground uppercase">
         {label}
       </dt>
-      <dd className="text-sm">{children}</dd>
+      <dd className="flex-1 text-sm">{children}</dd>
     </div>
   )
 }

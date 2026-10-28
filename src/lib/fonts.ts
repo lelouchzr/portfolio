@@ -1,13 +1,12 @@
-import { Caveat, IBM_Plex_Serif } from "next/font/google"
-import { GeistMono } from "geist/font/mono"
+import { Caveat, Noto_Serif } from "next/font/google"
+import localFont from "next/font/local"
 import { GeistSans } from "geist/font/sans"
 
 import { cn } from "@/lib/utils"
 
 const fontSans = GeistSans
-const fontMono = GeistMono
 
-const fontSerif = IBM_Plex_Serif({
+const fontSerif = Noto_Serif({
   weight: ["400"],
   subsets: ["latin"],
   display: "swap",
@@ -19,6 +18,21 @@ const fontHandwritten = Caveat({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-handwritten",
+})
+
+const fontMono = localFont({
+  src: "../assets/fonts/PaperMono[wght].woff2",
+  display: "swap",
+  variable: "--font-mono",
+})
+
+// Only the iPod uses it, so it loads on demand instead of on every page.
+const fontChicagoKare = localFont({
+  src: "../assets/fonts/ChicagoKare-Regular.woff2",
+  weight: "400",
+  display: "block",
+  preload: false,
+  variable: "--font-chicago-kare",
 })
 
 // const fontPixel = localFont({
@@ -48,6 +62,6 @@ export const fontVariables = cn(
   fontMono.variable,
   fontSerif.variable,
   fontHandwritten.variable,
-  "[--font-sans:var(--font-geist-sans)]",
-  "[--font-mono:var(--font-geist-mono)]"
+  fontChicagoKare.variable,
+  "[--font-sans:var(--font-geist-sans)]"
 )

@@ -40,7 +40,6 @@ export function HelloTitle({
       <PanelTitle
         as="div"
         id={`${ID}-greeting`}
-        className="font-handwritten leading-none"
         aria-hidden
         suppressHydrationWarning
       >

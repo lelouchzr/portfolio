@@ -17,7 +17,7 @@ import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
 export function SocialLinks() {
   return (
-    <Panel className="screen-line-bottom-line">
+    <Panel className="screen-line-bottom-none screen-line-top-none">
       <h2 className="sr-only">Social links</h2>
 
       <PanelContent>
@@ -54,7 +54,7 @@ export function SocialLinks() {
         </ul>
       </PanelContent>
 
-      <HandwrittenNote className="-top-4 right-full mr-4 hidden w-20 flex-col items-end lg:flex">
+      <HandwrittenNote className="-top-7 right-full mr-4 hidden w-20 flex-col items-end lg:flex">
         <span className="-rotate-6">follow me</span>
         <HandwrittenArrow className="size-7 translate-x-3 -scale-x-100 -rotate-6" />
       </HandwrittenNote>
