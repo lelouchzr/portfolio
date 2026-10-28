@@ -121,7 +121,7 @@ const messages: Record<Locale, PortfolioMessages> = {
     sections: {
       stack: "Stack",
       experience: "Experience",
-      education: "Education",
+      education: "Education and entrepreneurship",
       projects: "Projects",
     },
     actions: {
@@ -146,7 +146,7 @@ const messages: Record<Locale, PortfolioMessages> = {
       hello: "Hello",
       stack: "Stack",
       experience: "Experience",
-      education: "Education",
+      education: "Education and entrepreneurship",
       projects: "Projects",
       copyMark: "Copy Mark as SVG",
       copyMarkSuccess: "Mark as SVG copied",
@@ -178,7 +178,7 @@ const messages: Record<Locale, PortfolioMessages> = {
     metadata: {
       title: "Adrien - Software Engineer",
       description:
-        "Étudiant en ingénierie logicielle intéressé par l'IA, les systèmes backend et les technologies émergentes.",
+        "Étudiant en ingénierie logicielle et étudiant-entrepreneur SNEE, je développe des applications full-stack, des outils IA et des systèmes backend.",
     },
     overview: {
       title: "Aperçu",
@@ -197,7 +197,7 @@ const messages: Record<Locale, PortfolioMessages> = {
     sections: {
       stack: "Stack",
       experience: "Expérience",
-      education: "Formation",
+      education: "Formation et entrepreneuriat",
       projects: "Projets",
     },
     actions: {
@@ -229,7 +229,7 @@ const messages: Record<Locale, PortfolioMessages> = {
       hello: "Bonjour",
       stack: "Stack",
       experience: "Expérience",
-      education: "Formation",
+      education: "Formation et entrepreneuriat",
       projects: "Projets",
       copyMark: "Copier le logo en SVG",
       copyMarkSuccess: "Logo SVG copié",
@@ -280,7 +280,7 @@ const messages: Record<Locale, PortfolioMessages> = {
     sections: {
       stack: "기술 스택",
       experience: "경력",
-      education: "학력",
+      education: "학력 및 창업",
       projects: "프로젝트",
     },
     actions: {
@@ -312,7 +312,7 @@ const messages: Record<Locale, PortfolioMessages> = {
       hello: "소개",
       stack: "기술 스택",
       experience: "경력",
-      education: "학력",
+      education: "학력 및 창업",
       projects: "프로젝트",
       copyMark: "마크 SVG 복사",
       copyMarkSuccess: "마크 SVG가 복사되었습니다",
@@ -592,6 +592,13 @@ const educationTranslations: Partial<
   Record<Locale, Record<string, Partial<Education>>>
 > = {
   fr: {
+    snee: {
+      school: "Statut national étudiant-entrepreneur (SNEE)",
+      fieldOfStudy: "Projet entrepreneurial : Frameclue",
+      description: `Nice, France.
+
+Développement d'une application d'analyse de créations vidéo par intelligence artificielle.`,
+    },
     epitech: {
       degree: "Master",
       fieldOfStudy: "Ingénierie logicielle / Informatique",
@@ -630,6 +637,13 @@ const educationTranslations: Partial<
     },
   },
   kr: {
+    snee: {
+      school: "프랑스 국가 학생 창업가 자격(SNEE)",
+      fieldOfStudy: "창업 프로젝트: Frameclue",
+      description: `프랑스 니스.
+
+인공지능을 활용해 영상 광고 소재를 분석하는 애플리케이션 개발.`,
+    },
     epitech: {
       degree: "석사 과정",
       fieldOfStudy: "소프트웨어 공학 / 컴퓨터 과학",

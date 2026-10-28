@@ -16,7 +16,7 @@ type EducationLabels = Pick<PortfolioMessages["actions"], "present">
 
 export function Education({
   education = EDUCATION,
-  title = "Education",
+  title = "Education and entrepreneurship",
   labels = { present: "Present" },
 }: {
   education?: Education[]

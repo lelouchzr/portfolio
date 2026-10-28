@@ -1,6 +1,6 @@
 # Adrien Lachambre — portfolio
 
-Personal portfolio, project showcase and shadcn component registry for [adrienlachambre.com](https://adrienlachambre.com).
+Personal portfolio and project showcase for [adrienlachambre.com](https://adrienlachambre.com).
 
 ## Stack
 

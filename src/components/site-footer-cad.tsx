@@ -13,8 +13,6 @@ import { USER } from "@/features/portfolio/data/user"
 // Imported here rather than through `@/config/site`, which client components
 // pull in, to keep the manifest out of client bundles.
 import packageJson from "../../package.json"
-// Precomputed by `pnpm registry:build`, so the count costs no registry import.
-import registryStats from "../../registry-stats.json"
 import { ChanhDaiMark } from "./chanhdai-mark"
 
 const INSPIRED_BY = [
@@ -81,7 +79,7 @@ export function SiteFooterCad() {
               <time dateTime={build.date}>{build.date}</time>
             </Field>
 
-            <Field label="Registry">{registryStats.total} items</Field>
+            <Field label="Status">Student entrepreneur (SNEE)</Field>
 
             <Field label="Deployed on">
               <span>Openship</span>

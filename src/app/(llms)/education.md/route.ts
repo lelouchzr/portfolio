@@ -1,6 +1,6 @@
 import { EDUCATION } from "@/features/portfolio/data/education"
 
-const content = `# Education
+const content = `# Education and entrepreneurship
 
 ${EDUCATION.map((item) => {
   const heading =

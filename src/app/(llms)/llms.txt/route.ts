@@ -1,21 +1,29 @@
 import { SITE_INFO } from "@/config/site"
-import { getComponentDocs } from "@/features/doc/data/documents"
+import { USER } from "@/features/portfolio/data/user"
 
-const allComponents = getComponentDocs()
-const content = `# adrienlachambre.com
+const content = `# ${USER.displayName}
 
-> Adrien Lachambre's software engineering portfolio and component registry.
+> ${USER.bio}
 
-- [About](${SITE_INFO.url}/about.md): A quick intro to me, my tech stack, and how to connect.
-- [Experience](${SITE_INFO.url}/experience.md): Highlights from my career and key roles I've taken on.
-- [Education](${SITE_INFO.url}/education.md): Where I studied, what I focused on, and what I built along the way.
-- [Projects](${SITE_INFO.url}/projects.md): Selected projects that show my skills and creativity.
-- [Components](${SITE_INFO.url}/components.md): Every registry component, with install instructions.
-- [Blocks](${SITE_INFO.url}/blocks.md): Every registry block, grouped by category, with install instructions.
+Personal portfolio of Adrien Lachambre, based in Nice, France. Holder of France's National Student-Entrepreneur Status (SNEE) for 2026–2027, developing Frameclue, an application for analyzing video creatives using artificial intelligence.
 
-## Components
+## Portfolio
 
-${allComponents.map((item) => `- [${item.metadata.title}](${SITE_INFO.url}/components/${item.slug}.md): ${item.metadata.description}`).join("\n")}
+- [English](${SITE_INFO.url}/en): Portfolio in English.
+- [Français](${SITE_INFO.url}/fr): Portfolio en français.
+- [한국어](${SITE_INFO.url}/kr): 한국어 포트폴리오.
+
+## Profile and work
+
+- [About](${SITE_INFO.url}/about.md): Background, technical skills and contact links.
+- [Experience](${SITE_INFO.url}/experience.md): Professional experience.
+- [Education and entrepreneurship](${SITE_INFO.url}/education.md): EPITECH, the Inha University exchange and the SNEE entrepreneurial project.
+- [Projects](${SITE_INFO.url}/projects.md): Adrien's software engineering projects, including Frameclue.
+
+## Resume
+
+- [English resume](${SITE_INFO.url}/adrien-lachambre-resume-en.pdf): Six-month, full-time final-year internship in South Korea, starting in early March 2027.
+- [CV français](${SITE_INFO.url}/adrien-lachambre-cv-fr.pdf): Stage de fin d'études de six mois à temps plein en Corée du Sud, à partir de début mars 2027.
 `
 
 export const revalidate = false

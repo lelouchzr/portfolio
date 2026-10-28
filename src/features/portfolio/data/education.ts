@@ -2,6 +2,19 @@ import type { Education } from "@/features/portfolio/types/education"
 
 export const EDUCATION: Education[] = [
   {
+    id: "snee",
+    school: "National Student-Entrepreneur Status (SNEE)",
+    fieldOfStudy: "Entrepreneurial project: Frameclue",
+    period: {
+      start: "2026",
+      end: "2027",
+    },
+    description: `Nice, France.
+
+Development of an application for analyzing video creatives using artificial intelligence.`,
+    isExpanded: true,
+  },
+  {
     id: "epitech",
     school: "EPITECH - European Institute of Technology",
     degree: "Master's Degree",

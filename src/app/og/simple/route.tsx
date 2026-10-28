@@ -2,6 +2,8 @@ import { readFileSync } from "node:fs"
 import { join } from "node:path"
 import { ImageResponse } from "next/og"
 
+import { ADRIEN_MARK_PATH } from "@/components/chanhdai-mark"
+
 import { clampParam } from "../params"
 
 const geistSemiBold = readFileSync(
@@ -32,10 +34,7 @@ export async function GET(request: Request) {
           width={128}
           height={64}
         >
-          <path
-            fill="currentColor"
-            d="M192 256H64v-64h128v64ZM448 64H320v128h128v64H256V0h192v64ZM64 192H0V64h64v128ZM512 192h-64V64h64v128ZM192 64H64V0h128v64Z"
-          />
+          <path fill="currentColor" d={ADRIEN_MARK_PATH} />
         </svg>
       </div>
 
