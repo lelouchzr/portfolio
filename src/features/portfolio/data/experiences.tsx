@@ -16,10 +16,11 @@ export const EXPERIENCES: Experience[] = [
         title: "Co-Founder & Software Engineer",
         employmentPeriod: {
           start: "03.2025",
+          end: "08.2026",
         },
         employmentType: "Freelance",
         icon: <CodeXmlIcon />,
-        description: `- Co-founded LostHaven, an independent game development project with a commercial release objective.
+        description: `- Co-founded LostHaven, an independent game development project that ran until August 2026 with a commercial release objective.
 - Contributed to game development with Godot and designed the project's technical architecture.
 - Developed and maintained the official website and related web services.
 - Designed and implemented gameplay systems and web-based features.
@@ -38,7 +39,6 @@ export const EXPERIENCES: Experience[] = [
         isExpanded: true,
       },
     ],
-    isCurrentEmployer: true,
   },
   {
     id: "apimo",

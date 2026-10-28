@@ -4,14 +4,14 @@ import { MOBILE_NAV } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 import blocks from "@/registry/__blocks__.json"
-import { getAllDocs } from "@/features/doc/data/documents"
+import { getComponentDocs } from "@/features/doc/data/documents"
 import type { DocPreview } from "@/features/doc/types/document"
 
 const CommandMenu = dynamic(() => import("@/components/command-menu"))
 const NavMobile = dynamic(() => import("@/components/nav-mobile"))
 
 export function SiteBottomNav() {
-  const docs = getAllDocs()
+  const docs = getComponentDocs()
 
   // Minimize data serialized to client component - only send necessary fields
   const docPreviews: DocPreview[] = docs.map((doc) => ({

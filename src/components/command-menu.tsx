@@ -57,7 +57,7 @@ import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
 import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
 import { getWordmarkSVG } from "./chanhdai-wordmark"
-import { GridViewIcon, NewsIcon, ReactIcon, SearchIcon } from "./icons"
+import { GridViewIcon, ReactIcon, SearchIcon } from "./icons"
 import { Button } from "./ui/button"
 import { Kbd, KbdGroup } from "./ui/kbd"
 
@@ -106,13 +106,6 @@ function getMenuLinks(
       kind: "page",
       icon: <GridViewIcon />,
       shortcut: "GB",
-    },
-    {
-      title: "Blog",
-      href: "/blog",
-      kind: "page",
-      icon: <NewsIcon />,
-      shortcut: "GL",
     },
   ]
 }
@@ -402,19 +395,6 @@ export function CommandMenu({
     )
   }, [blocks, handleOpenLink])
 
-  const blogLinks = useMemo(
-    () =>
-      docs
-        .filter((doc) => doc.category === "blog")
-        .map<CommandLinkItem>((doc) => ({
-          title: doc.title,
-          href: `/blog/${doc.slug}`,
-          kind: "page",
-          keywords: ["blog"],
-        })),
-    [docs]
-  )
-
   const handleLinkHighlight = useCallback((link: CommandLinkItem) => {
     setSelectedCommandKind(link.kind)
   }, [])
@@ -462,14 +442,6 @@ export function CommandMenu({
             {componentsGroup}
 
             {blocksGroup}
-
-            <CommandLinkGroup
-              heading="Blog"
-              links={blogLinks}
-              fallbackIcon={<NewsIcon />}
-              onLinkHighlight={handleLinkHighlight}
-              onLinkSelect={handleOpenLink}
-            />
 
             <CommandLinkGroup
               heading={messages.socialLinks}

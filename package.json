@@ -1,24 +1,17 @@
 {
-  "name": "chanhdai.com",
+  "name": "adrienlachambre.com",
   "version": "0.1.0",
   "description": "A pixel-perfect dev portfolio and shadcn registry.",
-  "homepage": "https://chanhdai.com",
+  "homepage": "https://adrienlachambre.com",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "Adrien Lachambre",
+    "email": "contact@adrienlachambre.com",
+    "url": "https://github.com/lelouchzr"
   },
-  "contributors": [
-    {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
-    }
-  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": "git+https://github.com/lelouchzr/portfolio.git"
   },
   "scripts": {
     "dev": "next dev",

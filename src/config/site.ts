@@ -54,7 +54,7 @@ export const GITHUB_USERNAME = SOCIAL.github.handle
 export const SOURCE_CODE_GITHUB_REPO = "lelouchzr/portfolio"
 export const SOURCE_CODE_GITHUB_URL = "https://github.com/lelouchzr/portfolio"
 
-export const SPONSORSHIP_URL = "https://github.com/sponsors/ncdai"
+export const SPONSORSHIP_URL = "https://github.com/lelouchzr"
 
 export const UTM_PARAMS = {
   utm_source: "adrienlachambre.com",

@@ -2,6 +2,36 @@ import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
+    id: "frameclue",
+    title: "Frameclue",
+    period: {
+      start: "09.2026",
+    },
+    skills: [
+      "Creative Intelligence",
+      "Product Engineering",
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "PostgreSQL",
+      "Gemini",
+      "Vercel Workflow",
+      "Docker",
+      "Vitest",
+      "Playwright",
+      "i18n",
+    ],
+    description: `Entrepreneurial Creative Intelligence product that helps solo founders and small brands understand video creatives and decide what to test next.
+- Building the full-stack product with Next.js 16, React 19, TypeScript and Tailwind CSS.
+- Implemented private video uploads, validation and storage with Supabase Auth, PostgreSQL, Storage and Row Level Security.
+- Designed durable Gemini analysis workflows that produce structured, versioned reports grounded in evidence from each creative.
+- Added French and English localization, automated tests and security-focused access controls for a private alpha.
+- Developing the product as a holder of France's National Student-Entrepreneur Status (SNEE).`,
+    isExpanded: true,
+  },
+  {
     id: "oriel",
     title: "Oriel",
     period: {
@@ -97,6 +127,7 @@ export const PROJECTS: Project[] = [
     title: "LostHaven",
     period: {
       start: "09.2025",
+      end: "08.2026",
     },
     link: "https://lost-haven.com",
     logo: "/images/portfolio/losthaven-logo-rune.png",
@@ -108,7 +139,7 @@ export const PROJECTS: Project[] = [
       "Team Project",
       "Commercialization",
     ],
-    description: `Single-player game built with Godot as part of a team project with a commercialization objective.
+    description: `Single-player game built with Godot as part of a team project that ran until August 2026.
 - Co-founded the project and contributed to the commercial release strategy.
 - Designed the project's technical architecture and core systems.
 - Developed gameplay systems with Godot and web-based features around the game.

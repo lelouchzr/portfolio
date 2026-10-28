@@ -31,7 +31,7 @@ const OPENPANEL_URL =
   "https://openpanel.dev?utm_source=adrienlachambre.com&utm_medium=referral&utm_campaign=footer"
 
 // Not derived from `SITE_INFO.url`: that follows `NEXT_PUBLIC_APP_URL` and
-// would read `ncdai.localhost` in dev.
+// would read the local development origin in dev.
 const SITE_TITLE = "adrienlachambre.com"
 
 const SITE_SUBTITLE = packageJson.description

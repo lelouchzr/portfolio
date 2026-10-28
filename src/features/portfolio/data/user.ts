@@ -10,6 +10,7 @@ export const USER: User = {
   bio: "Software Engineering student interested in AI, backend systems and emerging technologies.",
   flipSentences: [
     "Software Engineer.",
+    "Student Entrepreneur (SNEE).",
     "AI and backend systems.",
     "Emerging technologies.",
     "Building impactful digital products.",
@@ -31,7 +32,9 @@ export const USER: User = {
 
 Through my experiences at Apimo, I contributed to REST APIs and backend solutions using Symfony, PHP and SQL while working in Agile teams on large-scale software projects.
 
-I enjoy building personal projects around AI, language learning, developer tools and web applications. These projects help me improve my technical skills while exploring new technologies, product ideas and clean software architecture.
+I’m currently building Frameclue, an entrepreneurial Creative Intelligence product that helps teams understand video creatives and choose what to test next. I hold France’s National Student-Entrepreneur Status (SNEE).
+
+I also build personal projects around AI agents, tool calling, MCP integrations, language learning, developer tools and web applications. I experiment with environments such as Hermes by Nous Research while exploring new technologies, product ideas and clean software architecture.
 
 After an academic exchange program in South Korea, I developed a strong interest in international environments and cross-cultural collaboration. I’m actively learning Korean and preparing for TOPIK, TOEIC and IELTS, with the goal of working in an international setting.
 `,
@@ -44,7 +47,7 @@ After an academic exchange program in South Korea, I developed a strong interest
     darkOn: "/images/portfolio/adrien-avatar.webp",
   },
   ogImage:
-    "https://assets.chanhdai.com/images/screenshot-og-image-dark.png?t=1778602757",
+    "/og/simple?title=Adrien%20Lachambre&description=Software%20Engineer%20and%20Student%20Entrepreneur",
   namePronunciationUrl: "",
   timeZone: "Europe/Paris",
   keywords: [
@@ -61,6 +64,10 @@ After an academic exchange program in South Korea, I developed a strong interest
     "rag",
     "lost haven",
     "flashcardstudy",
+    "frameclue",
+    "creative intelligence",
+    "student entrepreneur",
+    "SNEE",
   ],
   dateCreated: "2026-07-09", // YYYY-MM-DD
 }

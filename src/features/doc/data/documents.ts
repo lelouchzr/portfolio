@@ -76,12 +76,13 @@ export function getDocsByCategory(category: string) {
 }
 
 /** Categories derived from the doc's content subfolder. */
-export const BLOG_CATEGORY = "blog"
 export const COMPONENTS_CATEGORY = "components"
 
 /** Blog posts — docs under the `blog/` content folder. */
-export function getBlogPosts() {
-  return getDocsByCategory(BLOG_CATEGORY)
+export function getBlogPosts(): Doc[] {
+  // The repository still contains upstream articles for attribution and future
+  // reference, but they are not Adrien's work and must not be published.
+  return []
 }
 
 /** Component docs — docs under the `components/` content folder. */

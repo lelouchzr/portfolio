@@ -7,7 +7,7 @@ import { LocalizedHomeLink } from "@/components/localized-home-link"
 import { NavDesktop } from "@/components/nav-desktop"
 import { ThemeToggle } from "@/components/theme-toggle"
 import blocks from "@/registry/__blocks__.json"
-import { getAllDocs } from "@/features/doc/data/documents"
+import { getComponentDocs } from "@/features/doc/data/documents"
 import type { DocPreview } from "@/features/doc/types/document"
 
 const BrandContextMenu = dynamic(
@@ -17,7 +17,7 @@ const BrandContextMenu = dynamic(
 const CommandMenu = dynamic(() => import("@/components/command-menu"))
 
 export function SiteHeader() {
-  const docs = getAllDocs()
+  const docs = getComponentDocs()
 
   // Minimize data serialized to client component - only send necessary fields
   const docPreviews: DocPreview[] = docs.map((doc) => ({

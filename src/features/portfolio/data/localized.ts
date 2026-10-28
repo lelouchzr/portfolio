@@ -348,6 +348,7 @@ const userTranslations: Partial<Record<Locale, Partial<User>>> = {
     jobTitle: "Ingénieur logiciel",
     flipSentences: [
       "Ingénieur logiciel.",
+      "Étudiant-entrepreneur (SNEE).",
       "IA et systèmes backend.",
       "Technologies émergentes.",
       "Produits numériques utiles.",
@@ -364,7 +365,9 @@ const userTranslations: Partial<Record<Locale, Partial<User>>> = {
 
 À travers mes expériences chez Apimo, j'ai contribué au développement d'API REST et de solutions backend avec Symfony, PHP et SQL, au sein d'équipes Agile travaillant sur des projets logiciels à grande échelle.
 
-J'aime aussi développer des projets personnels autour de l'IA, de l'apprentissage des langues, des outils développeur et des applications web. Ces projets me permettent de progresser techniquement tout en explorant de nouvelles technologies, idées produit et architectures logicielles propres.
+Je développe actuellement Frameclue, un produit entrepreneurial de Creative Intelligence qui aide à comprendre les créations vidéo et à choisir les prochains tests. Je bénéficie du Statut national étudiant-entrepreneur (SNEE).
+
+Je développe aussi des projets personnels autour des agents IA, du tool calling, des intégrations MCP, de l'apprentissage des langues, des outils développeur et des applications web. J'expérimente notamment avec des environnements comme Hermes de Nous Research, tout en explorant de nouvelles technologies, idées produit et architectures logicielles propres.
 
 Après un échange universitaire en Corée du Sud, j'ai développé un fort intérêt pour les environnements internationaux et la collaboration interculturelle. J'apprends activement le coréen et je prépare le TOPIK, le TOEIC et l'IELTS, avec l'objectif de travailler dans un contexte international.
 `,
@@ -374,6 +377,7 @@ Après un échange universitaire en Corée du Sud, j'ai développé un fort int�
     jobTitle: "소프트웨어 엔지니어",
     flipSentences: [
       "소프트웨어 엔지니어.",
+      "학생 창업가(SNEE).",
       "AI와 백엔드 시스템.",
       "신기술.",
       "의미 있는 디지털 제품 개발.",
@@ -391,7 +395,9 @@ Après un échange universitaire en Corée du Sud, j'ai développé un fort int�
 
 Apimo에서의 경험을 통해 Symfony, PHP, SQL을 사용한 REST API와 백엔드 솔루션 개발에 참여했으며, 대규모 소프트웨어 프로젝트를 진행하는 Agile 팀에서 협업했습니다.
 
-개인 프로젝트로는 AI, 언어 학습, 개발자 도구, 웹 애플리케이션을 주로 개발합니다. 이러한 프로젝트를 통해 기술 역량을 지속적으로 향상시키고 새로운 기술, 제품 아이디어, 깔끔한 소프트웨어 아키텍처를 탐구하고 있습니다.
+현재 영상 광고 소재를 이해하고 다음 테스트를 선택하도록 돕는 Creative Intelligence 제품 Frameclue를 개발하고 있습니다. 프랑스 국가 학생 창업가 자격(SNEE)을 보유하고 있습니다.
+
+개인 프로젝트로는 AI 에이전트, 도구 호출, MCP 통합, 언어 학습, 개발자 도구, 웹 애플리케이션을 주로 개발합니다. Nous Research의 Hermes 같은 환경도 실험하며 새로운 기술, 제품 아이디어, 깔끔한 소프트웨어 아키텍처를 탐구하고 있습니다.
 
 한국 교환학생 경험 이후 국제적인 환경과 문화 간 협업에 큰 관심을 갖게 되었습니다. 현재 한국어를 공부하고 있으며 TOPIK, TOEIC, IELTS를 준비하면서 국제적인 환경에서 일하는 것을 목표로 하고 있습니다.
 `,
@@ -416,7 +422,7 @@ const experienceTranslations: Partial<
         "1": {
           title: "Co-fondateur & Software Engineer",
           employmentType: "Freelance",
-          description: `- Co-fondateur de LostHaven, projet indépendant de développement de jeu avec un objectif de sortie commerciale.
+          description: `- Co-fondateur de LostHaven, projet indépendant de développement de jeu mené jusqu'en août 2026 avec un objectif de sortie commerciale.
 - Contribution au développement du jeu avec Godot et à la conception de l'architecture technique du projet.
 - Développement et maintenance du site officiel et des services web liés.
 - Conception et implémentation de systèmes de gameplay et de fonctionnalités web.
@@ -505,7 +511,7 @@ const experienceTranslations: Partial<
         "1": {
           title: "공동 창업자 & 소프트웨어 엔지니어",
           employmentType: "프리랜스",
-          description: `- 상업 출시를 목표로 하는 독립 게임 개발 프로젝트 LostHaven 공동 창업.
+          description: `- 2026년 8월까지 진행된 상업 출시 목표의 독립 게임 개발 프로젝트 LostHaven 공동 창업.
 - Godot 기반 게임 개발과 프로젝트 기술 아키텍처 설계에 참여.
 - 공식 웹사이트와 관련 웹 서비스 개발 및 유지보수.
 - 게임플레이 시스템과 웹 기반 기능 설계 및 구현.
@@ -668,6 +674,14 @@ const projectTranslations: Partial<
   Record<Locale, Record<string, Partial<Project>>>
 > = {
   fr: {
+    frameclue: {
+      description: `Produit entrepreneurial de Creative Intelligence qui aide les fondateurs indépendants et les petites marques à comprendre leurs créations vidéo et à choisir les prochains tests.
+- Développement du produit full-stack avec Next.js 16, React 19, TypeScript et Tailwind CSS.
+- Mise en place d'uploads vidéo privés, de la validation et du stockage avec Supabase Auth, PostgreSQL, Storage et Row Level Security.
+- Conception de workflows d'analyse Gemini durables produisant des rapports structurés, versionnés et fondés sur les éléments observables de chaque création.
+- Ajout des versions française et anglaise, de tests automatisés et de contrôles d'accès orientés sécurité pour une alpha privée.
+- Développement du projet dans le cadre du Statut national étudiant-entrepreneur (SNEE).`,
+    },
     oriel: {
       description: `Oriel est une application macOS native et open source permettant d'afficher des widgets légers en HTML, CSS et JavaScript directement sur le bureau, avec une architecture locale et orientée sécurité.
 - Développement de l'application avec Swift 6, SwiftUI, AppKit et WebKit, en utilisant des WKWebViews isolées et non persistantes pour chaque widget.
@@ -697,7 +711,7 @@ const projectTranslations: Partial<
 - Déploiement sur Vercel avec infrastructure Supabase production, sitemap, robots.txt et monitoring performance.`,
     },
     losthaven: {
-      description: `Jeu solo développé avec Godot au sein d'un projet d'équipe avec un objectif de commercialisation.
+      description: `Jeu solo développé avec Godot au sein d'un projet d'équipe mené jusqu'en août 2026 avec un objectif de commercialisation.
 - Co-fondateur du projet et contribution à la stratégie de sortie commerciale.
 - Conception de l'architecture technique et des systèmes principaux.
 - Développement de systèmes de gameplay avec Godot et de fonctionnalités web autour du jeu.
@@ -744,6 +758,14 @@ const projectTranslations: Partial<
     },
   },
   kr: {
+    frameclue: {
+      description: `1인 창업자와 소규모 브랜드가 영상 광고 소재를 이해하고 다음 테스트를 결정하도록 돕는 Creative Intelligence 창업 프로젝트.
+- Next.js 16, React 19, TypeScript, Tailwind CSS로 풀스택 제품 개발.
+- Supabase Auth, PostgreSQL, Storage, Row Level Security를 활용한 비공개 영상 업로드, 검증, 저장 구현.
+- 각 소재의 관찰 가능한 근거를 바탕으로 구조화되고 버전 관리되는 보고서를 생성하는 내구성 있는 Gemini 분석 워크플로 설계.
+- 비공개 알파를 위해 프랑스어/영어 지원, 자동화 테스트, 보안 중심 접근 제어 추가.
+- 프랑스 국가 학생 창업가 자격(SNEE)으로 프로젝트 개발.`,
+    },
     oriel: {
       description: `Oriel은 가벼운 HTML, CSS, JavaScript 위젯을 데스크톱에 직접 배치할 수 있는 오픈 소스 네이티브 macOS 애플리케이션으로, 로컬 우선과 보안을 중심으로 설계되었습니다.
 - Swift 6, SwiftUI, AppKit, WebKit으로 애플리케이션을 개발하고, 각 위젯을 격리된 비영구 WKWebView에서 렌더링.
@@ -773,7 +795,7 @@ const projectTranslations: Partial<
 - Vercel과 Supabase production 인프라로 배포하고 sitemap, robots.txt, 성능 모니터링 구성.`,
     },
     losthaven: {
-      description: `상업 출시를 목표로 팀 프로젝트로 개발 중인 Godot 기반 싱글 플레이어 게임.
+      description: `상업 출시를 목표로 2026년 8월까지 팀 프로젝트로 개발한 Godot 기반 싱글 플레이어 게임.
 - 프로젝트 공동 창업 및 상업 출시 전략에 기여.
 - 프로젝트 기술 아키텍처와 핵심 시스템 설계.
 - Godot 기반 게임플레이 시스템과 게임 관련 웹 기능 개발.
