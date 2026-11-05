@@ -12,7 +12,6 @@ export const EDUCATION: Education[] = [
     description: `Nice, France.
 
 Development of an application for analyzing video creatives using artificial intelligence.`,
-    isExpanded: true,
   },
   {
     id: "epitech",
@@ -37,7 +36,6 @@ Development of an application for analyzing video creatives using artificial int
       "Software Architecture",
       "Project Management",
     ],
-    isExpanded: true,
   },
   {
     id: "inha-university",

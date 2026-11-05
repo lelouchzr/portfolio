@@ -12,6 +12,6 @@ describe("SNEE education entry", () => {
     expect(entry?.period).toEqual({ start: "2026", end: "2027" })
     expect(entry?.fieldOfStudy).toContain("Frameclue")
     expect(entry?.degree).toBeUndefined()
-    expect(entry?.isExpanded).toBe(true)
+    expect(entry?.isExpanded).toBeFalsy()
   })
 })

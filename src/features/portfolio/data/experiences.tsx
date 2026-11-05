@@ -36,7 +36,6 @@ export const EXPERIENCES: Experience[] = [
           "Project Management",
           "Product Strategy",
         ],
-        isExpanded: true,
       },
     ],
   },

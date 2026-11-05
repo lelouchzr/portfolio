@@ -32,7 +32,6 @@ const projects: Project[] = [
 - Connect Meta AI to real local MCP tools for focused evidence searches and structured investigation findings.
 - Persist cases, notes and activity locally with DuckDB; export Markdown and JSON reports and resume investigations later.
 - Keep manual investigations available without an API key, with explicit provider states and bounded AI requests.`,
-    isExpanded: true,
   },
   {
     id: "frameclue",
@@ -61,7 +60,6 @@ const projects: Project[] = [
 - Designed durable Gemini analysis workflows that produce structured, versioned reports grounded in evidence from each creative.
 - Added French and English localization, automated tests and security-focused access controls for a private alpha.
 - Developing the product as a holder of France's National Student-Entrepreneur Status (SNEE).`,
-    isExpanded: true,
   },
   {
     id: "nanotekspice",
@@ -213,7 +211,6 @@ const projects: Project[] = [
 - Integrated Stripe Checkout, Billing Portal, webhooks, subscription plans, quotas and feature gates across frontend and database policies.
 - Added analytics-focused pages including daily progress, due cards, recent activity, hardest cards and plan-based advanced stats.
 - Deployed on Vercel with Supabase production infrastructure, sitemap generation, robots.txt and performance monitoring.`,
-    isExpanded: true,
   },
   {
     id: "losthaven",
