@@ -56,7 +56,7 @@ describe("public portfolio content", () => {
     const content = await (await getHackathons()).text()
 
     expect(content).toContain("Meta Global AI Developer Hackathon")
-    expect(content).toContain("Participation: 2026-11-05")
+    expect(content).toContain("Participation: 2026-10-26 – 2026-11-04")
     expect(content).toContain("https://github.com/lelouchzr/sentinel")
     expect(content).toContain(
       "Participation: 2022 | Cannes, France | in-person"

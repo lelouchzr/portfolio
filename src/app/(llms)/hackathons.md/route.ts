@@ -7,8 +7,11 @@ ${HACKATHONS.map((hackathon) => {
     ? `\n\nProject: [${hackathon.project.title}](${hackathon.project.url})`
     : ""
   const event = hackathon.eventUrl ? `\n\n[Event](${hackathon.eventUrl})` : ""
+  const period = hackathon.endDate
+    ? `${hackathon.date} – ${hackathon.endDate}`
+    : hackathon.date
 
-  return `## ${hackathon.title}\n\nParticipation: ${hackathon.date} | ${hackathon.location} | ${hackathon.format}\n\n${hackathon.description}${project}${event}`
+  return `## ${hackathon.title}\n\nParticipation: ${period} | ${hackathon.location} | ${hackathon.format}\n\n${hackathon.description}${project}${event}`
 }).join("\n\n")}
 `
 

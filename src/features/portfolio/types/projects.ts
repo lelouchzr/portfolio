@@ -11,6 +11,8 @@ export type Project = {
     start: string
     /** End date; leave undefined for "Present". */
     end?: string
+    /** The dates describe commit activity, rather than the project's lifetime. */
+    source?: "commits"
   }
   /** Public URL (site, repository, demo, or video). */
   link?: string

@@ -4,7 +4,8 @@ export const HACKATHONS: Hackathon[] = [
   {
     id: "meta-global-ai-2026",
     title: "Meta Global AI Developer Hackathon",
-    date: "2026-11-05",
+    date: "2026-10-26",
+    endDate: "2026-11-04",
     location: "Worldwide",
     format: "online",
     description:

@@ -3,6 +3,8 @@ export type Hackathon = {
   title: string
   /** ISO date, or just the year when the exact date is unknown. */
   date: string
+  /** Inclusive end date for events spanning several days. */
+  endDate?: string
   location: string
   format: "online" | "in-person"
   description: string

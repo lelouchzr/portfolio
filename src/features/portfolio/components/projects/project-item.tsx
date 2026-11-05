@@ -75,8 +75,15 @@ export function ProjectItem({
             </h3>
 
             <dl className="text-sm text-muted-foreground">
-              <dt className="sr-only">Period</dt>
-              <dd className="flex items-center gap-0.5">
+              <dt className="sr-only">
+                {project.period.source === "commits"
+                  ? "Git activity"
+                  : "Period"}
+              </dt>
+              <dd className="flex flex-wrap items-center gap-x-0.5">
+                {project.period.source === "commits" && (
+                  <span className="mr-1">Git ·</span>
+                )}
                 <span>{start}</span>
                 {!isSinglePeriod && (
                   <>

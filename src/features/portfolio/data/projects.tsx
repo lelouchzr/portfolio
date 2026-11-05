@@ -4,7 +4,7 @@ export const PROJECTS: Project[] = [
   {
     id: "sentinel",
     title: "Sentinel",
-    period: { start: "10.2026", end: "11.2026" },
+    period: { start: "04.11.2026", end: "05.11.2026", source: "commits" },
     link: "https://github.com/lelouchzr/sentinel",
     skills: [
       "Python",
@@ -26,9 +26,7 @@ export const PROJECTS: Project[] = [
   {
     id: "frameclue",
     title: "Frameclue",
-    period: {
-      start: "09.2026",
-    },
+    period: { start: "01.09.2026", end: "25.10.2026", source: "commits" },
     skills: [
       "Creative Intelligence",
       "Product Engineering",
@@ -56,7 +54,7 @@ export const PROJECTS: Project[] = [
   {
     id: "nanotekspice",
     title: "NanoTekSpice",
-    period: { start: "08.2026", end: "08.2026" },
+    period: { start: "01.08.2026", end: "31.08.2026", source: "commits" },
     link: "https://github.com/lelouchzr/nanotekspice",
     skills: [
       "C++20",
@@ -76,7 +74,7 @@ export const PROJECTS: Project[] = [
   {
     id: "raytracer",
     title: "Raytracer — Atelier",
-    period: { start: "04.2026", end: "05.2026" },
+    period: { start: "20.04.2026", end: "28.05.2026", source: "commits" },
     link: "https://github.com/lelouchzr/raytracer",
     skills: [
       "C++20",
@@ -97,7 +95,7 @@ export const PROJECTS: Project[] = [
   {
     id: "arcade",
     title: "Arcade",
-    period: { start: "03.2026", end: "04.2026" },
+    period: { start: "28.03.2026", end: "11.04.2026", source: "commits" },
     link: "https://github.com/lelouchzr/arcade",
     skills: [
       "C++20",
@@ -118,9 +116,7 @@ export const PROJECTS: Project[] = [
   {
     id: "oriel",
     title: "Oriel",
-    period: {
-      start: "07.2026",
-    },
+    period: { start: "23.07.2026", end: "23.07.2026", source: "commits" },
     link: "https://github.com/lelouchzr/Oriel",
     skills: [
       "macOS",
@@ -149,9 +145,7 @@ export const PROJECTS: Project[] = [
   {
     id: "handwriting-recognition",
     title: "Python Handwriting Recognition",
-    period: {
-      start: "07.2026",
-    },
+    period: { start: "17.05.2026", end: "08.06.2026", source: "commits" },
     link: "https://github.com/lelouchzr/Handwriting-Recognition",
     skills: [
       "Python",
@@ -173,9 +167,7 @@ export const PROJECTS: Project[] = [
   {
     id: "flashcardstudy",
     title: "FlashCardStudy",
-    period: {
-      start: "04.2026",
-    },
+    period: { start: "11.04.2026", end: "06.09.2026", source: "commits" },
     link: "https://flashcardstudy.com",
     logo: "/images/portfolio/flashcardstudy-logo.png",
     invertLogoInDarkMode: true,
@@ -233,10 +225,7 @@ export const PROJECTS: Project[] = [
   {
     id: "lightweight-rag-framework",
     title: "Python RAG Framework",
-    period: {
-      start: "06.2026",
-      end: "07.2026",
-    },
+    period: { start: "10.06.2026", end: "15.06.2026", source: "commits" },
     link: "https://github.com/lelouchzr/python-rag-framework",
     logo: "/images/portfolio/python-rag-framework-logo.png",
     invertLogoInDarkMode: true,
@@ -263,10 +252,7 @@ export const PROJECTS: Project[] = [
   {
     id: "python-agent-runtime",
     title: "Python Agent Runtime",
-    period: {
-      start: "06.2026",
-      end: "07.2026",
-    },
+    period: { start: "17.06.2026", end: "22.06.2026", source: "commits" },
     link: "https://github.com/lelouchzr/python-agent-runtime",
     logo: "/images/portfolio/python-agent-runtime-logo.png",
     invertLogoInDarkMode: true,
@@ -291,9 +277,7 @@ export const PROJECTS: Project[] = [
   {
     id: "python-doc-generator",
     title: "Python Doc Generator",
-    period: {
-      start: "06.2026",
-    },
+    period: { start: "24.06.2026", end: "30.06.2026", source: "commits" },
     link: "https://github.com/lelouchzr/python-doc-generator",
     logo: "/images/portfolio/python-doc-generator-logo.png",
     invertLogoInDarkMode: true,
@@ -319,10 +303,7 @@ export const PROJECTS: Project[] = [
   {
     id: "lem-in",
     title: "Lem_in",
-    period: {
-      start: "20.03.2023",
-      end: "16.04.2023",
-    },
+    period: { start: "25.09.2023", end: "11.06.2025", source: "commits" },
     link: "https://github.com/lelouchzr/lem_in",
     logo: "/images/portfolio/lem-in-logo.png",
     invertLogoInDarkMode: true,
@@ -346,10 +327,7 @@ export const PROJECTS: Project[] = [
   {
     id: "corewar",
     title: "Corewar",
-    period: {
-      start: "24.04.2023",
-      end: "28.05.2023",
-    },
+    period: { start: "12.05.2025", end: "10.06.2025", source: "commits" },
     link: "https://github.com/lelouchzr/corewar",
     logo: "/images/portfolio/corewar-logo.png",
     invertLogoInDarkMode: true,

@@ -9,6 +9,17 @@ import type { Hackathon } from "@/features/portfolio/types/hackathons"
 import { Panel, PanelHeader, PanelTitle, PanelTitleSup } from "./panel"
 import { PanelTitleCopy } from "./panel-title-copy"
 
+function formatDate(date: string, locale: Locale): string {
+  if (date.length === 4) return date
+
+  return new Intl.DateTimeFormat(locale === "kr" ? "ko" : locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`))
+}
+
 export function Hackathons({
   hackathons,
   title,
@@ -43,15 +54,16 @@ export function Hackathons({
             <h3 className="font-medium text-balance">{hackathon.title}</h3>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
               <time dateTime={hackathon.date}>
-                {hackathon.date.length === 4
-                  ? hackathon.date
-                  : new Intl.DateTimeFormat(locale === "kr" ? "ko" : locale, {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                      timeZone: "UTC",
-                    }).format(new Date(`${hackathon.date}T00:00:00Z`))}
+                {formatDate(hackathon.date, locale)}
               </time>
+              {hackathon.endDate && (
+                <>
+                  <span aria-hidden>–</span>
+                  <time dateTime={hackathon.endDate}>
+                    {formatDate(hackathon.endDate, locale)}
+                  </time>
+                </>
+              )}
               <span>{hackathon.location}</span>
               <Tag>{labels.participant}</Tag>
               <span>
