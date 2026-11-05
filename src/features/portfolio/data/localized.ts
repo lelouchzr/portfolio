@@ -750,6 +750,14 @@ const projectTranslations: Partial<
   Record<Locale, Record<string, Partial<Project>>>
 > = {
   fr: {
+    "mnist-handwriting-calculator": {
+      title: "Calculatrice manuscrite MNIST — SVM & CNN",
+      description: `Calculatrice locale d'expressions manuscrites comparant un modèle HOG + SVM calibré à un réseau de neurones convolutif.
+- Développement d'un espace de dessin React et d'un backend FastAPI pour reconnaître les chiffres et opérateurs manuscrits, vérifier les prédictions et calculer les expressions arithmétiques.
+- Implémentation de la segmentation des traits, de la réparation des traits interrompus et du centrage des symboles en 28 × 28 pixels, avec traitement géométrique des séparateurs décimaux et des signes de division.
+- Entraînement des deux modèles sur MNIST et des symboles générés, avec entraînement reproductible et jeux de validation et d'évaluation distincts.
+- Ajout des scores par symbole, des zones détectées, de cartes d'occlusion et de benchmarks de régression pour inspecter les prédictions et comparer les deux pipelines.`,
+    },
     sentinel: {
       description: `Espace de travail interactif en terminal pour analyser des journaux de sécurité, développé pour le Meta Global AI Developer Hackathon 2026.
 - Import de données CSV et JSONL, détection de signaux par règles et inspection des preuves originales dans une interface Textual.
@@ -862,6 +870,14 @@ const projectTranslations: Partial<
     },
   },
   kr: {
+    "mnist-handwriting-calculator": {
+      title: "MNIST 손글씨 계산기 — SVM & CNN",
+      description: `보정된 HOG + SVM 모델과 합성곱 신경망을 비교하는 로컬 손글씨 수식 계산기입니다.
+- React 그리기 작업 공간과 FastAPI 백엔드로 손으로 쓴 숫자와 연산자를 인식하고, 예측을 검토한 뒤 수식을 계산합니다.
+- 획 분할, 끊어진 획 복원, 28 × 28 픽셀 중심 정렬 전처리를 구현하고 소수점과 나눗셈 기호를 기하학적으로 처리합니다.
+- MNIST 숫자와 생성한 기호로 두 모델을 학습하고, 재현 가능한 학습 과정과 분리된 검증 및 평가 데이터를 구성했습니다.
+- 기호별 점수, 경계 상자, 가림 지도와 회귀 벤치마크로 예측을 살펴보고 두 인식 파이프라인을 비교합니다.`,
+    },
     sentinel: {
       description: `Meta Global AI Developer Hackathon 2026을 위해 개발한 보안 로그 조사용 대화형 터미널 작업 공간입니다.
 - CSV와 JSONL 데이터를 가져오고 규칙 기반 신호를 탐지하며 Textual 인터페이스에서 원본 근거를 확인합니다.

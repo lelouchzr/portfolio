@@ -2,6 +2,7 @@ import {
   ArcadeProjectIcon,
   FrameclueProjectIcon,
   HandwritingProjectIcon,
+  MnistCalculatorProjectIcon,
   NanotekspiceProjectIcon,
   OrielProjectIcon,
   RaytracerProjectIcon,
@@ -11,6 +12,31 @@ import { sortProjectsByDate } from "../lib/sort-projects"
 import type { Project } from "../types/projects"
 
 const projects: Project[] = [
+  {
+    id: "mnist-handwriting-calculator",
+    title: "MNIST Handwriting Calculator — SVM & CNN",
+    icon: <MnistCalculatorProjectIcon />,
+    period: { start: "03.03.2026", end: "22.03.2026", source: "commits" },
+    link: "https://github.com/lelouchzr/MNIST-Handwriting-Calculator-SVM-CNN",
+    skills: [
+      "Python",
+      "FastAPI",
+      "React 19",
+      "TypeScript",
+      "PyTorch",
+      "scikit-learn",
+      "SVM",
+      "CNN",
+      "HOG",
+      "MNIST",
+      "Computer Vision",
+    ],
+    description: `Local handwritten arithmetic calculator comparing a calibrated HOG + SVM model with a convolutional neural network.
+- Built a React drawing workspace and FastAPI backend to recognize handwritten digits and operators, review predictions and evaluate arithmetic expressions.
+- Implemented stroke segmentation, interrupted-stroke repair and centered 28 × 28 symbol preprocessing, with geometric handling of decimal marks and division signs.
+- Trained both models on MNIST digits and generated symbols, with reproducible training and separate validation and evaluation datasets.
+- Added per-symbol scores, bounding boxes, occlusion maps and regression benchmarks to inspect predictions and compare both recognition pipelines.`,
+  },
   {
     id: "sentinel",
     title: "Sentinel",

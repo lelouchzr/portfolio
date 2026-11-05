@@ -87,3 +87,12 @@ export function HandwritingProjectIcon(props: ProjectIconProps) {
     </ProjectIcon>
   )
 }
+
+export function MnistCalculatorProjectIcon(props: ProjectIconProps) {
+  return (
+    <ProjectIcon {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="3" />
+      <path d="M7 8.5c0-2 4-2 4 0 0 1.5-4 2-4 4h4m4-5h3m-1.5-1.5v3M7 17h4m-2-2v4m6-3h3m-3 3h3" />
+    </ProjectIcon>
+  )
+}
