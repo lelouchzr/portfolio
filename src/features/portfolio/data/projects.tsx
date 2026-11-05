@@ -1,9 +1,20 @@
+import {
+  ArcadeProjectIcon,
+  FrameclueProjectIcon,
+  HandwritingProjectIcon,
+  NanotekspiceProjectIcon,
+  OrielProjectIcon,
+  RaytracerProjectIcon,
+  SentinelProjectIcon,
+} from "../components/project-icons"
+import { sortProjectsByDate } from "../lib/sort-projects"
 import type { Project } from "../types/projects"
 
-export const PROJECTS: Project[] = [
+const projects: Project[] = [
   {
     id: "sentinel",
     title: "Sentinel",
+    icon: <SentinelProjectIcon />,
     period: { start: "04.11.2026", end: "05.11.2026", source: "commits" },
     link: "https://github.com/lelouchzr/sentinel",
     skills: [
@@ -26,7 +37,8 @@ export const PROJECTS: Project[] = [
   {
     id: "frameclue",
     title: "Frameclue",
-    period: { start: "01.09.2026", end: "25.10.2026", source: "commits" },
+    icon: <FrameclueProjectIcon />,
+    period: { start: "01.09.2026" },
     skills: [
       "Creative Intelligence",
       "Product Engineering",
@@ -54,6 +66,7 @@ export const PROJECTS: Project[] = [
   {
     id: "nanotekspice",
     title: "NanoTekSpice",
+    icon: <NanotekspiceProjectIcon />,
     period: { start: "01.08.2026", end: "31.08.2026", source: "commits" },
     link: "https://github.com/lelouchzr/nanotekspice",
     skills: [
@@ -74,6 +87,7 @@ export const PROJECTS: Project[] = [
   {
     id: "raytracer",
     title: "Raytracer — Atelier",
+    icon: <RaytracerProjectIcon />,
     period: { start: "20.04.2026", end: "28.05.2026", source: "commits" },
     link: "https://github.com/lelouchzr/raytracer",
     skills: [
@@ -95,6 +109,7 @@ export const PROJECTS: Project[] = [
   {
     id: "arcade",
     title: "Arcade",
+    icon: <ArcadeProjectIcon />,
     period: { start: "28.03.2026", end: "11.04.2026", source: "commits" },
     link: "https://github.com/lelouchzr/arcade",
     skills: [
@@ -116,6 +131,7 @@ export const PROJECTS: Project[] = [
   {
     id: "oriel",
     title: "Oriel",
+    icon: <OrielProjectIcon />,
     period: { start: "23.07.2026", end: "23.07.2026", source: "commits" },
     link: "https://github.com/lelouchzr/Oriel",
     skills: [
@@ -145,6 +161,7 @@ export const PROJECTS: Project[] = [
   {
     id: "handwriting-recognition",
     title: "Python Handwriting Recognition",
+    icon: <HandwritingProjectIcon />,
     period: { start: "17.05.2026", end: "08.06.2026", source: "commits" },
     link: "https://github.com/lelouchzr/Handwriting-Recognition",
     skills: [
@@ -348,3 +365,5 @@ export const PROJECTS: Project[] = [
 - Added a bonus ncurses visualizer for the simulation.`,
   },
 ]
+
+export const PROJECTS: Project[] = sortProjectsByDate(projects)
