@@ -136,7 +136,7 @@ Visited Quy Nhon, Binh Dinh for the first time, and returned to Ha Noi.`,
 - 2nd Prize — Can Tho City Youth and Children’s Creativity Contest 2018
 - 3rd Prize — National Young Informatics Contest 2018
 
-Earned direct admission to University of Science — VNUHCM, majoring in Information Systems.
+Earned direct admission to University of Science, VNUHCM, majoring in Information Systems.
 
 Began freelancing and joined Tung Tung as a UI/UX Designer.
 
@@ -170,7 +170,7 @@ Won Bronze Medal — 10th Design, Manufacturing, and Application Award 2022.`,
     year: 2025,
     content: `Open-sourced [chanhdai.com](https://github.com/ncdai/chanhdai.com) — 2.4K+ stars on GitHub.
 
-Released [React Wheel Picker](https://react-wheel-picker.chanhdai.com) — 70K+ weekly downloads, selected for the [Vercel OSS Program](https://vercel.com/open-source-program).
+Released [React Wheel Picker](https://react-wheel-picker.chanhdai.com) — 1.5M+ downloads, selected for the [Vercel OSS Program](https://vercel.com/open-source-program).
 
 Followed by [shadcn](https://x.com/shadcn) on X.`,
   },

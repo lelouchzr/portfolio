@@ -2,7 +2,6 @@
 title: Apple Carousel
 description: Infinite autoplay carousel with progress dots, inspired by Apple’s website.
 image: https://assets.chanhdai.com/images/blog/apple-carousel.webp
-new: true
 createdAt: 2026-09-16
 updatedAt: 2026-09-26
 ---
@@ -13,12 +12,18 @@ updatedAt: 2026-09-26
   openInV0Url="https://chanhdai.com/r/apple-carousel.json"
 />
 
+<DocDependencies name="apple-carousel" />
+
 ## Features
 
 - Loops endlessly, with neighboring cards peeking in.
 - Autoplays with a progress dot, and pauses on interaction or when off screen.
-- Swipe, scroll, click a dot, or use arrow keys, even mid-slide.
-- Respects reduced motion: no autoplay until Play is pressed, and cards jump instead of sliding.
+- Swipe, scroll, or click a dot, even mid-slide.
+
+## Use cases
+
+- Gallery of work or product shots.
+- Featured stories on a landing page.
 
 ## Installation
 
@@ -162,6 +167,11 @@ A caption and `Button` over each photo. `data-current` fades captions on peeking
   name="apple-carousel-caption-demo"
   openInV0Url="https://chanhdai.com/r/apple-carousel.json"
 />
+
+## Accessibility
+
+- Arrow keys, `Home`, and `End` move between the dots.
+- With `prefers-reduced-motion`, autoplay waits until Play is pressed, and cards jump instead of sliding.
 
 ## Credits
 

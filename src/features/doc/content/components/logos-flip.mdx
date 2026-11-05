@@ -8,10 +8,18 @@ updatedAt: 2026-09-07
 
 <ComponentPreview name="logos-flip-demo" />
 
+<DocDependencies name="logos-flip" />
+
 ## Features
 
 - Cycles through every logo over time.
 - Pauses while the page is hidden or the grid is off screen.
+
+## Use cases
+
+- Trusted-by section on a landing page.
+- Sponsor or partner grid with more logos than fit at once.
+- Customer logos near a pricing table.
 
 ## Installation
 
@@ -76,7 +84,7 @@ import { LogosFlip } from "@/components/logos-flip"
 Set `--column-count` to wrap the cards onto fewer columns:
 
 ```tsx
-<LogosFlip className="[--column-count:2] sm:[--column-count:4]">...</LogosFlip>
+<LogosFlip className="[--column-count:2] sm:[--column-count:4]"></LogosFlip>
 ```
 
 ## Accessibility

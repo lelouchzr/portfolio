@@ -3,12 +3,12 @@ import type { Registry } from "shadcn/schema"
 
 export const examples: Registry["items"] = [
   {
-    name: "text-flip-demo",
+    name: "text-swap-demo",
     type: "registry:example",
-    registryDependencies: [getRegistryItemUrl("text-flip")],
+    registryDependencies: [getRegistryItemUrl("text-swap")],
     files: [
       {
-        path: "examples/text-flip-demo.tsx",
+        path: "examples/text-swap-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -622,12 +622,27 @@ export const examples: Registry["items"] = [
     },
   },
   {
-    name: "testimonial-2-demo",
+    name: "logos-swap-demo",
     type: "registry:example",
-    registryDependencies: [getRegistryItemUrl("testimonial-2")],
+    registryDependencies: [getRegistryItemUrl("logos-swap")],
     files: [
       {
-        path: "examples/testimonial-2-demo.tsx",
+        path: "examples/logos-swap-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName:
+        "container mx-auto min-h-svh place-items-center-safe content-center-safe",
+    },
+  },
+  {
+    name: "pull-quote-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("pull-quote")],
+    files: [
+      {
+        path: "examples/pull-quote-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -807,6 +822,34 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/ipod-classic-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName: "flex min-h-svh items-center justify-center",
+    },
+  },
+  {
+    name: "wallet-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("wallet")],
+    files: [
+      {
+        path: "examples/wallet-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+    meta: {
+      previewClassName: "flex min-h-svh items-center justify-center",
+    },
+  },
+  {
+    name: "wallet-passes-demo",
+    type: "registry:example",
+    registryDependencies: [getRegistryItemUrl("wallet")],
+    files: [
+      {
+        path: "examples/wallet-passes-demo.tsx",
         type: "registry:example",
       },
     ],

@@ -20,21 +20,21 @@ export const components: Registry["items"] = [
     docs: "https://chanhdai.com/components/theme-switcher",
   },
   {
-    name: "text-flip",
+    name: "text-swap",
     type: "registry:component",
-    title: "Text Flip",
+    title: "Text Swap",
     description:
-      "Animated text that cycles through items with a smooth flip transition.",
+      "Animated text that swaps through items with a fade transition.",
     dependencies: ["motion"],
     files: [
       {
-        path: "components/text-flip/text-flip.tsx",
+        path: "components/text-swap/text-swap.tsx",
         type: "registry:component",
-        target: "@components/text-flip.tsx",
+        target: "@components/text-swap.tsx",
       },
     ],
     categories: ["text-effects"],
-    docs: "https://chanhdai.com/components/text-flip",
+    docs: "https://chanhdai.com/components/text-swap",
   },
   {
     name: "apple-hello-effect",
@@ -779,20 +779,36 @@ export const components: Registry["items"] = [
     docs: "https://chanhdai.com/components/logos-flip",
   },
   {
-    name: "testimonial-2",
+    name: "logos-swap",
     type: "registry:component",
-    title: "Testimonial 2",
+    title: "Logos Swap",
+    description: "Swap logos one at a time in a scattered order.",
+    dependencies: ["motion"],
+    files: [
+      {
+        path: "components/logos-swap/logos-swap.tsx",
+        type: "registry:component",
+        target: "@components/logos-swap.tsx",
+      },
+    ],
+    categories: ["marketing"],
+    docs: "https://chanhdai.com/components/logos-swap",
+  },
+  {
+    name: "pull-quote",
+    type: "registry:component",
+    title: "Pull Quote",
     description:
       "Display a testimonial quote with author attribution and source link.",
     files: [
       {
-        path: "components/testimonial-2/testimonial-2.tsx",
+        path: "components/pull-quote/pull-quote.tsx",
         type: "registry:component",
-        target: "@components/testimonial-2.tsx",
+        target: "@components/pull-quote.tsx",
       },
     ],
     categories: ["marketing"],
-    docs: "https://chanhdai.com/components/testimonial-2",
+    docs: "https://chanhdai.com/components/pull-quote",
   },
   {
     name: "line-nav",
@@ -1044,5 +1060,21 @@ export const components: Registry["items"] = [
     })),
     categories: ["illustrations"],
     docs: "https://chanhdai.com/components/ipod-classic",
+  },
+  {
+    name: "wallet",
+    type: "registry:component",
+    title: "Wallet",
+    description: "Leather wallet with cards you can peek at and pull out.",
+    dependencies: ["@base-ui/react", "motion"],
+    files: [
+      {
+        path: "components/wallet/wallet.tsx",
+        type: "registry:component",
+        target: "@components/wallet.tsx",
+      },
+    ],
+    categories: ["illustrations"],
+    docs: "https://chanhdai.com/components/wallet",
   },
 ]

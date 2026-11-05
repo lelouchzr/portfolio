@@ -3,8 +3,8 @@ import type { User } from "@/features/portfolio/types/user"
 
 import { ChanhDaiMarkIsometric } from "./chanhdai-mark-isometric"
 import { DiameterDimension } from "./diameter-dimension"
-import { FlipSentences } from "./flip-sentences"
 import { HandwrittenArrow, HandwrittenNote } from "./handwritten-note"
+import { ProfileTaglines } from "./profile-taglines"
 import { PronounceMyName } from "./pronounce-my-name"
 import { VerifiedIcon } from "./verified-icon"
 
@@ -35,15 +35,15 @@ export function ProfileHeader({ user = USER }: { user?: User }) {
             <div className="relative z-10 size-30 rounded-full min-[24rem]:size-32 sm:size-40">
               <img
                 className="block size-full rounded-[inherit] object-cover select-none dark:hidden"
-                src={user.avatarSketch ?? user.avatar}
-                alt="Avatar with sketch style in light mode"
+                src={user.avatarOutline}
+                alt="Avatar in light mode"
               />
               <img
                 className="hidden size-full rounded-[inherit] object-cover select-none dark:block"
-                src={user.avatar}
+                src={user.avatarMonochrome}
                 alt="Avatar in dark mode"
               />
-              <div className="pointer-events-none absolute inset-0 rounded-[inherit] inset-ring-1 inset-ring-foreground dark:hidden" />
+              <div className="pointer-events-none absolute inset-0 rounded-[inherit] inset-ring-1 inset-ring-foreground dark:inset-ring-foreground/20" />
 
               {/* The label assumes size-40 (sm+); the gutter fits it from lg. */}
               <DiameterDimension
@@ -77,9 +77,9 @@ export function ProfileHeader({ user = USER }: { user?: User }) {
             )}
           </div>
 
-          <FlipSentences className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
-            {user.flipSentences}
-          </FlipSentences>
+          <ProfileTaglines className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
+            {user.taglines}
+          </ProfileTaglines>
         </div>
       </div>
     </div>

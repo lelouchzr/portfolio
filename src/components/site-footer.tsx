@@ -62,19 +62,14 @@ export function SiteFooter() {
           <Item>
             <dt>Analytics</dt>
             <dd>
-              <ul>
-                <li>
-                  <a
-                    className="link-underline"
-                    href="https://openpanel.dev?utm_source=adrienlachambre.com&utm_medium=referral&utm_campaign=footer"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    OpenPanel
-                  </a>
-                </li>
-                <li>Google Analytics</li>
-              </ul>
+              <a
+                className="link-underline"
+                href="https://openpanel.dev?utm_source=adrienlachambre.com&utm_medium=referral&utm_campaign=footer"
+                target="_blank"
+                rel="noopener"
+              >
+                OpenPanel
+              </a>
             </dd>
           </Item>
 

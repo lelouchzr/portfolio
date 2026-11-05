@@ -7,6 +7,7 @@ import {
   IconRipple,
 } from "@tabler/icons-react"
 import {
+  ArrowUpDownIcon,
   BookOpenIcon,
   BriefcaseBusinessIcon,
   ChevronsUpDownIcon,
@@ -29,6 +30,7 @@ import {
   SunDimIcon,
   TerminalIcon,
   VibrateIcon,
+  WalletCardsIcon,
   ZapIcon,
 } from "lucide-react"
 
@@ -88,7 +90,7 @@ const COMPONENT_ICONS: Record<string, React.ReactNode> = {
   ),
   "copy-button": <CopyIcon />,
   "code-block-command": <TerminalIcon />,
-  "text-flip": <SeparatorHorizontalIcon />,
+  "text-swap": <SeparatorHorizontalIcon />,
   haptic: <VibrateIcon />,
   "testimonial-spotlight": <SunDimIcon />,
   "glow-card-grid": <LayoutGridIcon />,
@@ -144,7 +146,7 @@ const COMPONENT_ICONS: Record<string, React.ReactNode> = {
   ),
   "chevrons-up-down-icon": <ChevronsUpDownIcon />,
   "logos-carousel": <IconRipple />,
-  "testimonial-2": <IconBlockquote />,
+  "pull-quote": <IconBlockquote />,
   "line-nav": <IconBaselineDensitySmall />,
   "share-menu": <ShareIcon />,
   "spotlight-logo": <ChanhDaiMark />,
@@ -266,6 +268,7 @@ const COMPONENT_ICONS: Record<string, React.ReactNode> = {
     </svg>
   ),
   "logos-flip": <SquareCenterlineDashedVertical />,
+  "logos-swap": <ArrowUpDownIcon />,
   "swipe-actions": (
     <svg
       viewBox="0 0 24 24"
@@ -282,6 +285,7 @@ const COMPONENT_ICONS: Record<string, React.ReactNode> = {
   "apple-carousel": <GalleryHorizontal />,
   "jpg-card-holder": <FileImageIcon />,
   foldable: <BookOpenIcon />,
+  wallet: <WalletCardsIcon />,
 }
 
 export function ComponentIcon({ slug }: { slug: string }) {

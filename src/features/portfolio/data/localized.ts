@@ -346,7 +346,7 @@ const userTranslations: Partial<Record<Locale, Partial<User>>> = {
   fr: {
     bio: messages.fr.metadata.description,
     jobTitle: "Ingénieur logiciel",
-    flipSentences: [
+    taglines: [
       "Ingénieur logiciel.",
       "Étudiant-entrepreneur (SNEE).",
       "IA et systèmes backend.",
@@ -375,7 +375,7 @@ Après un échange universitaire en Corée du Sud, j'ai développé un fort int�
   kr: {
     bio: messages.kr.metadata.description,
     jobTitle: "소프트웨어 엔지니어",
-    flipSentences: [
+    taglines: [
       "소프트웨어 엔지니어.",
       "학생 창업가(SNEE).",
       "AI와 백엔드 시스템.",

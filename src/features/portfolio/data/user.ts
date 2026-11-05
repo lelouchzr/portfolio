@@ -8,7 +8,7 @@ export const USER: User = {
   gender: "male",
   pronouns: "he/him",
   bio: "Software engineering student and SNEE student entrepreneur building full-stack applications, AI tools and backend systems.",
-  flipSentences: [
+  taglines: [
     "Software Engineer.",
     "Student Entrepreneur (SNEE).",
     "AI and backend systems.",
@@ -39,7 +39,8 @@ I also build personal projects around AI agents, tool calling, MCP integrations,
 After an academic exchange program in South Korea, I developed a strong interest in international environments and cross-cultural collaboration. I’m actively learning Korean and preparing for TOPIK, TOEIC and IELTS, with the goal of working in an international setting.
 `,
   avatar: "/images/portfolio/adrien-avatar.webp",
-  avatarSketch: "/images/portfolio/adrien-avatar.webp",
+  avatarOutline: "/images/portfolio/adrien-avatar.webp",
+  avatarMonochrome: "/images/portfolio/adrien-avatar.webp",
   avatarVariants: {
     lightOff: "/images/portfolio/adrien-avatar.webp",
     lightOn: "/images/portfolio/adrien-avatar.webp",

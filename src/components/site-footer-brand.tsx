@@ -62,18 +62,41 @@ export function SiteFooterInteractiveLogotype() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d={ADRIEN_WORDMARK_PATH}
-                fill="url(#paint0_linear_1145_73)"
-              />
-              <path
-                className="stroke-foreground/10"
-                d={ADRIEN_WORDMARK_PATH}
-                strokeWidth="2"
-              />
+              <use href="#logotype-glyphs" fill="url(#logotype-hatch)" />
+              {/* Clears the hatch under the translucent outline, below the
+                  gradient so it still paints solid on hover. */}
+              <use href="#logotype-outline" className="stroke-background" />
+              <use href="#logotype-glyphs" fill="url(#logotype-gradient)" />
+              <use href="#logotype-outline" className="stroke-foreground/10" />
               <defs>
+                <g id="logotype-glyphs">
+                  <path d={ADRIEN_WORDMARK_PATH} />
+                </g>
+                <path
+                  id="logotype-outline"
+                  d={ADRIEN_WORDMARK_PATH}
+                  strokeWidth="2"
+                />
+
+                {/* Offset to the 32-unit glyph grid so the hatch meets every
+                    corner the same way. */}
+                <pattern
+                  id="logotype-hatch"
+                  x="1"
+                  y="1"
+                  width="8"
+                  height="8"
+                  patternUnits="userSpaceOnUse"
+                >
+                  <path
+                    className="stroke-line"
+                    d="M-1 1l2-2M0 8l8-8M7 9l2-2"
+                    strokeWidth="1"
+                  />
+                </pattern>
+
                 <motion.linearGradient
-                  id="paint0_linear_1145_73"
+                  id="logotype-gradient"
                   x1={gradientX1}
                   y1="1"
                   x2={VIEWBOX_WIDTH / 2}

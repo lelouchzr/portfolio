@@ -2,7 +2,6 @@
 title: Swipe Actions
 description: Swipe a row in a list to reveal actions on the left or right.
 image: https://assets.chanhdai.com/images/blog/swipe-actions.webp
-new: true
 createdAt: 2026-09-08
 updatedAt: 2026-09-10
 ---
@@ -13,14 +12,15 @@ updatedAt: 2026-09-10
   openInV0Url="https://chanhdai.com/r/swipe-actions.json"
 />
 
+<DocDependencies name="swipe-actions" />
+
 ## Features
 
 Built on top of [React Swipe Actions](https://react-primitives.chanhdai.com/swipe-actions).
 
-- Drag with pointer or touch, or open a focused row with the arrow keys.
+- Drag with pointer or touch.
 - Snaps open on distance or a flick. A full swipe runs the outermost action.
-- Only one row open at a time, dismissed by `Escape` or an outside click.
-- Keeps closed strips `inert` and respects `prefers-reduced-motion`.
+- Only one row open at a time, dismissed by an outside click.
 
 ## Installation
 
@@ -125,6 +125,12 @@ last. Here Delete sits next to the row and still needs a deliberate tap.
   name="swipe-actions-full-swipe-demo"
   openInV0Url="https://chanhdai.com/r/swipe-actions.json"
 />
+
+## Accessibility
+
+- Arrow keys open a focused row, and `Escape` closes it.
+- Closed strips are `inert`, so their actions stay out of reach.
+- Respects `prefers-reduced-motion`.
 
 ## References
 
