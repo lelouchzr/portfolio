@@ -320,7 +320,7 @@ const projects: Project[] = [
   {
     id: "lem-in",
     title: "Lem_in",
-    period: { start: "25.09.2023", end: "11.06.2025", source: "commits" },
+    period: { start: "11.06.2025", end: "11.06.2025", source: "commits" },
     link: "https://github.com/lelouchzr/lem_in",
     logo: "/images/portfolio/lem-in-logo.png",
     invertLogoInDarkMode: true,
