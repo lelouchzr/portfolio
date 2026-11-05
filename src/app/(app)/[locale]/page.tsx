@@ -15,6 +15,7 @@ import { absoluteUrl, cn } from "@/lib/utils"
 import { Education } from "@/features/portfolio/components/education"
 import { Experiences } from "@/features/portfolio/components/experiences"
 import { FrameWidthDimension } from "@/features/portfolio/components/frame-width-dimension"
+import { Hackathons } from "@/features/portfolio/components/hackathons"
 import { Hello } from "@/features/portfolio/components/hello"
 import { Overview } from "@/features/portfolio/components/overview"
 import { ProfileHeader } from "@/features/portfolio/components/profile-header"
@@ -84,8 +85,15 @@ export async function generateMetadata({
 
 export default async function HomePage({ params }: LocalePageProps) {
   const locale = await getRouteLocale(params)
-  const { user, experiences, education, projects, techStack, messages } =
-    getPortfolioData(locale)
+  const {
+    user,
+    experiences,
+    education,
+    hackathons,
+    projects,
+    techStack,
+    messages,
+  } = getPortfolioData(locale)
 
   return (
     <>
@@ -124,6 +132,14 @@ export default async function HomePage({ params }: LocalePageProps) {
             education={education}
             title={messages.sections.education}
             labels={messages.actions}
+          />
+          <Separator />
+
+          <Hackathons
+            hackathons={hackathons}
+            title={messages.sections.hackathons}
+            labels={messages.hackathons}
+            locale={locale}
           />
           <Separator />
 

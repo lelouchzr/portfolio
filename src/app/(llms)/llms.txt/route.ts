@@ -18,6 +18,7 @@ Personal portfolio of Adrien Lachambre, based in Nice, France. Holder of France'
 - [About](${SITE_INFO.url}/about.md): Background, technical skills and contact links.
 - [Experience](${SITE_INFO.url}/experience.md): Professional experience.
 - [Education and entrepreneurship](${SITE_INFO.url}/education.md): EPITECH, the Inha University exchange and the SNEE entrepreneurial project.
+- [Hackathons](${SITE_INFO.url}/hackathons.md): Participation in the Meta Global AI Developer Hackathon with Sentinel and Tech for Tourism in Cannes.
 - [Projects](${SITE_INFO.url}/projects.md): Adrien's software engineering projects, including Frameclue.
 
 ## Resume

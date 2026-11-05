@@ -2,6 +2,28 @@ import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
+    id: "sentinel",
+    title: "Sentinel",
+    period: { start: "10.2026", end: "11.2026" },
+    link: "https://github.com/lelouchzr/sentinel",
+    skills: [
+      "Python",
+      "Textual",
+      "DuckDB",
+      "Meta AI",
+      "MCP",
+      "AI Agents",
+      "Typer",
+      "Security",
+    ],
+    description: `Interactive terminal workspace for investigating security logs, built for the Meta Global AI Developer Hackathon 2026.
+- Import CSV and JSONL records, detect rule-based signals and inspect original evidence in a Textual interface.
+- Connect Meta AI to real local MCP tools for focused evidence searches and structured investigation findings.
+- Persist cases, notes and activity locally with DuckDB; export Markdown and JSON reports and resume investigations later.
+- Keep manual investigations available without an API key, with explicit provider states and bounded AI requests.`,
+    isExpanded: true,
+  },
+  {
     id: "frameclue",
     title: "Frameclue",
     period: {
@@ -30,6 +52,68 @@ export const PROJECTS: Project[] = [
 - Added French and English localization, automated tests and security-focused access controls for a private alpha.
 - Developing the product as a holder of France's National Student-Entrepreneur Status (SNEE).`,
     isExpanded: true,
+  },
+  {
+    id: "nanotekspice",
+    title: "NanoTekSpice",
+    period: { start: "08.2026", end: "08.2026" },
+    link: "https://github.com/lelouchzr/nanotekspice",
+    skills: [
+      "C++20",
+      "Digital Circuits",
+      "Simulation",
+      "SDL2",
+      "CMake",
+      "SUBLEQ",
+      "Testing",
+    ],
+    description: `Enhanced remake of a second-year EPITECH project: a digital circuit simulator in C++20.
+- Parse .nts circuit descriptions and simulate linked components with 0, 1 and unknown logic states.
+- Implement CMOS gates, counters, flip-flops, RAM and ROM using shared electrical nets and clocked simulation steps.
+- Add a native SDL2 circuit viewer, display devices and a programmable SUBLEQ computer.
+- Share the same simulation engine between the interactive shell and graphical viewer, with automated tests.`,
+  },
+  {
+    id: "raytracer",
+    title: "Raytracer — Atelier",
+    period: { start: "04.2026", end: "05.2026" },
+    link: "https://github.com/lelouchzr/raytracer",
+    skills: [
+      "C++20",
+      "Ray Tracing",
+      "PBR",
+      "SDL2",
+      "ImGui",
+      "BVH",
+      "Multithreading",
+      "TCP",
+    ],
+    description: `Enhanced remake of a second-year EPITECH project: a C++20 rendering engine and native scene editor.
+- Generate images from configurable 3D scenes with extensible geometry, lights, materials and transformations.
+- Add reflections, refraction, PBR path tracing, HDR lighting and photon caustics.
+- Build a native SDL2/ImGui editor with progressive previews, scene editing and PNG export.
+- Accelerate rendering with a BVH, multiple threads and distributed TCP workers.`,
+  },
+  {
+    id: "arcade",
+    title: "Arcade",
+    period: { start: "03.2026", end: "04.2026" },
+    link: "https://github.com/lelouchzr/arcade",
+    skills: [
+      "C++20",
+      "Plugins",
+      "Shared Libraries",
+      "SDL2",
+      "SFML",
+      "ncurses",
+      "RAII",
+      "CMake",
+    ],
+    description: `Enhanced remake of a second-year EPITECH project: a modular C++20 gaming platform.
+- Load games and graphics backends as shared libraries through a common plugin contract.
+- Switch graphics backends while preserving the running game's state and score.
+- Include seven games and up to thirteen graphics backends, depending on installed dependencies.
+- Add persistent leaderboards, game modes and RAII-based plugin lifetime management.`,
   },
   {
     id: "oriel",

@@ -3,11 +3,13 @@ import { DEFAULT_LOCALE } from "@/i18n/config"
 
 import type { Education } from "../types/education"
 import type { Experience } from "../types/experiences"
+import type { Hackathon } from "../types/hackathons"
 import type { Project } from "../types/projects"
 import type { TechStack } from "../types/tech-stack"
 import type { User } from "../types/user"
 import { EDUCATION } from "./education"
 import { EXPERIENCES } from "./experiences"
+import { HACKATHONS } from "./hackathons"
 import { PROJECTS } from "./projects"
 import { TECH_STACK } from "./tech-stack"
 import { USER } from "./user"
@@ -36,6 +38,7 @@ export type PortfolioMessages = {
     experience: string
     education: string
     projects: string
+    hackathons: string
   }
   actions: {
     showMore: string
@@ -43,6 +46,12 @@ export type PortfolioMessages = {
     present: string
     openProject: string
     copySectionLink: string
+  }
+  hackathons: {
+    participant: string
+    online: string
+    inPerson: string
+    event: string
   }
   stackCategories: Record<string, string>
   commandMenu: {
@@ -61,6 +70,7 @@ export type PortfolioMessages = {
     experience: string
     education: string
     projects: string
+    hackathons: string
     copyMark: string
     copyMarkSuccess: string
     copyLogotype: string
@@ -93,6 +103,7 @@ export type LocalizedPortfolio = {
   user: User
   experiences: Experience[]
   education: Education[]
+  hackathons: Hackathon[]
   projects: Project[]
   techStack: TechStack[]
   messages: PortfolioMessages
@@ -123,6 +134,7 @@ const messages: Record<Locale, PortfolioMessages> = {
       experience: "Experience",
       education: "Education and entrepreneurship",
       projects: "Projects",
+      hackathons: "Hackathons",
     },
     actions: {
       showMore: "Show more",
@@ -130,6 +142,12 @@ const messages: Record<Locale, PortfolioMessages> = {
       present: "Present",
       openProject: "Open project",
       copySectionLink: "Copy link to section",
+    },
+    hackathons: {
+      participant: "Participant",
+      online: "Online",
+      inPerson: "In person",
+      event: "Event",
     },
     stackCategories: {},
     commandMenu: {
@@ -148,6 +166,7 @@ const messages: Record<Locale, PortfolioMessages> = {
       experience: "Experience",
       education: "Education and entrepreneurship",
       projects: "Projects",
+      hackathons: "Hackathons",
       copyMark: "Copy Mark as SVG",
       copyMarkSuccess: "Mark as SVG copied",
       copyLogotype: "Copy Logotype as SVG",
@@ -199,6 +218,7 @@ const messages: Record<Locale, PortfolioMessages> = {
       experience: "Expérience",
       education: "Formation et entrepreneuriat",
       projects: "Projets",
+      hackathons: "Hackathons",
     },
     actions: {
       showMore: "Voir plus",
@@ -206,6 +226,12 @@ const messages: Record<Locale, PortfolioMessages> = {
       present: "Aujourd'hui",
       openProject: "Ouvrir le projet",
       copySectionLink: "Copier le lien de la section",
+    },
+    hackathons: {
+      participant: "Participation",
+      online: "En ligne",
+      inPerson: "En présentiel",
+      event: "Événement",
     },
     stackCategories: {
       Language: "Langages",
@@ -231,6 +257,7 @@ const messages: Record<Locale, PortfolioMessages> = {
       experience: "Expérience",
       education: "Formation et entrepreneuriat",
       projects: "Projets",
+      hackathons: "Hackathons",
       copyMark: "Copier le logo en SVG",
       copyMarkSuccess: "Logo SVG copié",
       copyLogotype: "Copier le logotype en SVG",
@@ -282,6 +309,7 @@ const messages: Record<Locale, PortfolioMessages> = {
       experience: "경력",
       education: "학력 및 창업",
       projects: "프로젝트",
+      hackathons: "해커톤",
     },
     actions: {
       showMore: "더 보기",
@@ -289,6 +317,12 @@ const messages: Record<Locale, PortfolioMessages> = {
       present: "현재",
       openProject: "프로젝트 열기",
       copySectionLink: "섹션 링크 복사",
+    },
+    hackathons: {
+      participant: "참가",
+      online: "온라인",
+      inPerson: "현장 참가",
+      event: "행사",
     },
     stackCategories: {
       Language: "언어",
@@ -314,6 +348,7 @@ const messages: Record<Locale, PortfolioMessages> = {
       experience: "경력",
       education: "학력 및 창업",
       projects: "프로젝트",
+      hackathons: "해커톤",
       copyMark: "마크 SVG 복사",
       copyMarkSuccess: "마크 SVG가 복사되었습니다",
       copyLogotype: "로고타입 SVG 복사",
@@ -684,10 +719,65 @@ Développement d'une application d'analyse de créations vidéo par intelligence
   },
 }
 
+const hackathonTranslations: Partial<
+  Record<Locale, Record<string, Partial<Hackathon>>>
+> = {
+  fr: {
+    "meta-global-ai-2026": {
+      location: "International",
+      description:
+        "Participation avec Sentinel, un espace de travail en terminal pour analyser des journaux de sécurité avec Meta AI et des outils MCP locaux.",
+    },
+    "tech-for-tourism-2022": {
+      description:
+        "Participation en présentiel au hackathon Tech for Tourism à Cannes.",
+    },
+  },
+  kr: {
+    "meta-global-ai-2026": {
+      location: "전 세계",
+      description:
+        "Meta AI와 로컬 MCP 도구로 보안 로그를 분석하는 터미널 작업 공간 Sentinel로 참가했습니다.",
+    },
+    "tech-for-tourism-2022": {
+      location: "프랑스 칸",
+      description: "칸에서 열린 Tech for Tourism 해커톤에 현장 참가했습니다.",
+    },
+  },
+}
+
 const projectTranslations: Partial<
   Record<Locale, Record<string, Partial<Project>>>
 > = {
   fr: {
+    sentinel: {
+      description: `Espace de travail interactif en terminal pour analyser des journaux de sécurité, développé pour le Meta Global AI Developer Hackathon 2026.
+- Import de données CSV et JSONL, détection de signaux par règles et inspection des preuves originales dans une interface Textual.
+- Connexion de Meta AI à de vrais outils MCP locaux pour rechercher des preuves et produire des constats structurés.
+- Persistance locale des dossiers, notes et activités avec DuckDB, export Markdown/JSON et reprise des investigations.
+- Investigation manuelle disponible sans clé API, avec états explicites du fournisseur et requêtes IA limitées.`,
+    },
+    nanotekspice: {
+      description: `Reprise enrichie d'un projet de deuxième année à EPITECH : un simulateur de circuits numériques en C++20.
+- Lecture de circuits .nts et simulation des composants connectés avec les états 0, 1 et inconnu.
+- Implémentation de portes CMOS, compteurs, bascules, RAM et ROM avec des connexions partagées et une simulation cadencée.
+- Ajout d'un visualiseur natif SDL2, de composants d'affichage et d'un ordinateur programmable SUBLEQ.
+- Moteur commun au shell et à l'interface graphique, avec tests automatisés.`,
+    },
+    raytracer: {
+      description: `Reprise enrichie d'un projet de deuxième année à EPITECH : un moteur de rendu C++20 et un éditeur de scènes natif.
+- Génération d'images depuis des scènes 3D configurables, avec géométries, lumières, matériaux et transformations extensibles.
+- Ajout des réflexions, de la réfraction, du path tracing PBR, de l'éclairage HDR et des caustiques par photons.
+- Éditeur SDL2/ImGui avec prévisualisation progressive, édition de scènes et export PNG.
+- Accélération par BVH, multithreading et rendu distribué via TCP.`,
+    },
+    arcade: {
+      description: `Reprise enrichie d'un projet de deuxième année à EPITECH : une plateforme de jeux modulaire en C++20.
+- Chargement des jeux et des moteurs graphiques sous forme de bibliothèques partagées via un contrat de plugins commun.
+- Changement de moteur graphique en cours de partie, avec conservation de l'état du jeu et du score.
+- Sept jeux et jusqu'à treize moteurs graphiques selon les dépendances installées.
+- Classements persistants, modes de jeu et gestion de la durée de vie des plugins par RAII.`,
+    },
     frameclue: {
       description: `Produit entrepreneurial de Creative Intelligence qui aide les fondateurs indépendants et les petites marques à comprendre leurs créations vidéo et à choisir les prochains tests.
 - Développement du produit full-stack avec Next.js 16, React 19, TypeScript et Tailwind CSS.
@@ -772,6 +862,34 @@ const projectTranslations: Partial<
     },
   },
   kr: {
+    sentinel: {
+      description: `Meta Global AI Developer Hackathon 2026을 위해 개발한 보안 로그 조사용 대화형 터미널 작업 공간입니다.
+- CSV와 JSONL 데이터를 가져오고 규칙 기반 신호를 탐지하며 Textual 인터페이스에서 원본 근거를 확인합니다.
+- Meta AI를 실제 로컬 MCP 도구에 연결해 근거를 검색하고 구조화된 조사 결과를 생성합니다.
+- DuckDB로 사건, 메모, 활동을 로컬에 저장하고 Markdown/JSON 보고서 내보내기와 조사 재개를 지원합니다.
+- API 키 없이 수동 조사가 가능하며 공급자 상태와 AI 요청 한도를 명시합니다.`,
+    },
+    nanotekspice: {
+      description: `EPITECH 2학년 프로젝트를 개선한 C++20 디지털 회로 시뮬레이터입니다.
+- .nts 회로를 읽고 연결된 부품의 0, 1, 미정 논리 상태를 시뮬레이션합니다.
+- 공유 연결망과 클록 단계를 이용해 CMOS 게이트, 카운터, 플립플롭, RAM과 ROM을 구현합니다.
+- 네이티브 SDL2 회로 뷰어, 표시 장치, 프로그래밍 가능한 SUBLEQ 컴퓨터를 추가했습니다.
+- 셸과 그래픽 뷰어가 같은 엔진을 사용하며 자동화 테스트를 포함합니다.`,
+    },
+    raytracer: {
+      description: `EPITECH 2학년 프로젝트를 개선한 C++20 렌더링 엔진과 네이티브 장면 편집기입니다.
+- 확장 가능한 도형, 광원, 재질, 변환을 이용해 3D 장면에서 이미지를 생성합니다.
+- 반사, 굴절, PBR 경로 추적, HDR 조명과 광자 기반 코스틱을 추가했습니다.
+- 점진적 미리보기, 장면 편집과 PNG 내보내기를 지원하는 SDL2/ImGui 편집기를 구현했습니다.
+- BVH, 멀티스레딩과 TCP 분산 작업자로 렌더링을 가속합니다.`,
+    },
+    arcade: {
+      description: `EPITECH 2학년 프로젝트를 개선한 모듈형 C++20 게임 플랫폼입니다.
+- 공통 플러그인 계약으로 게임과 그래픽 백엔드를 공유 라이브러리로 불러옵니다.
+- 게임 상태와 점수를 유지하면서 실행 중인 그래픽 백엔드를 전환합니다.
+- 설치된 의존성에 따라 7개 게임과 최대 13개 그래픽 백엔드를 지원합니다.
+- 영구 점수판, 게임 모드와 RAII 기반 플러그인 수명 관리를 구현했습니다.`,
+    },
     frameclue: {
       description: `1인 창업자와 소규모 브랜드가 영상 광고 소재를 이해하고 다음 테스트를 결정하도록 돕는 Creative Intelligence 창업 프로젝트.
 - Next.js 16, React 19, TypeScript, Tailwind CSS로 풀스택 제품 개발.
@@ -863,6 +981,7 @@ export function getPortfolioData(locale: Locale): LocalizedPortfolio {
     user: getLocalizedUser(locale),
     experiences: getLocalizedExperiences(locale),
     education: getLocalizedEducation(locale),
+    hackathons: getLocalizedHackathons(locale),
     projects: getLocalizedProjects(locale),
     techStack: getLocalizedTechStack(),
     messages: messages[locale] ?? messages[DEFAULT_LOCALE],
@@ -901,6 +1020,14 @@ function getLocalizedEducation(locale: Locale): Education[] {
   const translations = educationTranslations[locale] ?? {}
 
   return EDUCATION.map((item) => ({
+    ...item,
+    ...(translations[item.id] ?? {}),
+  }))
+}
+
+function getLocalizedHackathons(locale: Locale): Hackathon[] {
+  const translations = hackathonTranslations[locale] ?? {}
+  return HACKATHONS.map((item) => ({
     ...item,
     ...(translations[item.id] ?? {}),
   }))

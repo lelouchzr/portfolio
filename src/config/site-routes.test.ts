@@ -55,6 +55,7 @@ describe("portfolio routing", () => {
     "/education.md",
     "/experience.md",
     "/projects.md",
+    "/hackathons.md",
     "/llms.txt",
     "/sitemap.xml",
     "/adrien-lachambre-cv-fr.pdf",

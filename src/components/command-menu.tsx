@@ -17,6 +17,7 @@ import { useTiks } from "@rexa-developer/tiks/react"
 import {
   BoxIcon,
   BriefcaseBusinessIcon,
+  CodeXmlIcon,
   CornerDownLeftIcon,
   DownloadIcon,
   FileTextIcon,
@@ -116,6 +117,12 @@ function getPortfolioLinks(
       href: localizePath("/#education", locale),
       kind: "page",
       icon: <GraduationCapIcon />,
+    },
+    {
+      title: messages.hackathons,
+      href: localizePath("/#hackathons", locale),
+      kind: "page",
+      icon: <CodeXmlIcon />,
     },
     {
       title: messages.projects,

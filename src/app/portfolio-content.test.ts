@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest"
 
 import { GET as getEducation } from "./(llms)/education.md/route"
+import { GET as getHackathons } from "./(llms)/hackathons.md/route"
 import { GET as getIndex } from "./(llms)/llms.txt/route"
 import sitemap from "./sitemap"
 
@@ -25,6 +26,7 @@ describe("public portfolio content", () => {
       "/about.md",
       "/experience.md",
       "/education.md",
+      "/hackathons.md",
       "/projects.md",
       "/adrien-lachambre-resume-en.pdf",
       "/adrien-lachambre-cv-fr.pdf",
@@ -48,5 +50,17 @@ describe("public portfolio content", () => {
       "/kr",
     ])
     expect(entries.every((entry) => entry.alternates?.languages?.ko)).toBe(true)
+  })
+
+  it("exports hackathon participations without inventing dates or awards", async () => {
+    const content = await (await getHackathons()).text()
+
+    expect(content).toContain("Meta Global AI Developer Hackathon")
+    expect(content).toContain("Participation: 2026-11-05")
+    expect(content).toContain("https://github.com/lelouchzr/sentinel")
+    expect(content).toContain(
+      "Participation: 2022 | Cannes, France | in-person"
+    )
+    expect(content).not.toMatch(/winner|finalist|award/i)
   })
 })
